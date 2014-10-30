@@ -7,8 +7,22 @@ body {
   margin: 0 auto;
 }
 
+ul.navbar {
+	list-style: none;
+	margin: 0 20px;
+	padding: 0; 
+	margin-bottom: 20px;
+}
+
+ul.navbar li a {
+	background: #ccc;
+	padding: 8px 20px;
+	float: left;
+}
+
 .toc {
 	background: white;
+	clear: left;
 	float: left;
 	width: 25%;
 	padding: 20px;
@@ -28,4 +42,14 @@ body {
 	width: 25%;
 	padding: 20px;
 	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
 }
