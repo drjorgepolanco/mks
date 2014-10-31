@@ -430,40 +430,6 @@ html,body {
   border-radius: 0 1px 1px 0;
 }
 
-#fabrizio {
-	border-top: 100px solid black; 
-	border-right: 63px solid transparent;
-	width: 0;
-	transform: scale(.33);
-	transform-origin: 0 0;
-	margin: 20px;
-	opacity:.6;
-  position: absolute;
-  bottom: -130px;
-}
-#fabrizio:before {
-	background: black;
-	width: 20px;
-	height: 30px;
-	content: '';
-	display: block;
-	transform: skewX(-32deg);
-	position: relative;
-	top: -65px;
-	left: 29px;
-}
-#fabrizio:after {
-	background: black;
-	width: 40px;
-	height: 36px;
-	content: '';
-	display: block;
-	transform: skewX(-32deg);
-	position: relative;
-	top: -130px;
-	left: 49px;
-}
-
 #circle {
   width: 50px;
   height: 50px;
@@ -520,28 +486,3 @@ font-size: 11px;
   }
 } 
 
-
-#awwwards {
-  position: absolute;
-  bottom: 30px;
-  left: 70px;
-}
-#awwwards a {
-  color: #444;
-  text-decoration: none;
-  border-bottom: 1px solid #888;
-}
-
-#coolors {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  color: #444;
-  text-decoration: none;
-  border-bottom: 1px solid #888;
-  animation: coolors 1s infinite;
-  opacity: 1;
-}
-@keyframes coolors {
-  50% { right: 40px; }
-}
