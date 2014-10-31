@@ -65,4 +65,125 @@ html, body {
 	left: 5px;
 	top: 5px;
 	box-shadow: inset #000 0 0 4px, #555 0 0 3px 0, #222 -3px 2px, #000 -5px 5px, #E0E0E0 -7px 6px 1px, #6D6D6D -7px 6px 9px;
+	transform: translateZ(1px);
 }
+
+#front-cover {
+	width: 344px;
+	height: 734px;
+	background: #000;
+	border-radius: 39px;
+	position: absolute;
+	top: 8px;
+	left: 9px;
+}
+
+#home {
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background: linear-gradient(32deg, #666, #000, #666);
+	top: 684px;
+	left: 160px;
+}
+
+#home div {
+	background: #000;
+	border-radius: 50%;
+	width: 46px;
+	height: 46px;
+	position: absolute;
+	left: 3px;
+	top: 3px;
+}
+
+#camera {
+	width: 11px;
+	height: 11px;
+	background: #000;
+	position: absolute;
+	top: 35px;
+	left: 124px;
+	border-radius: 50%;
+	box-shadow: inset #666 -5px 2px 9px -2px;
+}
+
+#camera div {
+	width: 6px;
+	height: 6px;
+	background: radial-gradient(#E1E4F5, #0D2B69 33%);
+	background-position: -1px -1px;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	border-radius: 50%;
+}
+
+#speaker {
+	width: 50px;
+	height: 4px;
+	border-radius: 2px;
+	background: #555;
+	position: absolute;
+	top: 39px;
+	left: 156px;
+	box-shadow: inset #222 0 0 4px;
+}
+
+#volume {
+	height: 128px;
+	width: 11px;
+	border-radius: 10px;
+	position: absolute;
+	background: #F9F9FA;
+	top: 171px;
+	left: -20px;
+	box-shadow: inset #292A2F 4px 0 8px 1px, #D5D5D5 -1px 0 2px;
+
+}
+
+#volume div {
+	width: 8px;
+	height: 55px;
+	background: #BBBCC0;
+	border-radius: 10px;
+	position: absolute;
+	box-shadow: #eee -1px 1px, #777 -1px 3px, #505057 -3px 3px, inset #909197 -3px 0 3px;
+}
+
+#volume div:first-child {
+	top: 2px;
+	left: 4px;
+}
+
+#volume div:last-child {
+	top: 69px;
+	left: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
