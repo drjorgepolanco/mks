@@ -58,3 +58,4 @@ end
 
 
 bmw =  Car.new
+bmw.drive
