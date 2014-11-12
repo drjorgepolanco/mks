@@ -25,7 +25,7 @@ class Car
 			puts "After your trip, you will have #{$fuel_left} gallons left."
 			puts "That will allow you to drive for another #{$fuel_left * 20.0} miles."
 			if $fuel_left < 3
-				puts "You need to fuel up!"
+				puts "After that trip, you will need to fuel up!"
 				gas_decision = puts "Do you want to buy gas? Please, answer with 'yes' or 'no': "
 				gas_decision = gets.chomp.downcase
 				if gas_decision == "yes"
@@ -51,7 +51,7 @@ class Car
 			puts "You won't be able to fit all this gas in your tank. You only need #{fuel_top} gallons."
 			fuel_up
 		else
-			puts "The total cost of that gas will be #{total_cost} dollars."
+			puts "The total cost of that gas will be $#{total_cost} dollars."
 		end
 	end
 end
