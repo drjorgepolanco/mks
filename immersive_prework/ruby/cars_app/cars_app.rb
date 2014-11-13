@@ -12,7 +12,9 @@ class Car
 	end
 
 	def self.show_cars
-		@@cars_per_color
+		@@cars_per_color.each do |key, value|
+			puts "#{key}: #{value}"
+		end
 	end
 
 	def initialize(color)
@@ -42,6 +44,28 @@ class Car
 		gallons_needed = 10.0 - @fuel
 		puts "You must pay $#{3.5 * gallons_needed}"
 		@fuel = 10.0
+	end
+
+	def add_car_color
+		if @@cars_per_color.has_key?(@color) 
+			@@cars_per_color[@color] += 1
+		else
+			@@cars_per_color[@color] = 1
+		end
+	end
+
+	def remove_car_color
+		if @@cars_per_color.has_key?(@color) 
+			@@cars_per_color[@color] -= 1
+		else
+			puts "Error"
+		end
+	end
+
+	def color=(newColor)
+		remove_car_color 
+		@color = newColor
+		add_car_color	
 	end
 
 end
