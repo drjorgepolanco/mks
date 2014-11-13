@@ -1,3 +1,25 @@
+module Fighter
+	def punch(victim, power = @strength)
+		if power > 6
+			puts "#{name} gives a SuperPowerPunch to #{victim.name}: KaaBOOM!!"
+			@caffeine_level -= (@caffeine_level / 5)
+			victim.scream
+			victim.run
+		elsif power > 3
+			puts "#{name} gives a PowerPunch to #{victim.name}: BOoOm!"
+			@caffeine_level -= (@caffeine_level / 5)
+			victim.scream
+		elsif power > 0
+			puts "#{name} gives a Punch to #{victim.name}: Pum!"
+			@caffeine_level -= (@caffeine_level / 5)
+			puts "#{victim.name} says: Ouch!"
+		else
+			puts "I can kiss you dooode, but no strength to punch..."
+		end
+	end
+end
+
+
 class Person
 	attr_reader :name
 	attr_accessor :caffeine_level
@@ -34,30 +56,12 @@ end
 
 
 class PowerRanger < Person
+	include Fighter
 
 	def initialize(name, strength, color)
 		super(name)
 		@strength = strength
 		@color = color
-	end
-
-	def punch(victim, power = @strength)
-		if power > 6
-			puts "#{name} gives a SuperPowerPunch to #{victim.name}: KaaBOOM!!"
-			@caffeine_level -= (@caffeine_level / 5)
-			victim.scream
-			victim.run
-		elsif power > 3
-			puts "#{name} gives a PowerPunch to #{victim.name}: BOoOm!"
-			@caffeine_level -= (@caffeine_level / 5)
-			victim.scream
-		elsif power > 0
-			puts "#{name} gives a Punch to #{victim.name}: Pum!"
-			@caffeine_level -= (@caffeine_level / 5)
-			puts "#{victim.name} says: Ouch!"
-		else
-			puts "I can kiss you dooode, but no strength to punch..."
-		end
 	end
 
 	def rest(nap_time)
@@ -74,29 +78,12 @@ end
 
 
 class EvilNinja < Person
+	include Fighter
+	
 	def initialize(name, strength, evilness)
 		super(name)
 		@strength = strength
 		@evilness = evilness
-	end
-
-	def punch(victim, power = @strength)
-		if power > 6
-			puts "#{name} gives a SuperPowerPunch to #{victim.name}: KaaBOOM!!"
-			@caffeine_level -= (@caffeine_level / 5)
-			victim.scream
-			victim.run
-		elsif power > 3
-			puts "#{name} gives a PowerPunch to #{victim.name}: BOoOm!"
-			@caffeine_level -= (@caffeine_level / 5)
-			victim.scream
-		elsif power > 0
-			puts "#{name} gives a Punch to #{victim.name}: Pum!"
-			@caffeine_level -= (@caffeine_level / 5)
-			puts "#{victim.name} says: Ouch!"
-		else
-			puts "I can kiss you dooode, but no strength to punch..."
-		end
 	end
 
 	def cause_mayhem(victim)
