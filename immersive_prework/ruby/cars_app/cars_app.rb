@@ -57,8 +57,6 @@ class Car
 	def remove_car_color
 		if @@cars_per_color.has_key?(@color) 
 			@@cars_per_color[@color] -= 1
-		else
-			puts "Error"
 		end
 	end
 
