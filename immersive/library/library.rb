@@ -1,18 +1,21 @@
 class Book
-  attr_accessor :title, :checked_out, :current_user, :year_published, :edition, :reviews
+  attr_accessor :title, :author, :checked_out, :current_user, :year, :edition, :reviews
 
-  def initialize(title, author, year = "unknown", edition = "unknown")
+  def initialize(title, author, year, edition)
     @title = title
     @author = author
     @checked_out = false
     @current_user = nil
-    @year_published = year
+    @year = year
     @edition = edition
     @reviews = {}
   end
 
   def add_review(user, rating, review = "Be the first to review this book")
     @reviews[user.name] = [rating, review]
+    puts "The user #{user.name} left the following review: "
+    puts "Rating: #{rating} stars!"
+    puts "Review: #{review}"
   end
 end
 
@@ -26,7 +29,7 @@ class Borrower
     @books = []
   end
 
-  def list_of_books_borrowed
+  def list_of_borrowed_books
     puts "#{@name} has checked out the following books: "
     @books.each do |book|
       puts "\"#{book.title}\""
@@ -37,16 +40,16 @@ end
 
 
 class Library
-  def initialize(name)
+  def initialize
     @books = []
   end
 
   def books
     @books.each do |book|
       if book.checked_out
-        puts "\"#{book.title}\": checked out"
+        puts "\"#{book.title}\" by \"#{book.author}\". Year: #{book.year}. Edition: #{book.edition}. Status: checked out"
       else
-        puts "\"#{book.title}\": available"
+        puts "\"#{book.title}\" by \"#{book.author}\". Year: #{book.year}. Edition: #{book.edition}. Status: available"
       end
     end
   end
@@ -85,7 +88,7 @@ class Library
     puts "The following books are currently available:"
     @books.each do |book|
       if book.checked_out == false
-        puts "\"#{book.title}\""
+        puts "\"#{book.title}\" by \"#{book.author}\". Year: #{book.year}. Edition: #{book.edition}."
       end
     end
   end
