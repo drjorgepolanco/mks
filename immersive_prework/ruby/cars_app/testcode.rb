@@ -14,21 +14,25 @@ puts car_3.color
 Car.show_cars
 
 car_5 = Car.new("black")
+
 puts Car.show_cars
+
 puts Car.most_popular_color
-# car_blue = Car.new("blue")
-# puts Car.total_car_count
-# puts car_blue.color
 
-# car_red = Car.new("red")
-# puts Car.total_car_count
-# puts car_red.color
 
-# car_blue_other = Car.new("blue")
-# puts Car.total_car_count
-# puts car_blue_other.color
+car_x = Convertible.new("red")
+car_y = Convertible.new("yellow")
 
-# Car.show_cars
+puts car_x.roof_status
+
+car_x.roof_status = "open"
+
+puts car_x.roof_status
+
+car_x.top_down
+car_x.top_down
+
+
 # car_a = Car.new()
 # car_b = Car.new()
 # puts car_a

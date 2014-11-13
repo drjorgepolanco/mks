@@ -19,10 +19,10 @@ class Car
 
 	def self.most_popular_color
 		most_popular = @@cars_per_color.values.max
-		keys = @@cars_per_color.select {|k, v| v == most_popular}.keys
+		keys = @@cars_per_color.select {|key, value| value == most_popular}.keys
 	end
 
-	def initialize(color)
+	def initialize(color = "white")
 		@@total_car_count += 1
 		@fuel = 10
 		@distance = 0
@@ -71,3 +71,32 @@ class Car
 		add_car_color	
 	end
 end
+
+class Convertible < Car
+	attr_accessor :roof_status
+
+	def initialize(color = "red", convertible = true)
+		super(color)
+		@convertible = convertible
+		@roof_status = "closed"
+	end
+
+	def top_down
+		if @roof_status == "closed"
+			@roof_status = "open"
+			puts "Now opening the roof"
+		else
+			puts "The roof was already open"
+		end
+	end
+
+	def top_down
+		if @roof_status == "open"
+			@roof_status = "closed"
+			puts "Now closing the roof"
+		else
+			puts "The roof was already closed"
+		end
+	end
+end
+
