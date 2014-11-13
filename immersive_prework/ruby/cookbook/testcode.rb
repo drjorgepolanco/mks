@@ -24,4 +24,5 @@ mex_cuisine.add_recipe(burrito)
 p mex_cuisine.recipes
 
 mex_cuisine.recipe_titles
-# mex_cuisine.recipe_ingredients 
+mex_cuisine.recipe_ingredients 
+mex_cuisine.recipe_steps

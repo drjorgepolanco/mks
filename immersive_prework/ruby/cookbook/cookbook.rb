@@ -13,13 +13,20 @@ class Cookbook
 	end
 
 	def recipe_titles
+		puts "The available recipes in this Book are: "
 		@recipes.each do |item| 
 			puts item.title
 		end
 	end
 
 	def recipe_ingredients
+		puts "The ingredients of this recipe are: "
 		@recipes.each {|item| puts item.ingredients}
+	end
+
+	def recipe_steps
+		puts "To make this recipe, you need to: "
+		@recipes.each {|item| puts item.steps}
 	end
 end
 
