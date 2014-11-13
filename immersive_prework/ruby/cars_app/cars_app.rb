@@ -17,6 +17,11 @@ class Car
 		end
 	end
 
+	def self.most_popular_color
+		most_popular = @@cars_per_color.values.max
+		keys = @@cars_per_color.select {|k, v| v == most_popular}.keys
+	end
+
 	def initialize(color)
 		@@total_car_count += 1
 		@fuel = 10
@@ -60,10 +65,9 @@ class Car
 		end
 	end
 
-	def color=(newColor)
+	def color=(new_color)
 		remove_car_color 
-		@color = newColor
+		@color = new_color
 		add_car_color	
 	end
-
 end

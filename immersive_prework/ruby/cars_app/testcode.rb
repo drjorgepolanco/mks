@@ -13,6 +13,9 @@ puts car_3.color
 
 Car.show_cars
 
+car_5 = Car.new("black")
+puts Car.show_cars
+puts Car.most_popular_color
 # car_blue = Car.new("blue")
 # puts Car.total_car_count
 # puts car_blue.color
