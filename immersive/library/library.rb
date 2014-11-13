@@ -1,10 +1,22 @@
 class Book
-  attr_reader :author
+  attr_accessor :title, :checked_out, :current_user, :year_published, :edition, :reviews
 
-  def initialize(title, author)
+  def initialize(title, author, year = "unknown", edition = "unknown")
+    @title = title
     @author = author
+    @checked_out = false
+    @current_user = nil
+    @year_published = year
+    @edition = edition
+    @reviews = {}
+  end
+
+  def add_review(user, rating, review = "Be the first to review this book")
+    @reviews[user.name] = [rating, review]
   end
 end
+
+
 
 class Borrower
   attr_accessor :books, :name
@@ -21,6 +33,8 @@ class Borrower
     end
   end
 end
+
+
 
 class Library
   def initialize(name)
