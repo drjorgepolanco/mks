@@ -7,7 +7,18 @@ class Book
 end
 
 class Borrower
+  attr_accessor :books, :name
+
   def initialize(name)
+    @name = name
+    @books = []
+  end
+
+  def list_of_books_borrowed
+    puts "#{@name} has checked out the following books: "
+    @books.each do |book|
+      puts "\"#{book.title}\""
+    end
   end
 end
 
