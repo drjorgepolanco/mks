@@ -14,7 +14,7 @@ class Cookbook
 
 	def recipe_titles
 		puts "================================================================="
-		puts "The available recipes in this Book are: "
+		puts "The available recipes in the #{@title} Book are: "
 		@recipes.each do |item| 
 			puts item.title
 		end
@@ -23,13 +23,34 @@ class Cookbook
 	def recipe_ingredients
 		puts "================================================================="
 		puts "The ingredients of this recipe are: "
-		@recipes.each {|item| puts item.ingredients}
+		@recipes.each do |item| 
+			puts "-----------------"
+			puts item.title.upcase
+			puts item.ingredients
+		end
 	end
 
 	def recipe_steps
 		puts "================================================================="
 		puts "To make this recipe, you need to: "
-		@recipes.each {|item| puts item.steps}
+		@recipes.each do |item| 
+			puts "-----------------"
+			puts item.title.upcase
+			puts item.steps
+		end
+	end
+
+	def print_cookbook
+		puts "================================================================="
+		puts "The #{@title} cookbook has the following recipes:"
+		@recipes.each do |item|
+			puts ""
+			puts item.title.upcase
+			puts "The ingredients of this recipe are:"
+			puts item.ingredients
+			puts "To make this recipe you need to:"
+			puts item.steps
+		end
 	end
 end
 
@@ -45,10 +66,15 @@ class Recipe
 	def print_recipe
 		puts "================================================================="
 		puts "Title:"
+		puts "******"
 		puts @title
+		puts ""
 		puts "Ingredients:"
+		puts "************"
 		puts @ingredients
+		puts ""
 		puts "Steps:"
+		puts "******"
 		puts @steps
 	end
 end

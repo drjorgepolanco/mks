@@ -25,9 +25,13 @@ mex_cuisine.add_recipe(burrito)
 mex_cuisine.add_recipe(burrito_veggie)
 # puts mex_cuisine.recipes
 
-# mex_cuisine.recipe_titles
-# mex_cuisine.recipe_ingredients 
-# mex_cuisine.recipe_steps
+mex_cuisine.recipe_titles
+mex_cuisine.recipe_ingredients 
+mex_cuisine.recipe_steps
 
 burrito.print_recipe
 burrito_veggie.print_recipe
+
+mex_cuisine.print_cookbook
+
+
