@@ -11,15 +11,19 @@ class Car
 		"I'm a car! I've driven #{@distance} and have #{@fuel} gallons gas left"
 	end
 
+	def self.show_cars
+		@@cars_per_color
+	end
+
 	def initialize(color)
 		@@total_car_count += 1
 		@fuel = 10
 		@distance = 0
 		@color = color
-		if @@cars_per_color[color]
-			@@cars_per_color[color] += 1
+		if @@cars_per_color[color] == nil
+			@@cars_per_color[color] = 1
 		else
-			@cars_per_color[color] = 1
+			@@cars_per_color[color] += 1
 		end
 	end
 
@@ -41,15 +45,3 @@ class Car
 	end
 
 end
-
-car_a = Car.new()
-car_b = Car.new()
-puts car_a
-puts car_b
-car_a.drive(10)
-puts car_a
-puts car_b
-car_a.drive(232)
-car_b.drive(117)
-puts car_a
-puts car_b
