@@ -17,6 +17,10 @@ class Cookbook
 			puts item.title
 		end
 	end
+
+	def recipe_ingredients
+		@recipes.each {|item| puts item.ingredients}
+	end
 end
 
 class Recipe
