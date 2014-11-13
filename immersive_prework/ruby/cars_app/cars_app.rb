@@ -1,13 +1,26 @@
 class Car
 	@@total_car_count = 0
+	@@cars_per_color = {}
+	attr_accessor :color
+
+	def self.total_car_count
+		@@total_car_count
+	end
 
 	def to_s()
 		"I'm a car! I've driven #{@distance} and have #{@fuel} gallons gas left"
 	end
 
-	def initialize()
+	def initialize(color)
+		@@total_car_count += 1
 		@fuel = 10
 		@distance = 0
+		@color = color
+		if @@cars_per_color[color]
+			@@cars_per_color[color] += 1
+		else
+			@cars_per_color[color] = 1
+		end
 	end
 
 	def drive(miles)
@@ -27,9 +40,6 @@ class Car
 		@fuel = 10.0
 	end
 
-	def self.total_car_count
-		@@total_car_count
-	end
 end
 
 car_a = Car.new()
