@@ -52,10 +52,11 @@ module Tennis
   end
 
   class Player
-    attr_accessor :points, :opponent
+    attr_accessor :points, :opponent, :serving
 
-    def initialize
+    def initialize(serving: false)
       @points = 0
+      @serving = serving
     end
 
     def record_won_ball!
@@ -63,6 +64,10 @@ module Tennis
     end
 
     def score
+      return 'Deuce' if @points >= 3 && @points == @opponent.points
+      return 'Ad-in' if @points >= 4 && @points == (opponent.points + 1)
+      return 'Ad-out' if @points >= 4 && @points == (opponent.points - 1)
+      return 'We have a winner! The Game is Over!' if @points >= 4
       return 'love'     if @points == 0
       return 'fifteen'  if @points == 1
       return 'thirty'   if @points == 2
