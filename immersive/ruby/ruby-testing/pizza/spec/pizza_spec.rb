@@ -11,6 +11,13 @@ describe Pizza::Pie do
 
 			expect(pizza.toppings).to eq(toppings)
 		end
+
+		it "defaults the toppings to cheese, if the pizza has no toppings" do
+			pizza = Pizza::Pie.new
+
+			expect(pizza.toppings.size).to eq(1)
+			expect(pizza.toppings.first.name).to eq("tomato & cheese")
+		end
 	end
 end
 
