@@ -13,6 +13,24 @@ module Tennis
     def wins_ball(winner)
       winner.record_won_ball!
     end
+
+    def score_report
+      if player1.points >= 3 && player1.points == player2.points
+        return "The score is deuce!"
+      elsif player1.points >= 4 || player2.points >= 4
+        if player1.points >= 4 && player1.points == (player2.points + 1)
+          return "The score is ad-in."
+        elsif player2.points >= 4 && player1.points == (player2.points - 1)
+          return "The score is ad-out."
+        elsif player1.points >= (player2.points + 2)
+          return "Game Over! The server wins!"
+        else
+          return "Game Over! The receiver wins!"
+        end
+      else
+        return "Player One: '#{player1.score}'. Player Two: '#{player2.score}'."
+      end
+    end
   end
 
   class Player
