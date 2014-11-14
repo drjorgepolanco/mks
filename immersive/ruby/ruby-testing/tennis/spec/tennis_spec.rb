@@ -32,34 +32,60 @@ describe Tennis::Game do
   end
 
   describe '#score_report' do
-    it 'returns the scores or the status of both players' do
-      game.player1.points = 0
-      game.player2.points = 0
-      expect(game.score_report).to eq("Player One: 'love'. Player Two: 'love'.")
+    context 'when none of the player has scored any points' do
+      it "returns 'love' for both players" do
+        game.player1.points = 0
+        game.player2.points = 0
+        expect(game.score_report).to eq("Player One: 'love'. Player Two: 'love'.")
+      end
+    end
 
-      game.player1.points = 1
-      game.player2.points = 0
-      expect(game.score_report).to eq("Player One: 'fifteen'. Player Two: 'love'.")
+    context "when one of the players has score one point" do
+      it "returns 'fifteen' for the scoring player and 'love' for the looser" do
+        game.player1.points = 1
+        game.player2.points = 0
+        expect(game.score_report).to eq("Player One: 'fifteen'. Player Two: 'love'.")
+      end
+    end
 
-      game.player1.points = 3
-      game.player2.points = 3
-      expect(game.score_report).to eq("The score is deuce!")
+    context "when both players have the same score" do
+      it "returns deuce" do
+        game.player1.points = 3
+        game.player2.points = 3
+        expect(game.score_report).to eq("The score is deuce!")
+      end
+    end
 
-      game.player1.points = 4
-      game.player2.points = 3
-      expect(game.score_report).to eq("The score is ad-in.")
+    context "when a player has enough points to win, but not two more than the opponent" do
+      it "returns ad-in" do
+        game.player1.points = 4
+        game.player2.points = 3
+        expect(game.score_report).to eq("The score is ad-in.")
+      end
+    end
 
-      game.player1.points = 7
-      game.player2.points = 8
-      expect(game.score_report).to eq("The score is ad-out.")
+    context "when an opponent has enough points to win, but not two more than the player" do
+      it "returns ad-out" do
+        game.player1.points = 7
+        game.player2.points = 8
+        expect(game.score_report).to eq("The score is ad-out.")
+      end
+    end
 
-      game.player1.points = 4
-      game.player2.points = 2
-      expect(game.score_report).to eq("Game Over! The server wins!")
+    context "when the player has enough points to win and two more than the opponent" do
+      it "declares the server as the winner" do
+        game.player1.points = 4
+        game.player2.points = 2
+        expect(game.score_report).to eq("Game Over! The server wins!")
+      end
+    end
 
-      game.player1.points = 2
-      game.player2.points = 4
-      expect(game.score_report).to eq("Game Over! The receiver wins!")
+    context "when the opponent has enough points to win and two more than the player" do
+      it "declares the receiver as the winner" do
+        game.player1.points = 2
+        game.player2.points = 4
+        expect(game.score_report).to eq("Game Over! The receiver wins!")
+      end
     end
   end
 end
