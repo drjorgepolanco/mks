@@ -18,15 +18,10 @@ module Tennis
       if deuce?
         return "The score is deuce!"
       elsif player1.points >= 4 || player2.points >= 4
-        if ad_in?
-          return "The score is ad-in."
-        elsif ad_out?
-          return "The score is ad-out."
-        elsif server_wins?
-          return "Game Over! The server wins!"
-        else
-          return "Game Over! The receiver wins!"
-        end
+          return "The score is ad-in." if ad_in?
+          return "The score is ad-out." if ad_out?
+          return "Game Over! The server wins!" if server_wins?
+          return "Game Over! The receiver wins!" if receiver_wins?
       else
         return "Player One: '#{player1.score}'. Player Two: '#{player2.score}'."
       end
@@ -50,6 +45,9 @@ module Tennis
       player1.points >= (player2.points + 2)
     end
 
+    def receiver_wins?
+      return true if !ad_in? && !ad_out? && !server_wins?
+    end
 
   end
 
