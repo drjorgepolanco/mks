@@ -40,6 +40,16 @@ describe Pizza::Pie do
 				expect(pizza.vegetarian?).to eq(true)
 			end
 		end
+
+		describe "#deliver!" do
+			it "sets the delivery time for the pizza to 30 minutes from now" do
+				now = Time.now
+				pizza = Pizza::Pie.new
+				pizza.deliver!(now)
+
+				expect(pizza.delivery_time).to eq(now + 30*60)
+			end
+		end
 	end
 end
 
