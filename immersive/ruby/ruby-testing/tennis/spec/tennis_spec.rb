@@ -92,8 +92,8 @@ end
 
 describe Tennis::Player do
   let(:player) do
-    player = Tennis::Player.new
-    player.opponent = Tennis::Player.new
+    player = Tennis::Player.new(serving: true)
+    player.opponent = Tennis::Player.new(serving: false)
 
     return player
   end
@@ -140,6 +140,41 @@ describe Tennis::Player do
         player.points = 3
 
         expect(player.score).to eq('forty')
+      end
+    end
+
+    context "when a player reaches 4 points and the other has less than 3" do
+      it "declares a winner and ends the game" do
+        player.points = 4
+
+        expect(player.score).to eq("We have a winner! The Game is Over!")
+      end
+    end
+
+    context "when the player is ahead in the game" do
+      it "returns Ad-in" do
+        player.points = 7
+        player.opponent.points = 6
+
+        expect(player.score).to eq('Ad-in')
+      end
+    end
+
+    context "when the opponent is ahead in the game" do
+      it "returns Ad-out" do
+        player.points = 6
+        player.opponent.points = 7
+
+        expect(player.score).to eq('Ad-out')
+      end
+    end
+
+    context "when both players have the same score" do
+      it "returns deuce" do
+        player.points = 3
+        player.opponent.points = 3
+
+        expect(player.score).to eq('Deuce')
       end
     end
   end
