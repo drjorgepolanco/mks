@@ -31,35 +31,35 @@ describe Tennis::Game do
     end
   end
 
-  describe '#report_scores' do
+  describe '#score_report' do
     it 'returns the scores or the status of both players' do
       game.player1.points = 0
       game.player2.points = 0
-      expect(game.report_scores).to eq("The score is love, love.")
+      expect(game.score_report).to eq("Player One: 'love'. Player Two: 'love'.")
 
       game.player1.points = 1
       game.player2.points = 0
-      expect(game.report_scores).to eq("The score is fifteen, love.")
+      expect(game.score_report).to eq("Player One: 'fifteen'. Player Two: 'love'.")
 
       game.player1.points = 3
       game.player2.points = 3
-      expect(game.report_scores).to eq("The score is deuce!")
+      expect(game.score_report).to eq("The score is deuce!")
 
       game.player1.points = 4
       game.player2.points = 3
-      expect(game.report_scores).to eq("The score is ad-in.")
+      expect(game.score_report).to eq("The score is ad-in.")
 
       game.player1.points = 7
       game.player2.points = 8
-      expect(game.report_scores).to eq("The score is ad-out.")
+      expect(game.score_report).to eq("The score is ad-out.")
 
       game.player1.points = 4
       game.player2.points = 2
-      expect(game.report_scores).to eq("Game Over! The server wins!")
+      expect(game.score_report).to eq("Game Over! The server wins!")
 
       game.player1.points = 2
       game.player2.points = 4
-      expect(game.report_scores).to eq("Game Over! The receiver wins!")
+      expect(game.score_report).to eq("Game Over! The receiver wins!")
     end
   end
 end
