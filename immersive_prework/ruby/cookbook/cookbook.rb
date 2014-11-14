@@ -67,7 +67,7 @@ class Recipe
 		puts "================================================================="
 		puts "Title:"
 		puts "******"
-		puts @title
+		puts @title.upcase
 		puts ""
 		puts "Ingredients:"
 		puts "************"
@@ -75,6 +75,9 @@ class Recipe
 		puts ""
 		puts "Steps:"
 		puts "******"
-		puts @steps
+		# puts @steps
+		steps_hash = Hash[@steps.map.with_index.to_a]
+		steps_hash.each {|key, value| puts "#{value + 1}. #{key.capitalize}"}
 	end
+
 end
