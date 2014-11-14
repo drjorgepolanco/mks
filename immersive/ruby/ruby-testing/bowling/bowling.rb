@@ -6,9 +6,11 @@ class BowlingGame
 	end
 
 	def roll(pins)
+		@rolls << pins
 	end
 
 	def score
-		0
+		# reduce: sum the elements of an array
+		@rolls.reduce(:+)
 	end
 end
