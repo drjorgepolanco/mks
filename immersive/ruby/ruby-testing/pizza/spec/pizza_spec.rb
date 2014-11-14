@@ -37,7 +37,7 @@ describe Pizza::Pie do
 					Pizza::Topping.new("cheese", vegetarian: true)
 				]
 				pizza = Pizza::Pie.new(toppings)
-				expect(pizza.vegetarian?).to eq(true)
+				expect(pizza.vegetarian?).to be_true
 			end
 		end
 
@@ -48,6 +48,17 @@ describe Pizza::Pie do
 				pizza.deliver!(now)
 
 				expect(pizza.delivery_time).to eq(now + 30*60)
+			end
+		end
+
+		describe "#late?" do
+			context "when the pizza arrive past delivery time" do
+				it "returns true" do
+					pizza = Pizza::Pie.new
+					pizza.delivery_time = Time.now - 1
+
+					expect(pizza.late?).to be_true
+				end
 			end
 		end
 	end
