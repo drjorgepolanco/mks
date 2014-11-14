@@ -17,9 +17,8 @@ class BowlingGame
 
 			if strike?
 				score_strike
-			elsif @roll + @next_roll == 10
-				@total_score += 10 + @rolls[@current_roll + 2]
-				@current_roll += 2
+			elsif spare?
+				score_spare
 			else
 				@total_score += @roll + @next_roll
 				@current_roll += 2
@@ -44,6 +43,16 @@ class BowlingGame
 		@total_score += 10 + @next_roll + @rolls[@current_roll + 2]
 		@current_roll += 1
 	end
+
+	def spare?
+		@roll + @next_roll == 10
+	end
+
+	def score_spare
+		@total_score += 10 + @rolls[@current_roll + 2]
+		@current_roll += 2
+	end
+
 
 end
 
