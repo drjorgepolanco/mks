@@ -68,7 +68,7 @@ To make this recipe you need to: <br>
 #####*****
 
 #####Ingredients: Tortilla and Bean
-#####************
+#####*************
 
 #####Steps:
 #####*******
@@ -81,7 +81,7 @@ To make this recipe you need to: <br>
 #####*****
 
 #####Ingredients: Tortilla, Veggies and Salt
-#####************
+#####*************
 
 #####Steps:
 #####*******
