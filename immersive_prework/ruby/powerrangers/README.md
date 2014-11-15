@@ -16,7 +16,7 @@ Base Code taken from **github:** [makersquare/powerrangers](https://github.com/m
 
 **It's late for work:**
 
-Jorge's drank **3** shots of coffee and now have a caffeine level of **8.0**.
+Jorge drank **3** shots of coffee and now have a caffeine level of **8.0**!.
 
 Jorge runs fast like a gazelle!
 
