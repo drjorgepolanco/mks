@@ -13,43 +13,33 @@ class Cookbook
 	end
 
 	def recipe_titles
-		puts "================================================================="
-		puts "The available recipes in the #{@title} Book are: "
+		puts "===================================================="
+		puts "The available recipes in the \"#{@title}\" Book are: "
 		@recipes.each do |item| 
 			puts item.title
 		end
 	end
 
 	def recipe_ingredients
-		puts "================================================================="
+		puts "===================================================="
 		puts "The ingredients of this recipe are: "
 		@recipes.each do |item| 
-			puts "-----------------"
-			puts item.title.upcase
-			puts item.ingredients
-		end
-	end
-
-	def recipe_steps
-		puts "================================================================="
-		puts "To make this recipe, you need to: "
-		@recipes.each do |item| 
-			puts "-----------------"
-			puts item.title.upcase
-			puts item.steps
+			puts "#{item.title.upcase}: #{item.ingredients.map(&:capitalize).join(", ")}." 
 		end
 	end
 
 	def print_cookbook
-		puts "================================================================="
+		puts "===================================================="
 		puts "The #{@title} cookbook has the following recipes:"
 		@recipes.each do |item|
 			puts ""
 			puts item.title.upcase
+			puts "---------------"
+			puts " "
 			puts "The ingredients of this recipe are:"
-			puts item.ingredients
+			puts item.ingredients.map {|x| puts "- " + x.capitalize}
 			puts "To make this recipe you need to:"
-			puts item.steps
+			puts item.steps.map {|x| puts "- " + x.capitalize}
 		end
 	end
 end
@@ -64,18 +54,16 @@ class Recipe
 	end
 
 	def print_recipe
-		puts "================================================================="
-		puts "Title:"
+		puts "===================================================="
+		puts "Title: #{@title.upcase}"
 		puts "******"
-		puts @title.upcase
 		puts ""
-		puts "Ingredients:"
+		puts "Ingredients: " + @ingredients[0..-2].map(&:capitalize).join(", ") + " and " + @ingredients[-1].capitalize if ingredients.length > 1
+		puts "Ingredients: " + @ingredients[0] unless ingredients.length > 1
 		puts "************"
-		puts @ingredients
 		puts ""
 		puts "Steps:"
 		puts "******"
-		# puts @steps
 		steps_hash = Hash[@steps.map.with_index.to_a]
 		steps_hash.each {|key, value| puts "#{value + 1}. #{key.capitalize}"}
 	end
