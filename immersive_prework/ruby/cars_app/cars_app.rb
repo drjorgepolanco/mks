@@ -25,9 +25,9 @@ class Car
 		puts "We have the following cars available:"
 		@@cars_per_color.each do |key, value|
 			if @@cars_per_color[key] == 1
-				puts "#{key}: #{value} car."
+				puts "- #{key}: #{value} car."
 			else
-				puts "#{key}: #{value} cars."
+				puts "- #{key}: #{value} cars."
 			end
 		end
 		puts " "
