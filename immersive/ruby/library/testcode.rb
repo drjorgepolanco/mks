@@ -1,5 +1,6 @@
 require_relative 'library'
 
+puts "---------------------------------------------------------------"
 puts "Creating the library"
 library = Library.new
 puts ""
@@ -122,7 +123,7 @@ library.books
 puts ""
 
 puts "---------------------------------------------------------------"
-puts "these should return the books each user checked out"
+puts "These should return the books each user checked out"
 puts ""
 puts "Jorge: "
 jorge.list_of_borrowed_books
