@@ -7,7 +7,9 @@ Base Code taken from **github:** [makersquare/library-project](https://github.co
 **To test:**
 
 1. Open Terminal
-2. Write: ruby testcode.rb
+2. Write: 
+			
+		ruby testcode.rb
 4. Done
 
 ---------------------------------------------------------------
