@@ -7,7 +7,9 @@ Base Code taken from **github:** [makersquare/powerrangers](https://github.com/m
 **To test:**
 
 1. Open Terminal
-2. Write: ruby powerrangers.rb
+2. Write: 
+
+		ruby powerrangers.rb
 4. Done
 
 ========================
