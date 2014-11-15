@@ -65,26 +65,26 @@ To make this recipe you need to: <br>
 
 ====================================================
 #####Title: BEAN BURRITO
-####*****
+#####*****
 
 #####Ingredients: Tortilla and Bean
-####************
+#####************
 
 #####Steps:
-####*******
+#####*******
 1. Heat beans
 2. Place beans in tortilla
 3. Roll up
 
 ==========================
 #####Title: VEGGIE BURRITO
-####*****
+#####*****
 
 #####Ingredients: Tortilla, Veggies and Salt
-####************
+#####************
 
 #####Steps:
-####*******
+#####*******
 1. Heat veggies
 2. Place veggies in tortilla
 3. Put salt
