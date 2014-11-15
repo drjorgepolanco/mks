@@ -67,7 +67,7 @@ class PowerRanger < Person
 	def rest(nap_time)
 		puts "#{@name} says: Ohhh, I need to rest..... ZzZzzZzz"
 		@caffeine_level += nap_time
-		puts "#{@name}'s caffeine level is now #{@caffeine_level}."
+		puts "#{@name}'s caffeine level is now #{@caffeine_level}.0."
 	end
 
 	def use_megazord(victim)
