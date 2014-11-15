@@ -36,7 +36,7 @@ class Person
 		elsif @caffeine_level > 3
 			puts "#{@name} runs as fast as possible!"
 			@caffeine_level -= (@caffeine_level / 3)
-		elsif @caffeine_level > 0
+		elsif @caffeine_level > 1
 			puts "#{@name} barely runs, oohh Loord!!"
 			@caffeine_level -= (@caffeine_level / 3)
 		else
@@ -50,7 +50,7 @@ class Person
 
 	def drink_coffee(coffee_shot = 1)
 		@caffeine_level += coffee_shot
-		puts "#{@name}'s caffeine_level is now #{@caffeine_level}"
+		puts "#{@name}'s drank #{coffee_shot} shots of coffee and now have a caffeine level of #{@caffeine_level}."
 	end
 end
 
@@ -67,12 +67,12 @@ class PowerRanger < Person
 	def rest(nap_time)
 		puts "#{@name} says: Ohhh, I need to rest..... ZzZzzZzz"
 		@caffeine_level += nap_time
-		puts "#{@name}'s caffeine level is now #{@caffeine_level}"
+		puts "#{@name}'s caffeine level is now #{@caffeine_level}."
 	end
 
 	def use_megazord(victim)
 		punch(victim, 5000)
-		@caffeine_level -= (@caffeine_level / 2)
+		victim.caffeine_level = 1
 	end 
 end
 
@@ -89,7 +89,7 @@ class EvilNinja < Person
 	def cause_mayhem(victim)
 		victim.caffeine_level = 0
 		puts "#{name} cause MAYHEM!!!! to #{victim.name}."
-		puts "#{victim.name} is now screwed. He can't fight anymore. His caffeine level is #{victim.caffeine_level}"
+		puts "#{victim.name} is now screwed. He can't fight anymore. His caffeine level is #{victim.caffeine_level}."
 	end
 end
 
@@ -105,9 +105,20 @@ def fight_scene
 	jorge = Person.new("Jorge")
 	massiel = Person.new("Massiel")
 
+	puts "It's late for work: "
+
 	jorge.drink_coffee(3)
+	jorge.run
+	massiel.caffeine_level = 1.0
+	
+	puts "#{massiel.name} couldn't drink her coffee this morning, so her caffeine level is #{massiel.caffeine_level}."
+	
 	massiel.run
 
+	puts "While running to work #{jorge.name} and #{massiel.name} hear a lot of noise. Some people are fighting..."
+	
+	puts "Ohhh nooo!!! It's the Mighty Morphin Power Rangers!!"
+	
 	jason.punch(rita, 3)
 	rita.cause_mayhem(jason)
 	jason.rest(10)
