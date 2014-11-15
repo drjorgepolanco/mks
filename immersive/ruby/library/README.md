@@ -260,7 +260,7 @@ The book **"My Sister's Grave"** has been checked out by **Massiel**.
 The book **"Old Fashioned"** has been checked out by **Edgar**.
 
 ---------------------------------------------------------------
-#####Leave a review of the book "41: A Portrait of My Father" from Edgar
+####Leave a review of the book "41: A Portrait of My Father" from Edgar
 
 **The user Edgar left the following review:**
 
