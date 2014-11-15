@@ -70,7 +70,7 @@ To make this recipe you need to: <br>
 #####Ingredients: Tortilla and Bean
 ####************
 
-####Steps:
+#####Steps:
 ####*******
 1. Heat beans
 2. Place beans in tortilla
@@ -84,7 +84,7 @@ To make this recipe you need to: <br>
 ####************
 
 #####Steps:
-####******
+####*******
 1. Heat veggies
 2. Place veggies in tortilla
 3. Put salt
