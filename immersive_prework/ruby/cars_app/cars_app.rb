@@ -42,7 +42,7 @@ class Car
 	end
 
 	def to_s
-		"I'm a car! I've driven #{@distance} miles and have #{@fuel} gallons gas left"
+		"I'm a car! I've driven #{@distance} miles and have #{@fuel} gallons gas left!"
 	end
 
 	def drive(miles)
