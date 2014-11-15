@@ -27,11 +27,11 @@ puts Car.most_popular_color
 car_x = Convertible.new("red")
 car_y = Convertible.new("yellow")
 
-puts "The top is currently " + car_x.roof_status + "."
+puts "The roof is currently " + car_x.roof_status + "."
 
 car_x.top_up
 
-puts "The top is currently " + car_x.roof_status + "."
+puts "The roof is currently " + car_x.roof_status + "."
 
 car_x.top_down
 car_x.top_down

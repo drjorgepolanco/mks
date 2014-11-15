@@ -8,7 +8,9 @@ Base Code taken from **github:** [makersquare/cars](https://github.com/makersqua
 
 1. Open Terminal
 2. Open irb
-3. Write: load 'testcode.rb'
+3. Write: 
+			
+		load 'testcode.rb'
 4. Done
 
 ========================
