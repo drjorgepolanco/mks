@@ -110,6 +110,7 @@ Sorry, this book is currently unavailable.
 
 ---------------------------------------------------------------
 ####These should return the books each user checked out
+<br>
 
 #####Jorge:
 
@@ -119,7 +120,7 @@ Sorry, this book is currently unavailable.
 
 "The Ruby Programming Language"
 
-
+<br>
 #####Massiel:
 
 **Massiel has checked out the following books:**
@@ -128,7 +129,7 @@ Sorry, this book is currently unavailable.
 
 "The Obituary Society"
 
-
+<br>
 #####Edgar:
 
 **Edgar has checked out the following books:**
@@ -137,7 +138,7 @@ Sorry, this book is currently unavailable.
 
 "Old Fashioned"
 
-
+<br>
 #####Omar:
 
 **Omar has checked out the following books:**
@@ -208,6 +209,7 @@ The user **Jorge** has returned the book **"The Ruby Programming Language"**.
 
 ---------------------------------------------------------------
 ####These should return the books each user checked out
+<br>
 
 #####Jorge:
 
@@ -215,7 +217,7 @@ The user **Jorge** has returned the book **"The Ruby Programming Language"**.
 
 "The Rails 4 Way"
 
-
+<br>
 #####Massiel:
 
 **Massiel has checked out the following books:**
@@ -224,7 +226,7 @@ The user **Jorge** has returned the book **"The Ruby Programming Language"**.
 
 "The Obituary Society"
 
-
+<br>
 #####Edgar:
 
 **Edgar has checked out the following books:**
@@ -233,7 +235,7 @@ The user **Jorge** has returned the book **"The Ruby Programming Language"**.
 
 "Old Fashioned"
 
-
+<br>
 #####Omar:
 
 **Omar has checked out the following books:**
