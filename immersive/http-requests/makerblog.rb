@@ -70,17 +70,27 @@ module MakerBlog
 			puts "Content: #{post["content"]}"
 			puts "_" * 40
 		end
+
+		def delete_post(id)
+			url = "http://makerblog.herokuapp.com/posts/#{id}"
+			response = Unirest.delete(url, 
+				headers: {"Accept" => "application/json"})
+			puts response.code
+			puts "You have succesfully deleted the post #{id}."
+		end
 	end
 end
 
 client = MakerBlog::Client.new
-# client.list_posts
-# client.show_post(19637)
+client.list_posts
+client.show_post(19637)
 
-# client.create_post("Kelvinator", "Amazing Title", "Esto se esta poniendo bueno!")
+client.create_post("Kelvinator", "Amazing Title", "Esto se esta poniendo bueno!")
 client.edit_post(19637, {name: "Wampam Pimpan", title: "Mustang", content: "Un caballo de carro."})
 
 client.show_post(19637)
+
+client.delete_post(19637)
 
 
 
