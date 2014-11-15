@@ -50,7 +50,7 @@ class Person
 
 	def drink_coffee(coffee_shot = 1)
 		@caffeine_level += coffee_shot
-		puts "#{@name} drank #{coffee_shot} shots of coffee and now have a caffeine level of #{@caffeine_level}."
+		puts "#{@name} drank #{coffee_shot} shots of coffee and now have a caffeine level of #{@caffeine_level}!"
 	end
 end
 
