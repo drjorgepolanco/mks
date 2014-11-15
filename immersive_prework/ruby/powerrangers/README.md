@@ -22,7 +22,7 @@ Massiel couldn't drink her coffee this morning, so her caffeine level is **1.0**
 
 Massiel whispers: I'm dead, dooode!
 
-######While running to work Jorge and Massiel hear a lot of noise. Some people are fighting...**
+######While running to work Jorge and Massiel hear a lot of noise. Some people are fighting...
 
 ####Ohhh nooo!!! It's the Mighty Morphin Power Rangers!!
 
