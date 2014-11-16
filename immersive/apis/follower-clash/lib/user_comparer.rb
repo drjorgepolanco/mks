@@ -29,7 +29,14 @@ module UserComparer
 			@user2 = user2
 		end
 
-		def compare
+		def compare_followers
+			if @user1.followers > @user2.followers
+				@user1.username
+			elsif @user1.followers < user2.followers
+				@user2.username
+			else
+				"Both users have the same number of followers."
+			end
 		end
 	end
 end
