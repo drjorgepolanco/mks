@@ -84,8 +84,9 @@ module MakerBlog
 			url = @makerblog_url + id
 			response = Unirest.delete(url, 
 				headers: {"Accept" => "application/json"})
-			puts response_code(response.code)
 			puts "You have succesfully deleted the post #{id}."
+			puts "_" * 40
+			puts response_code(response.code)
 		end
 
 		private
