@@ -28,11 +28,12 @@ when 'read'
 when 'update'
   user_post_id = puts "Please, provide the id of the post you want to edit: "
   user_post_id = gets.chomp
-  user_name = puts "Please, write a new name for your Post. Leave empty if your don't want to change it:"
+  puts "All fields are required. I decided not to implement the option to leave empty fields. Sorry for that!"
+  user_name = puts "Please, write your name:"
   user_name = gets.chomp.split.map(&:capitalize).join(' ')
-  user_title = puts "Please, write a new title for your Post. Leave empty if your dont want to change it:"
+  user_title = puts "Please, write a new title for your Post:"
   user_title = gets.chomp.split.map(&:capitalize).join(' ')
-  user_content = puts "Please, write a new content for your Post. Leave empty if your dont want to change it:"
+  user_content = puts "Please, write a new content for your Post:"
   user_content = gets.chomp
 
   client.edit_post(user_post_id, {name: user_name, title: user_title, content: user_content})
