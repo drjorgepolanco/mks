@@ -67,6 +67,16 @@ module UserComparer
 			end
 		end
 
+		def compare_friends
+			if @user1.friends > @user2.friends
+				@user1.username
+			elsif @user1.friends < @user2.friends
+				@user2.username
+			else
+				puts "Both users are following the same amount of users."
+			end
+		end
+
 		def compare_tweets
 			if @user1.tweets > @user2.tweets
 				@user1.username

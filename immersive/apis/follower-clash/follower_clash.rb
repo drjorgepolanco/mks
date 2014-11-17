@@ -20,6 +20,8 @@ puts "The most popular user is: #{comparer.compare_followers}"
 puts "#{user1.username} is following #{user1.friends} users."
 puts "#{user2.username} is following #{user2.friends} users."
 
+puts "The user who follows more people in Twitter is #{comparer.compare_friends}."
+
 
 # Tweets
 # ******
