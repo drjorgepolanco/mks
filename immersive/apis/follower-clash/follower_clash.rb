@@ -14,3 +14,5 @@ puts "#{user2.username} is following #{user2.friends} users."
 
 puts "#{user1.username} has posted #{user1.tweets} tweets."
 puts "#{user2.username} has posted #{user2.tweets} tweets."
+
+puts "The most active tweeter is #{comparer.compare_tweets}."

@@ -27,8 +27,8 @@ module UserComparer
 		def tweets
 			@client.user(@username).tweets_count
 		end
-
 	end
+
 
 	class Comparer
 
@@ -43,8 +43,18 @@ module UserComparer
 			elsif @user1.followers < user2.followers
 				@user2.username
 			else
-				"Both users have the same number of followers."
+				puts "Both users have the same number of followers."
 			end
 		end
+
+		def compare_tweets
+			if @user1.tweets > @user2.tweets
+				@user1.username
+			elsif @user1.tweets < @user2.tweets
+				@user2.username
+			else
+				puts "Both users have the same amount of tweets."
+			end
+		end	 	 
 	end
 end
