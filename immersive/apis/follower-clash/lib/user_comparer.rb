@@ -31,6 +31,10 @@ module UserComparer
 		def favourites
 			@client.user(@username).favourites_count
 		end
+
+		def lists
+			@client.user(@username).listed_count
+		end
 	end
 
 
