@@ -27,6 +27,10 @@ module UserComparer
 		def tweets
 			@client.user(@username).tweets_count
 		end
+
+		def favourites
+			@client.user(@username).favourites_count
+		end
 	end
 
 

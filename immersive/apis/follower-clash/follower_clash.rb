@@ -16,3 +16,6 @@ puts "#{user1.username} has posted #{user1.tweets} tweets."
 puts "#{user2.username} has posted #{user2.tweets} tweets."
 
 puts "The most active tweeter is #{comparer.compare_tweets}."
+
+puts "#{user1.username} has favourited #{user1.favourites} tweets."
+puts "#{user2.username} has favourited #{user2.favourites} tweets."
