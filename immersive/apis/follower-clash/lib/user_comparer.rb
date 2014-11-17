@@ -36,8 +36,16 @@ module UserComparer
 			@client.user(@username).listed_count
 		end
 
+		def status_time
+			@client.user(@username).status.created_at.asctime
+		end
+
 		def status
 			@client.user(@username).status.text
+		end
+
+		def created_at
+			@client.user(@username).created_at.asctime
 		end
 	end
 

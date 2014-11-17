@@ -43,9 +43,17 @@ puts "#{user2.username} has favourited #{user2.favourites} tweets."
 puts "#{user1.username} is member of #{user1.lists} public lists."
 puts "#{user2.username} is member of #{user2.lists} public lists."
 
+
 # Status: A user's last tweet or retweet.
 # ******
 
-puts "#{user1.username}'s last tweet or retweet is: #{user1.status}"
-puts "#{user2.username}'s last tweet or retweet is: #{user2.status}"
+puts "#{user1.username}'s last tweet or retweet is: #{user1.status}, tweeted on: #{user1.status_time}."
+puts "#{user2.username}'s last tweet or retweet is: #{user2.status}, tweeted on: #{user2.status_time}."
+
+
+# Member since: The UTC datetime that the user account was created on Twitter.
+# ************
+
+puts "#{user1.username} is a Twitter member since: #{user1.created_at}."
+puts "#{user2.username} is a Twitter member since: #{user2.created_at}."
 
