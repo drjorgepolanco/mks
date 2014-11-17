@@ -35,6 +35,10 @@ module UserComparer
 		def lists
 			@client.user(@username).listed_count
 		end
+
+		def status
+			@client.user(@username).status.text
+		end
 	end
 
 
