@@ -8,3 +8,6 @@ get '/' do
 	@show_description = true
 	erb :index
 end
+
+post '/twitter' do
+end
