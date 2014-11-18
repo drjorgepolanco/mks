@@ -10,4 +10,5 @@ get '/' do
 end
 
 post '/twitter' do
+	erb :twitter
 end
