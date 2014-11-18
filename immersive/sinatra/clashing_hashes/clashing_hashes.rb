@@ -4,5 +4,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 get '/' do
+	@name = "Jorgito"
+	@show_description = true
 	erb :index
 end
