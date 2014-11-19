@@ -13,3 +13,18 @@ get '/say/*/to/*' do
 	erb :say
 end
 
+# get '/test' do
+# 	erb :test
+# end
+
+# post '/test' do
+# 	erb :test
+# end
+
+get '/dog-registration' do
+	erb :test
+end
+
+get '/dog-registration-results' do
+	erb :dog_registration_results
+end

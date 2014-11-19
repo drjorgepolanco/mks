@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+</head>
+<body>
+	<h1>Please, tell us more about your dog:</h1>
+  <form action="/dog-registration-results">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+    </div>
+    <div>
+      <label for="age">Age:</label>
+      <input type="age" id="age" name="age" />
+    </div>
+    <div>
+      <label for="mutt">Mutt?</label>
+      <input type="checkbox" id="mutt" name="mutt" />
+    </div>
+    <div>
+        <label for="breed">Breed:</label>
+        <select name="breed">
+         <option value="Rottweiler">Rottweiler</option>
+         <option value="Dobberman">Dobberman</option>
+         <option value="Pit Bull">Pit Bull</option>
+         <option value="Chihuahua">Chihuahua</option>
+         <option value="nil">Unknown</option>
+       </select>
+    </div>
+    <div>
+      <input type="submit" value="Submit Info">
+    </div>
+  </form>	
+</body>
+</html>
