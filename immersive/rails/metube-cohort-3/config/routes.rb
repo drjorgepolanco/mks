@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/videos' => 'videos#show_all'
+  root 'videos#show_all'
 
   get '/videos/gladiator' => 'videos#show_gladiator', as: 'gladiator_video'
   get '/videos/matilda' => 'videos#show_matilda', as: 'matilda_video'
