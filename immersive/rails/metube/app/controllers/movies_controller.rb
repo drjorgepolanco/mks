@@ -35,7 +35,7 @@ class MoviesController < ApplicationController
 
   def show_superman
   	@movie = {
-  		title: "Superman: The Movie"
+  		title: "Superman: The Movie",
   		subtitle: "A new, updated version of the popular comic book hero 'Superman'",
   		video_id: "0aWd-6YGxts",
   		description: "The story begins with Superman's birth on the doomed planet Krypton and follows him on his arrival to Earth, his childhood in Kansas and his career as reporter for the Daily Planet."
