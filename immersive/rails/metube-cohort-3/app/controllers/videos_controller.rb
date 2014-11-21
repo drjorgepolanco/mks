@@ -5,6 +5,7 @@ class VideosController < ApplicationController
 	end
 
 	def show_gladiator
+		@params = params
 		@movie = {
 			title: "Gladiator",
 			video_id: "FI1ylg4GKv8",
