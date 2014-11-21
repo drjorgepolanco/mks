@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/videos/:video_name' => 'videos#show', as: 'video'
+
   root "videos#show_all"
 
   get '/videos' => 'videos#show_all'
