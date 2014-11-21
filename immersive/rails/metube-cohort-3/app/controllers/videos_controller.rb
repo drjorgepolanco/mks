@@ -1,4 +1,8 @@
 class VideosController < ApplicationController
+
+	def show_all
+	end
+
 	def show_gladiator
 		@movie = {
 			title: "Gladiator",
