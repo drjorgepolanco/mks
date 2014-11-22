@@ -6,7 +6,7 @@ This basic Video Sharing App has been developed following the **first lesson** o
 
 #####Purpose:
 
-Learn about how a Rails application handles incoming HTTP requests and routes those requests to the appropriate sections of code within the application. 
+Learn about how a Rails application handles **incoming HTTP requests** and routes those requests to the appropriate sections of code within the application. 
 
 #####Topics:
 
@@ -15,7 +15,7 @@ Learn about how a Rails application handles incoming HTTP requests and routes th
 - Using instance variables to pass data from controllers to views.
 - Using `link_to` instead of `<a href=""></a>`.
 
-#####Goal:
+#####Goals:
 - Understand the relationship between the browser and a Rails app (routes, controllers, views).
 - Building **routes**, **controllers**, **views** from scratch, and their function within a Rails app.
 - Understand the file structure of a Rails app.
