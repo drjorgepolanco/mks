@@ -1,15 +1,16 @@
 class VideosController < ApplicationController
-	def show
-		video_name = params[:video_name_from_user]
-		@video = @@videos[video_name]
-	end
 
-	def show_all
-		@videos = @@videos
-	end
+  def show
+    video_name = params[:video_name_from_user]
+    @video = @@videos[video_name]
+  end
+  
+  def show_all
+    @videos = @@videos
+  end
 
-	@@videos = {
-		"gladiator" => {
+  @@videos = {
+    "gladiator" => {
       title: 'Gladiator',
       youtube_id: 'FI1ylg4GKv8',
       description: "Crowe shows everyone what's up."
@@ -29,5 +30,6 @@ class VideosController < ApplicationController
       youtube_id: 'XIsVHF2bwVs',
       description: 'Gotta love friends!'
     }
-	}
+  }
+
 end
