@@ -19,3 +19,8 @@ Start using **Rails helpers** to write cleaner and more efficient code for linki
 
 #####Goal:
 - Learn about linking to different pages and collecting data from a user through parameters.
+
+#####Challenges:
+
+- Show dynamically two videos in a single page.
+- Call named routes with two dynamic segment.
