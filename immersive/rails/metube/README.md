@@ -1,7 +1,8 @@
 #Metube 0.1
+###Routes, Controllers & Views (Intro to Rails)
 
 
-This basic app has been developed following the **first lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
+This basic Video Sharing App has been developed following the **first lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
 
 #####Purpose:
 
