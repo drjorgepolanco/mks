@@ -12,5 +12,5 @@ Each app covers a few topics:
 - [**Metube 0.1**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-1): Routes, Controllers & Views.
 - [**Metube 0.2**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-2): Linking, Named Routes & Parameters.
 - [**Metube 0.3**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-3): ActiveRecord & Rails Console.
-- [**Metube 0.4**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-4): Migrations & Instance Methods
-- [**Metube 0.5**](https://github.com/makersquare/metube-cohort3/tree/e-start): CRUD (Create, Read, Update, Destroy)
+- [**Metube 0.4**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-4): Migrations & Instance Methods.
+- [**Metube 0.5**](https://github.com/makersquare/metube-cohort3/tree/e-start): CRUD (Create, Read, Update, Delete).
