@@ -11,4 +11,10 @@ class VideosController < ApplicationController
 	def new 
 		@video = Video.new
 	end
+
+	def create
+		video = Video.new(params)
+		video.save
+		redirect_to root_path
+	end
 end
