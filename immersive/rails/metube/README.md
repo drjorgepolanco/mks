@@ -1,4 +1,5 @@
 #Metube App
+###Intro to Ruby on Rails
 
 
 This basic Video Sharing App has been developed following the **first week of lessons** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
@@ -13,4 +14,4 @@ Each app covers a few topics:
 - [**Metube 0.2**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-2): Linking, Named Routes & Parameters.
 - [**Metube 0.3**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-3): ActiveRecord & Rails Console.
 - [**Metube 0.4**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-4): Migrations & Instance Methods.
-- [**Metube 0.5**](https://github.com/makersquare/metube-cohort3/tree/e-start): CRUD (Create, Read, Update, Delete).
+- [**Metube 0.5**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-5): CRUD (Create, Read, Update & Delete).

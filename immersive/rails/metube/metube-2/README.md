@@ -1,5 +1,5 @@
 #Metube 0.2
-###Linking, Named Routes & Parameters (Intro to Rails)
+###Linking, Named Routes & Parameters
 
 
 This basic Video Sharing App has been developed following the **second lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
