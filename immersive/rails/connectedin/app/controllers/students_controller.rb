@@ -27,4 +27,8 @@ class StudentsController < ApplicationController
 
 		@student = students[student_name]
 	end
+
+	def index
+		@params = params 
+	end
 end
