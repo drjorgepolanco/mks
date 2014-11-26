@@ -13,8 +13,12 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-    @video.save
-    redirect_to @video
+    @video.user_id = current_user.id
+    if @video.save
+      redirect_to @video
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -23,8 +27,11 @@ class VideosController < ApplicationController
 
   def update
     @video = Video.find(params[:id])
-    @video.update(video_params)
-    redirect_to root_path
+    if @video.update(video_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
