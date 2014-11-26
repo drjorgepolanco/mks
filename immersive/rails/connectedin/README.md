@@ -31,5 +31,4 @@ Improve ConnectedIn.
 ######Extra
 
 - Added simple index.
-
 - Back link on show view.
