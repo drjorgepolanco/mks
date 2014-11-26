@@ -13,7 +13,9 @@ Learn how to **associate** models using `has_many` and `belongs_to` and add vali
 #####Topics:
 - Associations: `has_many`.
 - Associations: `belongs_to`.
+- Database `where` queries.
 - Validations.
+
 
 #####Goal:
 - To create an app that allows a user to create posts that belongs to him, creating associations that allows models to interact with each other.
