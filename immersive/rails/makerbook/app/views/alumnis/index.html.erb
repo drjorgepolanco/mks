@@ -1,4 +1,5 @@
 <% @alumnis.each do |alumni| %>
-	<img src="<%= alumni.picture_url %>">
-	<%= alumni.full_name %>
+	<img src="<%= alumni.picture_url %>" height="160">
+	<%= link_to alumni.full_name, alumni %>
+	<br>
 <% end %>
