@@ -1,0 +1,5 @@
+<img src="<%= @location.picture_url %>">
+<h1><%= @location.name.titleize %></h1>
+<h3><strong>Review:</strong></h3>
+<p><%= @location.review %></p>
+<%= link_to 'back to Locations', locations_path %>

@@ -1,0 +1,9 @@
+<%= form_for @location do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br>
+	<%= f.label :picture_url %>
+	<%= f.text_field :picture_url %><br>
+	<%= f.label :review %>
+	<%= f.text_area :review %><br>
+	<%= f.submit %>
+<% end %>
