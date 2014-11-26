@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     id = params[:id]
     @user = User.find(id)
+    @videos = @user.videos
   end
 
   def index
