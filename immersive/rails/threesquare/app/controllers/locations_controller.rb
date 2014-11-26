@@ -1,11 +1,11 @@
 class LocationsController < ApplicationController
+	before_action :set_location, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@locations = Location.all
 	end
 
 	def show
-		@location = Location.find(params[:id])
 	end
 
 	def new
@@ -22,11 +22,9 @@ class LocationsController < ApplicationController
 	end
 
 	def edit
-		@location = Location.find(params[:id])
 	end
 
 	def update
-		@location = Location.find(params[:id])
 		if @location.update(location_params)
 			redirect_to @location
 		else
@@ -35,12 +33,15 @@ class LocationsController < ApplicationController
 	end
 
 	def destroy
-		@location = Location.find(params[:id])
 		@location.destroy
 		redirect_to root_path
 	end
 
 	private
+
+	def set_location
+		@location = Location.find(params[:id])
+	end
 
 	def location_params
 		params.require(:locations).permit(:name, :picture_url, :review)
