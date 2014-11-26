@@ -1,10 +1,9 @@
-<h1>Welcome to My Favorite Places</h1>
-
 <p>Here I share places I have been that have left an impact in my heart. Enjoy!</p>
 
 <% @locations.each do |location| %>
 	<table>
-		<tr><h3><%= link_to location.name, location %></h3></tr>
-		<tr style="width:160px;"><%= link_to image_tag(location.picture_url), location %></tr>
+		<tr><td><h3><%= link_to location.name, location %></h3></td></tr>
+		<tr><td><img src="<%= location.picture_url %>" width="240px"></td></tr>
+		<tr><td><%= location.snippet %></td></tr>
 	</table>
 <% end %>
