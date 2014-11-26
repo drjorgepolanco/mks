@@ -1,6 +1,3 @@
 Rails.application.routes.draw do
-  get 'students/polanco' => 'students#polanco'
-  get 'students/clarke'  => 'students#clarke'
-  get 'students/chatham' => 'students#chatham'
-  get 'students/seidman' => 'students#seidman'
+  get 'students/:student_name' => 'students#show', as: 'student'
 end
