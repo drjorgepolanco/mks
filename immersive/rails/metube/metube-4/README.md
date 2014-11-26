@@ -2,7 +2,7 @@
 ###Migrations & Instance Methods (Intro to Rails)
 
 
-This basic Video Sharing App has been developed following the **second lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
+This basic Video Sharing App has been developed following the **fourth lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
 
 Base code taken from **github:** [makersquare/metube-cohort3](https://github.com/makersquare/metube-cohort3/tree/d-start).
 

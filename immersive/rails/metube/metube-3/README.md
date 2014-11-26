@@ -20,7 +20,6 @@ Base code taken from **github:** [makersquare/metube-cohort3](https://github.com
 - Get confortable with the Rails Console.
 
 #####Challenges:
-(No instructions available in Lesson.)
 
 - Display database entries dynamicallic based on :id.
 - Create the show_all page that pulls from the database.
