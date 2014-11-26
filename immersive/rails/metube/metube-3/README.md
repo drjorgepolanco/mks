@@ -7,7 +7,7 @@ This basic Video Sharing App has been developed following the **third lesson** o
 Base code taken from **github:** [makersquare/metube-cohort3](https://github.com/makersquare/metube-cohort3/tree/c-start).
 
 #####Purpose:
-- Create the first database-backed Rails web application.
+Create the first database-backed Rails web application.
 
 #####Topics:
 - Generating a **model** and **migration** through the command line.
@@ -16,10 +16,10 @@ Base code taken from **github:** [makersquare/metube-cohort3](https://github.com
 - Pulling entries from a table into the Rails application
 
 #####Goal:
-- Understand ActiveRecord.
-- Get confortable with the Rails Console.
+- Understand **ActiveRecord**.
+- Get confortable with the **Rails Console**.
 
 #####Challenges:
 
-- Display database entries dynamicallic based on :id.
+- Display **database entries dynamicallic** based on :id.
 - Create the show_all page that pulls from the database.
