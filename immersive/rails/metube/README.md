@@ -15,3 +15,5 @@ Each app covers a few topics:
 - [**Metube 0.3**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-3): ActiveRecord & Rails Console.
 - [**Metube 0.4**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-4): Migrations & Instance Methods.
 - [**Metube 0.5**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-5): CRUD (Create, Read, Update & Delete).
+- [**Metube 0.6**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-6): Model Associations.
+- [**Metube 0.7**](https://github.com/drjorgepolanco/mks/tree/master/immersive/rails/metube/metube-7): Test Driven Development.
