@@ -3,7 +3,35 @@
 <%= form_tag signin_path do %>
 	<label for="email">Email</label>
 	<%= text_field_tag :email_address %>
+	<label for="password">Password</label>
+	<%= password_field_tag :password %>
+	<label for="password_confirmation">Confirmation</label>
+	<%= password_field_tag :password_confirmation %>
 	<%= submit_tag "Sign In" %>
 <% end %>
 
 <p>Don't have an account yet? <%= link_to "Click Here", new_user_path %></p>
+
+
+
+<!-- <h1>Sign In</h1>
+ -->
+<%#= form_for @user  do |f| %>
+	<%#= f.label :first_name %>
+	<%#= f.text_field :first_name %>
+
+	<%#= f.label :last_name %>
+	<%#= f.text_field :last_name %>
+
+	<%#= f.label :email_address %>
+	<%#= f.text_field :email_address %>
+
+	<%#= f.label :password %>
+	<%#= f.password_field :password %>
+
+	<%#= f.label :password_confirmation, "Confirmation" %>
+	<%#= f.password_field :password_confirmation %>
+
+	<%#= f.submit "Create my Account" %>
+
+<%# end %>
