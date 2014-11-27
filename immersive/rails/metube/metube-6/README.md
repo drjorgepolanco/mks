@@ -20,3 +20,15 @@ Learn how to **associate** models using `has_many` and `belongs_to` and add vali
 #####Goal:
 - To create an app that allows a user to create posts that belongs to him, creating associations that allows models to interact with each other.
 
+#####Challenge:
+- Look up `has_secure_password` and implement true password-based authentication.
+
+
+#####Extra:
+Created a full **Authentication System** using:
+
+- **REGEX** that validates email format.
+- **Gem bcrypt** to hash password into a secure format.
+
+
+
