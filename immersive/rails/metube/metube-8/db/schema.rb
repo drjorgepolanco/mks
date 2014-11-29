@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128125652) do
+ActiveRecord::Schema.define(version: 20141127154835) do
 
   create_table "ratings", force: true do |t|
     t.integer  "value"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20141128125652) do
     t.string   "title"
     t.string   "youtube_id"
     t.text     "description"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
 end

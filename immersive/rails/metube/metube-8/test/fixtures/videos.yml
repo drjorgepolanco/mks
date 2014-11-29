@@ -4,10 +4,8 @@ one:
   title: MyString
   youtube_id: MyString
   description: MyText
-  user_id: 1
 
 two:
   title: MyString
   youtube_id: MyString
   description: MyText
-  user_id: 1
