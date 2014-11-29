@@ -1,0 +1,14 @@
+<nav>
+<% if current_user? %>
+  Hello, <%= current_user.full_name %>! <%= link_to "Logout", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", signin_path %>
+<% end %>
+<br />
+<%= link_to "All Videos", videos_path %>
+<br />
+<%= link_to "All Users", users_path %>
+</nav>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %>
+<% end %>
