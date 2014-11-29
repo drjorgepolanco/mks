@@ -20,7 +20,8 @@
 	<% end %>
 	</tbody>
 </table>
-
+<% if !current_user? %>
 <br>
 <%= link_to 'Create User', new_user_path %>
 <br>
+<% end %>
