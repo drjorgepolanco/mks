@@ -6,6 +6,8 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @showtimes = @movie.showtimes
+    @showtime = @movie.showtimes.new
   end
 
   def new
