@@ -17,7 +17,7 @@ Interacting with the **Youtube API** to grab data related to particular videos a
 - Use **model callbacks** to call particular methods upon record creation.
 - Gem [Unirest](http://unirest.io/ruby.html).
 - Dynamically set record data based in API calls.
-- **Securely store API** keys as environment variables using **Figaro**.
+- **Securely store API** keys as environment variables using [**Figaro**](https://github.com/laserlemon/figaro).
 
 #####Goal:
 - The goal is to use the Youtube API to set the `description` and `title` for every video we upload based on the `youtube_id`.
