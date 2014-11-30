@@ -1,0 +1,26 @@
+%h1= @movie.title
+%br
+= image_tag @movie.image
+%p= link_to 'See the trailer', @movie.trailer
+%h3 Description:
+%p= @movie.description
+%br
+= link_to 'Home', root_path
+%br
+%br
+%table
+	%tbody
+	- @showtimes.each do |showtime|
+		%tr
+			%td= showtime.location
+			%td= showtime.time
+
+= form_for [@movie, @showtime] do |f|
+	.location
+		= f.label :location
+		= f.text_field :location
+	.time
+		= f.label :time
+		= f.text_field :time
+	.submit
+		= f.submit 'Create Showtime', :class => "button"
