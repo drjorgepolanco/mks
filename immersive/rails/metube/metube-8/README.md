@@ -20,4 +20,11 @@ Interacting with the **Youtube API** to grab data related to particular videos a
 - **Securely store API** keys as environment variables using **Figaro**.
 
 #####Goal:
-- The goal is to use the Youtube API to set the `description` and `title` for every video we upload based on the `youtube_id`. 
+- The goal is to use the Youtube API to set the `description` and `title` for every video we upload based on the `youtube_id`.
+
+#####Challenges:
+- Connect the Youtube API to Rails App.
+- Dynamically call video `description` based on `youtube_id`.
+- Dynamically call video `title` based on `youtube_id`.
+- Install gem 'figaro' and store private key to avoid pushing to Github. 
+
