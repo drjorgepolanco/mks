@@ -3054,3 +3054,259 @@ Migrating to CreateRoles (20141201154448)
             FROM sqlite_temp_master
             WHERE name='index_roles_on_movie_id' AND type='index'
 [0m
+  [1m[36m (14.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20141130090840)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image" varchar(255), "trailer" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141130090840"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to AddShowtimesToMovies (20141130092256)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "movies" ADD "showtimes" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141130092256"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to RemoveShowtimesFromMovie (20141130092711)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TEMPORARY TABLE "amovies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image" varchar(255), "trailer" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime, "showtimes" varchar(255)) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "movies"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image" varchar(255), "trailer" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "amovies"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amovies"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141130092711"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateShowtimes (20141130092907)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "showtimes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "time" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141130092907"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddMovieReferenceToShowtime (20141130093318)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "showtimes" ADD "movie_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141130093318"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateComments (20141201143152)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "message" text, "movie_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_comments_on_movie_id" ON "comments" ("movie_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141201143152"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateStars (20141201154421)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "stars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "bio" text, "headshot" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141201154421"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateRoles (20141201154448)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "character" varchar(255), "movie_id" integer, "star_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_roles_on_star_id" ON "roles" ("star_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141201154448"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_star_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_star_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "description", "image", "title", "trailer", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-12-01 16:30:05.895751"], ["description", "A young boy is arrested by the US Secret Service for writing a computer virus and is banned from using a computer until his 18th birthday. Years later, he and his new-found friends discover a plot to unleash a dangerous computer virus, but they must use their computer skills to find the evidence while being pursued by the Secret Service and the evil computer genius behind the virus."], ["image", "http://www.movieposter.com/posters/archive/main/79/MPW-39928"], ["title", "Hackers"], ["trailer", "pP6iTjhlOvs"], ["updated_at", "2014-12-01 16:30:05.895751"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "image", "title", "trailer", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-01 16:30:05.902273"], ["description", "An offbeat romantic comedy about a woman who doesn't believe true love exists, and the young man who falls for her."], ["image", "http://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Five_hundred_days_of_summer.jpg/220px-Five_hundred_days_of_summer.jpg"], ["title", "(500) Days of Summer"], ["trailer", "PsD0NpFSADM"], ["updated_at", "2014-12-01 16:30:05.902273"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "description", "image", "title", "trailer", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-12-01 16:30:05.904336"], ["description", "A guy challenges himself to say 'yes' to everything for an entire year."], ["image", "http://upload.wikimedia.org/wikipedia/en/thumb/7/71/YesMan2008poster.jpg/220px-YesMan2008poster.jpg"], ["title", "Yes Man"], ["trailer", "rvpsiIe2vBE"], ["updated_at", "2014-12-01 16:30:05.904336"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stars" ("bio", "created_at", "headshot", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["bio", "Jim Carrey, a Canadian-born actor who became a naturalized American citizen in 2004, is an actor and producer famous for his rubbery body movements and flexible facial expressions."], ["created_at", "2014-12-01 16:30:05.910585"], ["headshot", "http://ia.media-imdb.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_SY317_CR22,0,214,317_.jpg"], ["name", "Jim Carrey"], ["updated_at", "2014-12-01 16:30:05.910585"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stars" ("bio", "created_at", "headshot", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["bio", "Zooey Deschanel writes music, sings, and acts on screens, small and big. She is one half of the indie folk band She & Him."], ["created_at", "2014-12-01 16:30:05.913708"], ["headshot", "http://ia.media-imdb.com/images/M/MV5BMTQ4Mjk3NDA1MF5BMl5BanBnXkFtZTcwMDAyNTYxNw@@._V1_SY317_CR104,0,214,317_.jpg"], ["name", "Zooey Deschanel"], ["updated_at", "2014-12-01 16:30:05.913708"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stars" ("bio", "created_at", "headshot", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["bio", "Joseph Gordon-Levitt is an American actor, director, producer, and writer. As a child star, he appeared in the films A River Runs Through It, Angels in the Outfield, Beethoven, and 10 Things I Hate About You, and as Tommy Solomon in the TV series 3rd Rock from the Sun."], ["created_at", "2014-12-01 16:30:05.917405"], ["headshot", "http://ia.media-imdb.com/images/M/MV5BMTQzOTg0NTkzNF5BMl5BanBnXkFtZTcwNTQ4MTcwOQ@@._V1_SY317_CR35,0,214,317_.jpg"], ["name", "Joseph Gordon-Levitt"], ["updated_at", "2014-12-01 16:30:05.917405"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (28.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMovies (20141130090840)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image" varchar(255), "trailer" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141130090840"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to AddShowtimesToMovies (20141130092256)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "movies" ADD "showtimes" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141130092256"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to RemoveShowtimesFromMovie (20141130092711)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  CREATE TEMPORARY TABLE "amovies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image" varchar(255), "trailer" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime, "showtimes" varchar(255)) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "movies"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image" varchar(255), "trailer" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "amovies"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amovies"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141130092711"]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateShowtimes (20141130092907)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "showtimes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "time" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141130092907"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddMovieReferenceToShowtime (20141130093318)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "showtimes" ADD "movie_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141130093318"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateComments (20141201143152)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "message" text, "movie_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_comments_on_movie_id" ON "comments" ("movie_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141201143152"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateStars (20141201154421)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "stars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "bio" text, "headshot" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141201154421"]]
+  [1m[35m (20.8ms)[0m  commit transaction
+Migrating to CreateRoles (20141201154448)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "character" varchar(255), "movie_id" integer, "star_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_roles_on_movie_id" ON "roles" ("movie_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_roles_on_star_id" ON "roles" ("star_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141201154448"]]
+  [1m[36m (19.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_star_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_star_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_roles_on_movie_id' AND type='index'
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "description", "image", "title", "trailer", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-12-01 16:33:55.141507"], ["description", "A young boy is arrested by the US Secret Service for writing a computer virus and is banned from using a computer until his 18th birthday. Years later, he and his new-found friends discover a plot to unleash a dangerous computer virus, but they must use their computer skills to find the evidence while being pursued by the Secret Service and the evil computer genius behind the virus."], ["image", "http://www.movieposter.com/posters/archive/main/79/MPW-39928"], ["title", "Hackers"], ["trailer", "pP6iTjhlOvs"], ["updated_at", "2014-12-01 16:33:55.141507"]]
+  [1m[36m (10.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "image", "title", "trailer", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-01 16:33:55.156737"], ["description", "An offbeat romantic comedy about a woman who doesn't believe true love exists, and the young man who falls for her."], ["image", "http://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Five_hundred_days_of_summer.jpg/220px-Five_hundred_days_of_summer.jpg"], ["title", "(500) Days of Summer"], ["trailer", "PsD0NpFSADM"], ["updated_at", "2014-12-01 16:33:55.156737"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "description", "image", "title", "trailer", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-12-01 16:33:55.159530"], ["description", "A guy challenges himself to say 'yes' to everything for an entire year."], ["image", "http://upload.wikimedia.org/wikipedia/en/thumb/7/71/YesMan2008poster.jpg/220px-YesMan2008poster.jpg"], ["title", "Yes Man"], ["trailer", "rvpsiIe2vBE"], ["updated_at", "2014-12-01 16:33:55.159530"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stars" ("bio", "created_at", "headshot", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["bio", "Jim Carrey, a Canadian-born actor who became a naturalized American citizen in 2004, is an actor and producer famous for his rubbery body movements and flexible facial expressions."], ["created_at", "2014-12-01 16:33:55.167877"], ["headshot", "http://ia.media-imdb.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_SY317_CR22,0,214,317_.jpg"], ["name", "Jim Carrey"], ["updated_at", "2014-12-01 16:33:55.167877"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stars" ("bio", "created_at", "headshot", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["bio", "Zooey Deschanel writes music, sings, and acts on screens, small and big. She is one half of the indie folk band She & Him."], ["created_at", "2014-12-01 16:33:55.170522"], ["headshot", "http://ia.media-imdb.com/images/M/MV5BMTQ4Mjk3NDA1MF5BMl5BanBnXkFtZTcwMDAyNTYxNw@@._V1_SY317_CR104,0,214,317_.jpg"], ["name", "Zooey Deschanel"], ["updated_at", "2014-12-01 16:33:55.170522"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stars" ("bio", "created_at", "headshot", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["bio", "Joseph Gordon-Levitt is an American actor, director, producer, and writer. As a child star, he appeared in the films A River Runs Through It, Angels in the Outfield, Beethoven, and 10 Things I Hate About You, and as Tommy Solomon in the TV series 3rd Rock from the Sun."], ["created_at", "2014-12-01 16:33:55.172421"], ["headshot", "http://ia.media-imdb.com/images/M/MV5BMTQzOTg0NTkzNF5BMl5BanBnXkFtZTcwNTQ4MTcwOQ@@._V1_SY317_CR35,0,214,317_.jpg"], ["name", "Joseph Gordon-Levitt"], ["updated_at", "2014-12-01 16:33:55.172421"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "roles" ("character", "created_at", "movie_id", "star_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["character", "Carl"], ["created_at", "2014-12-01 16:33:55.229552"], ["movie_id", 3], ["star_id", 1], ["updated_at", "2014-12-01 16:33:55.229552"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("character", "created_at", "movie_id", "star_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["character", "Allison"], ["created_at", "2014-12-01 16:33:55.232246"], ["movie_id", 3], ["star_id", 2], ["updated_at", "2014-12-01 16:33:55.232246"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "roles" ("character", "created_at", "movie_id", "star_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["character", "Tom"], ["created_at", "2014-12-01 16:33:55.235211"], ["movie_id", 2], ["star_id", 3], ["updated_at", "2014-12-01 16:33:55.235211"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "roles" ("character", "created_at", "movie_id", "star_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["character", "Summer"], ["created_at", "2014-12-01 16:33:55.237386"], ["movie_id", 2], ["star_id", 2], ["updated_at", "2014-12-01 16:33:55.237386"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "showtimes" ("created_at", "location", "movie_id", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-01 16:33:55.281109"], ["location", "Violet Crown Cinema"], ["movie_id", 3], ["time", "10:00 PM"], ["updated_at", "2014-12-01 16:33:55.281109"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "showtimes" ("created_at", "location", "movie_id", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-01 16:33:55.283835"], ["location", "Violet Crown Cinema"], ["movie_id", 3], ["time", "1:00 PM"], ["updated_at", "2014-12-01 16:33:55.283835"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "showtimes" ("created_at", "location", "movie_id", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-01 16:33:55.286324"], ["location", "Alamo Drafthouse"], ["movie_id", 3], ["time", "4:00 PM"], ["updated_at", "2014-12-01 16:33:55.286324"]]
+  [1m[36m (28.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "showtimes" ("created_at", "location", "movie_id", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-01 16:33:55.317252"], ["location", "Violet Crown Cinema"], ["movie_id", 2], ["time", "11:00 AM"], ["updated_at", "2014-12-01 16:33:55.317252"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "showtimes" ("created_at", "location", "movie_id", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-01 16:33:55.321589"], ["location", "Alamo Drafthouse"], ["movie_id", 2], ["time", "2:30PM"], ["updated_at", "2014-12-01 16:33:55.321589"]]
+  [1m[36m (56.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "showtimes" ("created_at", "location", "movie_id", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-01 16:33:55.380415"], ["location", "Alamo Drafthouse"], ["movie_id", 2], ["time", "5:00PM"], ["updated_at", "2014-12-01 16:33:55.380415"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.0ms)[0m  INSERT INTO "stars" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-12-01 16:34:49.769942"], ["name", "Jonny Lee Miller"], ["updated_at", "2014-12-01 16:34:49.769942"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mMovie Load (0.4ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."title" = 'Hackers' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (17.2ms)[0m  INSERT INTO "roles" ("character", "created_at", "movie_id", "star_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["character", "Dade"], ["created_at", "2014-12-01 16:36:05.374586"], ["movie_id", 1], ["star_id", 4], ["updated_at", "2014-12-01 16:36:05.374586"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mStar Load (331.6ms)[0m  SELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."star_id" = ?[0m  [["star_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (67.6ms)[0m  [1mINSERT INTO "stars" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-12-01 16:38:21.114789"], ["name", "Angeline Jolie"], ["updated_at", "2014-12-01 16:38:21.114789"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "roles" ("character", "created_at", "movie_id", "star_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["character", "Kate"], ["created_at", "2014-12-01 16:38:39.109921"], ["movie_id", 1], ["star_id", 5], ["updated_at", "2014-12-01 16:38:39.109921"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
