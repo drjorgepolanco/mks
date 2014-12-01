@@ -20,5 +20,21 @@
 		= f.input :location
 	.time
 		= f.input :time
+	%br
+	.submit
+		= f.button :submit
+
+%br
+%br
+%table
+	%tbody
+	- @comments.each do |comment|
+		%tr
+			%td= comment.message
+
+= simple_form_for [@movie, @comment] do |f|
+	.message
+		= f.input :message
+	%br
 	.submit
 		= f.button :submit
