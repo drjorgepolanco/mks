@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   	resources :showtimes
   	resources :comments
   end
+
+  resources :stars, only: [:show]
 end
