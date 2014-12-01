@@ -5516,3 +5516,2081 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 12:12:52
 
 
 Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 12:12:52 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 12:37:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mStar Load (35.4ms)[0m  [1mSELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35mShowtime Load (0.4ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (111.5ms)
+Completed 200 OK in 617ms (Views: 483.8ms | ActiveRecord: 38.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 12:37:20 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 135ms (Views: 133.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:24 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStar Load (0.2ms)[0m  SELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."movie_id" = ?  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (25.9ms)
+Completed 200 OK in 140ms (Views: 134.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:25 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStar Load (0.2ms)[0m  SELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."movie_id" = ?  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (17.7ms)
+Completed 200 OK in 123ms (Views: 119.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 12:37:41 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 12:38:30 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 13ms
+
+SyntaxError (/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:19: syntax error, unexpected ')'
+));}\n    #{_hamlout.format_sc...
+ ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:20: syntax error, unexpected '}', expecting tSTRING_DEND
+));}\n  </li>\n", -1, false);end;...
+    ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:20: unknown regexp options - dv
+unmatched close parenthesis: /li>\n", -1, false);end;_hamlout.push_text("</i
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:20: syntax error, unexpected $undefined
+...end;_hamlout.push_text("</div>\n<br>\n<table>\n  <tbody></tb...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:20: syntax error, unexpected $undefined
+...amlout.push_text("</div>\n<br>\n<table>\n  <tbody></tbody>\n...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:20: syntax error, unexpected $undefined
+...sh_text("</div>\n<br>\n<table>\n  <tbody></tbody>\n", 0, fal...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:20: syntax error, unexpected '<'
+...div>\n<br>\n<table>\n  <tbody></tbody>\n", 0, false);
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:27: unknown regexp options - td
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:27: syntax error, unexpected $undefined
+));}</td>\n    <td>#{_hamlout.adjust_ta...
+          ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:28: syntax error, unexpected ')'
+));}</td>\n  </tr>\n", -1, fal...
+ ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:28: unknown regexp options - tr
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:28: syntax error, unexpected $undefined
+));}</td>\n  </tr>\n", -1, false);end;_hamlout.p...
+                   ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:32: unknown regexp options - dv
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:32: syntax error, unexpected $undefined
+));}\n</div>\n<div class='time'>\n  #{
+             ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:32: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+));}\n</div>\n<div class='time'>\n  #{
+                        ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:32: syntax error, unexpected $undefined
+));}\n</div>\n<div class='time'>\n  #{
+                                 ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:34: syntax error, unexpected '}', expecting tSTRING_DEND
+));}\n</div>\n<br>\n<div class='submit'>\n  #{
+    ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:37: unknown regexp options - dv
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+));}\n</div>\n", -1, false);end;_hamlout.b...
+             ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:37: syntax error, unexpected $undefined, expecting tSTRING_DEND
+...aml_temp);_hamlout.push_text("\n<br>\n<br>\n<table>\n  <tbod...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+...mp);_hamlout.push_text("\n<br>\n<br>\n<table>\n  <tbody></tb...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+...amlout.push_text("\n<br>\n<br>\n<table>\n  <tbody></tbody>\n...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+...sh_text("\n<br>\n<br>\n<table>\n  <tbody></tbody>\n", 1, fal...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:37: syntax error, unexpected '<'
+...<br>\n<br>\n<table>\n  <tbody></tbody>\n", 1, false);
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:45: unknown regexp options - td
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:45: syntax error, unexpected $undefined
+));}</td>\n  </tr>\n", -1, false);end;_...
+          ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:45: unknown regexp options - tabl
+unmatched close parenthesis: /tr>\n", -1, false);end;_hamlout.push_text("</
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:45: syntax error, unexpected $undefined
+...d;_hamlout.push_text("</table>\n", -1, false);
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:47: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+_hamlout.push_text("<div class='message'>\n  #{_hamlout.adj...
+                              ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:47: syntax error, unexpected $undefined
+...sh_text("<div class='message'>\n  #{_hamlout.adjust_tabs(1); 
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:49: syntax error, unexpected '}', expecting tSTRING_DEND
+));}\n</div>\n<br>\n<div class='submit'>\n  #{
+    ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:52: unknown regexp options - dv
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:52: syntax error, unexpected $undefined
+));}\n</div>\n", -1, false);end;_hamlout.b...
+             ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:52: syntax error, unexpected $undefined, expecting tSTRING_DEND
+...aml_temp);_hamlout.push_text("\n", 0, false);::Haml::Util.ht...
+...                               ^
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:52: unterminated string meets end of file
+/Volumes/epicrates/Dropbox/code/mks/immersive/rails/urdb/urdb-4/app/views/movies/show.html.haml:52: syntax error, unexpected end-of-input, expecting tSTRING_DEND):
+  app/views/movies/show.html.haml:19: syntax error, unexpected ')'
+  app/views/movies/show.html.haml:20: syntax error, unexpected '}', expecting tSTRING_DEND
+  app/views/movies/show.html.haml:20: unknown regexp options - dv
+  app/views/movies/show.html.haml:20: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:20: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:20: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:20: syntax error, unexpected '<'
+  app/views/movies/show.html.haml:27: unknown regexp options - td
+  app/views/movies/show.html.haml:27: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:28: syntax error, unexpected ')'
+  app/views/movies/show.html.haml:28: unknown regexp options - tr
+  app/views/movies/show.html.haml:28: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:32: unknown regexp options - dv
+  app/views/movies/show.html.haml:32: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:32: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+  app/views/movies/show.html.haml:32: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:34: syntax error, unexpected '}', expecting tSTRING_DEND
+  app/views/movies/show.html.haml:37: unknown regexp options - dv
+  app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:37: syntax error, unexpected $undefined, expecting tSTRING_DEND
+  app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:37: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:37: syntax error, unexpected '<'
+  app/views/movies/show.html.haml:45: unknown regexp options - td
+  app/views/movies/show.html.haml:45: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:45: unknown regexp options - tabl
+  app/views/movies/show.html.haml:45: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:47: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+  app/views/movies/show.html.haml:47: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:49: syntax error, unexpected '}', expecting tSTRING_DEND
+  app/views/movies/show.html.haml:52: unknown regexp options - dv
+  app/views/movies/show.html.haml:52: syntax error, unexpected $undefined
+  app/views/movies/show.html.haml:52: syntax error, unexpected $undefined, expecting tSTRING_DEND
+  app/views/movies/show.html.haml:52: unterminated string meets end of file
+  app/views/movies/show.html.haml:52: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.6ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 12:38:35 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `character' for #<Star:0x007ffcf6771f00>):
+    15: 		%li 
+    16: 			= image_tag(star.headshot)
+    17: 			%span.character 
+    18: 			= star.character 
+    19: 			= star.name
+    20: 
+    21: %br
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml___3208280019648132224_70362196323600'
+  app/views/movies/show.html.haml:14:in `_app_views_movies_show_html_haml___3208280019648132224_70362196323600'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.7ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 12:56:17 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (42.5ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mStar Load (0.5ms)[0m  [1mSELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (21.4ms)
+Completed 500 Internal Server Error in 261ms
+
+ActionView::Template::Error (undefined method `character' for #<Star:0x007ffcf644b268>):
+    15: 		%li 
+    16: 			= image_tag(star.headshot)
+    17: 			%span.character 
+    18: 			= star.character 
+    19: 			= star.name
+    20: 
+    21: %br
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml___3208280019648132224_70362196323600'
+  app/views/movies/show.html.haml:14:in `_app_views_movies_show_html_haml___3208280019648132224_70362196323600'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 13:22:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (52.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (53.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (63.3ms)
+Completed 200 OK in 2100ms (Views: 1992.8ms | ActiveRecord: 53.7ms)
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:43 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-01 13:22:43 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:43 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:43 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 13:22:44 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 13:22:46 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (61.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (37.8ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mShowtime Load (43.7ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 1]]
+  [1m[36mComment Load (32.9ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35mStar Load (0.3ms)[0m  SELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (226.6ms)
+Completed 500 Internal Server Error in 360ms
+
+ActionView::Template::Error (undefined method `star_path' for #<#<Class:0x007fde22777218>:0x007fde2582fe28>):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__2269609880801566860_70296044387840'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__2269609880801566860_70296044387840'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.9ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 13:22:46 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (0.2ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mShowtime Load (0.1ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT "stars".* FROM "stars" INNER JOIN "roles" ON "stars"."id" = "roles"."star_id" WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (20.4ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (undefined method `star_path' for #<#<Class:0x007fde22777218>:0x007fde27a616e0>):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__2269609880801566860_70296062320320'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__2269609880801566860_70296062320320'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.5ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered movies/show.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 173ms (Views: 124.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 14:04:06 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShowtime Load (0.2ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 189ms (Views: 185.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 14:32:09 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShowtime Load (0.1ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 116ms (Views: 113.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:00 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 14:33:01 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (54.9ms)
+Completed 200 OK in 160ms (Views: 156.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-01 14:35:47 -0500
+
+
+Started GET "/stars/4" for 127.0.0.1 at 2014-12-01 14:35:51 -0500
+
+ActionController::RoutingError (uninitialized constant StarsController):
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.8) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.5ms)
+
+
+Started GET "/stars/4" for 127.0.0.1 at 2014-12-01 14:35:51 -0500
+
+ActionController::RoutingError (uninitialized constant StarsController):
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.8) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.8ms)
+
+
+Started GET "/stars/5" for 127.0.0.1 at 2014-12-01 14:35:55 -0500
+
+ActionController::RoutingError (uninitialized constant StarsController):
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.8) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.9ms)
+
+
+Started GET "/stars/5" for 127.0.0.1 at 2014-12-01 14:35:55 -0500
+
+ActionController::RoutingError (uninitialized constant StarsController):
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.8) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.8) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.8) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.8) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 131ms (Views: 129.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:03 -0500
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShowtime Load (0.2ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 3]]
+  Rendered movies/show.html.haml within layouts/application (18.4ms)
+Completed 200 OK in 186ms (Views: 178.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:05 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 114ms (Views: 112.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:09 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 14:36:10 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 121ms (Views: 116.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:11 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 112ms (Views: 110.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:14 -0500
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2014-12-01 14:36:16 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36mStar Load (0.2ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 3]]
+  Rendered movies/show.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 114ms (Views: 110.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:16 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:17 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 110ms (Views: 108.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:18 -0500
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 2]]
+  Rendered movies/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 115ms (Views: 112.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:19 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 106ms (Views: 105.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:21 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:22 -0500
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 117ms (Views: 113.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 14:36:23 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 133ms (Views: 131.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-01 15:08:23 -0500
