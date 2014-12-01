@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
     @showtime = @movie.showtimes.new
     @comments = @movie.comments
     @comment = @movie.comments.new
+    @stars = @movie.stars
   end
 
   def new
