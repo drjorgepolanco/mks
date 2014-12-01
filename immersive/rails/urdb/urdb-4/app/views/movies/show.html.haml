@@ -1,12 +1,26 @@
-%h1= @movie.title
+= link_to 'Home', root_path, :class => 'right'
 %br
-= image_tag @movie.image
-%p= link_to 'See the trailer', @movie.trailer
-%h3 Description:
-%p= @movie.description
+#movie_info
+	%h1= @movie.title
+	%br
+	= image_tag @movie.image
+	%p= link_to 'See the trailer', @movie.trailer
+	%h3 Description:
+	%p= @movie.description
 %br
-= link_to 'Home', root_path
-%br
+#cast
+	%h2.centered Cast
+	%ul
+		%li 
+			= image_tag('http://ia.media-imdb.com/images/M/MV5BODg3MzYwMjE4N15BMl5BanBnXkFtZTcwMjU5NzAzNw@@._V1_SY98_CR6,0,67,98_.jpg')
+			%span.character Kate - 
+			Angelina Jolie
+		%li
+			= image_tag('http://ia.media-imdb.com/images/M/MV5BMjIyMjc0NTA2M15BMl5BanBnXkFtZTcwMTA4MzQ2OQ@@._V1_SY317_CR11,0,214,317_.jpg')
+			%span.character Dade - 
+			Jonny Lee Miller
+      
+
 %br
 %table
 	%tbody
