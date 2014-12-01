@@ -1,0 +1,40 @@
+%h1= @movie.title
+%br
+= image_tag @movie.image
+%p= link_to 'See the trailer', @movie.trailer
+%h3 Description:
+%p= @movie.description
+%br
+= link_to 'Home', root_path
+%br
+%br
+%table
+	%tbody
+	- @showtimes.each do |showtime|
+		%tr
+			%td= showtime.location
+			%td= showtime.time
+
+= simple_form_for [@movie, @showtime] do |f|
+	.location
+		= f.input :location
+	.time
+		= f.input :time
+	%br
+	.submit
+		= f.button :submit
+
+%br
+%br
+%table
+	%tbody
+	- @comments.each do |comment|
+		%tr
+			%td= comment.message
+
+= simple_form_for [@movie, @comment] do |f|
+	.message
+		= f.input :message
+	%br
+	.submit
+		= f.button :submit
