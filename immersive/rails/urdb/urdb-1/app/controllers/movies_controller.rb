@@ -1,21 +1,21 @@
-class VideosController < ApplicationController
-	before_action :set_videos, only: [:show, :edit, :update, :destroy]
+class MoviesController < ApplicationController
+	before_action :set_movies, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@videos = Video.all
+		@movies = Movie.all
 	end
 
 	def show
 	end
 
 	def new
-		@video = Video.new
+		@movie = Movie.new
 	end
 
 	def create
-		@video = Video.new(video_params)
-		if @video.save
-			redirect_to @video
+		@movie = Movie.new(movie_params)
+		if @movie.save
+			redirect_to @movie
 		else
 			render 'new'
 		end
@@ -25,25 +25,25 @@ class VideosController < ApplicationController
 	end
 
 	def update
-		if @video.update(video_params)
-			redirect_to @video
+		if @movie.update(movie_params)
+			redirect_to @movie
 		else
 			render 'edit'
 		end
 	end
 
 	def destroy
-		@video.destroy
+		@movie.destroy
 		redirect_to root_path
 	end
 
 	private
 
-	def set_videos
-		@video = Video.find(params[:id])
+	def set_movies
+		@movie = Movie.find(params[:id])
 	end
 
-	def video_params
-		params.require(:video).permit(:title, :image, :trailer, :description)
+	def movie_params
+		params.require(:movie).permit(:title, :image, :trailer, :description)
 	end
 end
