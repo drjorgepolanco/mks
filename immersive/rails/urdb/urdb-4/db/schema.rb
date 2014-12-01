@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201143152) do
+ActiveRecord::Schema.define(version: 20141201154448) do
 
   create_table "comments", force: true do |t|
     t.text     "message"
@@ -31,12 +31,31 @@ ActiveRecord::Schema.define(version: 20141201143152) do
     t.datetime "updated_at"
   end
 
+  create_table "roles", force: true do |t|
+    t.string   "character"
+    t.integer  "movie_id"
+    t.integer  "star_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["movie_id"], name: "index_roles_on_movie_id"
+  add_index "roles", ["star_id"], name: "index_roles_on_star_id"
+
   create_table "showtimes", force: true do |t|
     t.string   "location"
     t.string   "time"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "movie_id"
+  end
+
+  create_table "stars", force: true do |t|
+    t.string   "name"
+    t.text     "bio"
+    t.string   "headshot"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
