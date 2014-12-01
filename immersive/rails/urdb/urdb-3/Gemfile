@@ -13,3 +13,4 @@ gem 'spring',        group: :development
 gem 'hirb'
 gem 'haml'
 gem 'simple_form'
+gem 'foundation-rails'
