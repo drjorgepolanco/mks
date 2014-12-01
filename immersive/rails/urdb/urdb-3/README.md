@@ -1,25 +1,26 @@
-#URDB 0.2
-###Active Record Associations (Part 1)
+#URDB 0.3
+###Haml: HTML, all grown up
 
 
-This basic Video Sharing App has been developed following the **eight lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
+This IMDB Clone has been developed following the **eleventh lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
 
-Base code taken from **github:** [makersquare/metube-cohort3](https://github.com/makersquare/metube-cohort3/tree/add_ratings).
+Base code taken from **github:** [makersquare/urdb](https://github.com/makersquare/urdb/tree/haml-start).
 
 #####Purpose:
 
-Increase knowledge of **Associations** and **Nested Resources**.
+Learn to use **HAML** in a Rails Project.
 
 #####Topics:
-- Undoing Migrations.
-- Model Associations.
-- Nesting Resources.
+- Converting views from **ERB** to **HAML**.
+- Compare **HTML** and **HAML** syntax.
+- The basics of constructing **HTML** with **HAML**.
 
 #####Goal:
-- Add showtimes to movies.
-- Use nested resources to create better URL's.
-- Create a form to add `showtimes` in movie show view. 
+- Rebuild views using HAML. 
 
 #####Challenge:
 
-- Define `showtime_params`.
+- Add Comments to Movies.
+- Convert the application's layout to HAML.
+- Sort the list of Showtimes.
+- Replace `form_for` with `simple_form`.
