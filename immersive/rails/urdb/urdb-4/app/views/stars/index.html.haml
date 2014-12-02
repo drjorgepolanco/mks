@@ -1,0 +1,7 @@
+.row
+	.large-12.columns 
+		%h1 All Stars
+		- @stars.each do |star|
+			.large-3.medium-4.small-6.columns
+				%p= link_to image_tag(star.headshot), star
+				%h6= link_to star.name, star

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   	resources :comments
   end
 
-  resources :stars, only: [:show]
+  resources :stars, only: [:show, :index]
 end
