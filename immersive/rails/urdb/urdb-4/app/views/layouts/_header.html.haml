@@ -8,9 +8,10 @@
 				%span Menu
 
 	%section.top-bar-section
-		%ul.left
+		%ul.right
 			%li.divider
 			%li.active
 				%a{ href: '/' }
-					%i.icon-film
 					Movies
+			%li
+				= link_to "Stars", stars_path
