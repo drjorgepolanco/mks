@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201154448) do
+ActiveRecord::Schema.define(version: 20141202153411) do
 
   create_table "comments", force: true do |t|
     t.text     "message"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20141201154448) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "movies", ["slug"], name: "index_movies_on_slug"
 
   create_table "roles", force: true do |t|
     t.string   "character"
