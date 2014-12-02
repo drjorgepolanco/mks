@@ -7,4 +7,8 @@ class Movie < ActiveRecord::Base
 	def snippet
     self.description.truncate 50
   end
+
+  def to_param
+  	"#{id} - #{title}".parameterize
+  end
 end
