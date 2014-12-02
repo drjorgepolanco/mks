@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_filter :set_movie, only: [:show, :edit, :update, :destroy]
 
   def index
     @movies = Movie.all
@@ -55,7 +55,7 @@ class MoviesController < ApplicationController
 
   private
     def set_movie
-      @movie = Movie.find(params[:id])
+      @movie = Movie.find_by_slug!(params[:id])
     end
 
     def movie_params
