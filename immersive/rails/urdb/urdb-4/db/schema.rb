@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202153411) do
+ActiveRecord::Schema.define(version: 20141202164117) do
 
   create_table "comments", force: true do |t|
     t.text     "message"
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 20141202153411) do
     t.string   "headshot"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "stars", ["slug"], name: "index_stars_on_slug"
 
 end
