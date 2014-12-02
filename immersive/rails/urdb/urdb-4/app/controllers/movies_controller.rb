@@ -54,11 +54,23 @@ class MoviesController < ApplicationController
   end
 
   private
+    def movie_params
+      params[:movie].permit(:title, :image, :trailer, :description)
+    end
+
     def set_movie
       @movie = Movie.find_by_slug!(params[:id])
     end
 
-    def movie_params
-      params[:movie].permit(:title, :image, :trailer, :description)
-    end
+    # This way you can always use this helper method instead of accessing the instancd
+    # variable directly, both in the controller and in the view.
+    # Benefit: It's lazy loaded, it doesn't hit the database unless we call this.
+    # That means: if we add some caching we might be able to avoid the database find entirely
+    
+    # def movie
+    #   @movie ||= Movie.find_by_slug!(params[:id])
+    # end
+    # helper_method :movie
+
+    
 end
