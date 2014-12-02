@@ -11978,3 +11978,735 @@ Migrating to AddSlugToStars (20141202164117)
             FROM sqlite_temp_master
             WHERE name='index_stars_on_slug' AND type='index'
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-02 11:45:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (10.5ms)
+  Rendered layouts/_header.html.haml (2.8ms)
+Completed 200 OK in 222ms (Views: 205.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies/500-days-of-summer" for 127.0.0.1 at 2014-12-02 11:45:01 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"500-days-of-summer"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = '500-days-of-summer' LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (50.5ms)
+Completed 500 Internal Server Error in 78ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__4465393303655449268_70183731016180'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__4465393303655449268_70183731016180'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.1ms)
+
+
+Started GET "/movies/500-days-of-summer" for 127.0.0.1 at 2014-12-02 11:45:01 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"500-days-of-summer"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = '500-days-of-summer' LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/movies/500-days-of-summer" for 127.0.0.1 at 2014-12-02 11:45:12 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"500-days-of-summer"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = '500-days-of-summer' LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 2]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.1ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 11:45:22 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__4465393303655449268_70183731016180'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__4465393303655449268_70183731016180'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 11:45:22 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.4ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 11:47:45 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1
+Completed 500 Internal Server Error in 30ms
+
+NoMethodError (undefined method `star' for nil:NilClass):
+  app/controllers/movies_controller.rb:13:in `show'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 11:47:55 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+  [1m[35mShowtime Load (0.2ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."movie_id" = ?[0m  [["movie_id", 3]]
+Completed 500 Internal Server Error in 27ms
+
+NameError (undefined local variable or method `role' for #<MoviesController:0x007fa9dd68c318>):
+  app/controllers/movies_controller.rb:13:in `show'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.8ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 11:48:49 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35mStar Load (0.2ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.6ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:12:59 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (16.8ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml__4465393303655449268_70183742408660'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.8ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:13:37 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1
+Completed 404 Not Found in 24ms
+
+ActiveRecord::RecordNotFound (Couldn't find Star without an ID):
+  app/controllers/movies_controller.rb:13:in `show'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.6ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:14:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1
+Completed 404 Not Found in 57ms
+
+ActiveRecord::RecordNotFound (Couldn't find Star without an ID):
+  app/controllers/movies_controller.rb:13:in `show'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:14:55 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Star without an ID):
+  app/controllers/movies_controller.rb:13:in `show'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:14:57 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Star without an ID):
+  app/controllers/movies_controller.rb:13:in `show'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.5ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:15:04 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+  [1m[35mShowtime Load (0.4ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 3]]
+  Rendered movies/show.html.haml within layouts/application (21.4ms)
+  Rendered layouts/_header.html.haml (2.2ms)
+Completed 200 OK in 261ms (Views: 238.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-02 12:15:04 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:04 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-02 12:15:05 -0500
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:16:00 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    15: 				%ul
+    16: 					- @movie.roles.each do |role|
+    17: 						%li
+    18: 							= link_to role.star do
+    19: 								= image_tag(role.star.headshot)
+    20: 								%span.character= "#{role.character} -"
+    21: 								= role.star.name
+  app/views/movies/show.html.haml:18:in `block in _app_views_movies_show_html_haml___4498369429632041620_70217370610880'
+  app/views/movies/show.html.haml:16:in `_app_views_movies_show_html_haml___4498369429632041620_70217370610880'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.5ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShowtime Load (0.1ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 3]]
+  Rendered movies/show.html.haml within layouts/application (10.2ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 108ms (Views: 104.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-02 12:16:19 -0500
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 3]]
+  Rendered movies/show.html.haml within layouts/application (9.9ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 113ms (Views: 109.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-02 12:16:57 -0500
+
+
+Started GET "/stars" for 127.0.0.1 at 2014-12-02 12:17:08 -0500
+Processing by StarsController#index as HTML
+  [1m[35mStar Load (0.2ms)[0m  SELECT "stars".* FROM "stars"
+  Rendered stars/index.html.haml within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    3: 		%h1 All Stars
+    4: 		- @stars.each do |star|
+    5: 			.large-3.medium-4.small-6.columns
+    6: 				%p= link_to image_tag(star.headshot), star
+    7: 				%h6= link_to star.name, star
+  app/views/stars/index.html.haml:6:in `block in _app_views_stars_index_html_haml__1763979610328152434_70217414198180'
+  app/views/stars/index.html.haml:4:in `_app_views_stars_index_html_haml__1763979610328152434_70217414198180'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.6ms)
+
+
+Started GET "/stars" for 127.0.0.1 at 2014-12-02 12:17:24 -0500
+Processing by StarsController#index as HTML
+  [1m[36mStar Load (0.3ms)[0m  [1mSELECT "stars".* FROM "stars"[0m
+  Rendered stars/index.html.haml within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"stars", :id=>nil} missing required keys: [:id]):
+    3: 		%h1 All Stars
+    4: 		- @stars.each do |star|
+    5: 			.large-3.medium-4.small-6.columns
+    6: 				%p= link_to image_tag(star.headshot), star
+    7: 				%h6= link_to star.name, star
+  app/views/stars/index.html.haml:6:in `block in _app_views_stars_index_html_haml__1763979610328152434_70217414198180'
+  app/views/stars/index.html.haml:4:in `_app_views_stars_index_html_haml__1763979610328152434_70217414198180'
+
+
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/drjorgepolanco/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/stars" for 127.0.0.1 at 2014-12-02 12:21:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StarsController#index as HTML
+  [1m[35mStar Load (0.2ms)[0m  SELECT "stars".* FROM "stars"
+  Rendered stars/index.html.haml within layouts/application (10.1ms)
+  Rendered layouts/_header.html.haml (2.5ms)
+Completed 200 OK in 233ms (Views: 220.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-02 12:21:48 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-02 12:21:49 -0500
+
+
+Started GET "/stars/jim-carrey" for 127.0.0.1 at 2014-12-02 12:21:51 -0500
+Processing by StarsController#show as HTML
+  Parameters: {"id"=>"jim-carrey"}
+  [1m[36mStar Load (0.2ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."slug" = 'jim-carrey' LIMIT 1[0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."star_id" = ?  [["star_id", 1]]
+  Rendered stars/show.html.haml within layouts/application (34.1ms)
+  Rendered layouts/_header.html.haml (2.5ms)
+Completed 200 OK in 146ms (Views: 141.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies/yes-man" for 127.0.0.1 at 2014-12-02 12:21:53 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"yes-man"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'yes-man' LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 3]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShowtime Load (0.2ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 3]]
+  Rendered movies/show.html.haml within layouts/application (24.0ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 140ms (Views: 124.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/stars/jim-carrey" for 127.0.0.1 at 2014-12-02 12:22:03 -0500
+Processing by StarsController#show as HTML
+  Parameters: {"id"=>"jim-carrey"}
+  [1m[35mStar Load (0.2ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."slug" = 'jim-carrey' LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."star_id" = ?[0m  [["star_id", 1]]
+  Rendered stars/show.html.haml within layouts/application (2.2ms)
+  Rendered layouts/_header.html.haml (0.2ms)
+Completed 200 OK in 101ms (Views: 99.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-02 12:22:06 -0500
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.haml within layouts/application (3.2ms)
+  Rendered layouts/_header.html.haml (0.2ms)
+Completed 200 OK in 108ms (Views: 107.1ms | ActiveRecord: 0.2ms)
