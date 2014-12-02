@@ -25,3 +25,4 @@ Improve knowledge about Associations using **join tables**.
 - Make sure that the movies only appear on the stars show view if there are movies associated with the star.
 - Create index for stars.
 - Add link to stars in the nav bar.
+- Change the url for movies and stars from `/movies/1` and `/stars/1` to `movies/name-of-movie` and `stars/name-of-star`.

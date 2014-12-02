@@ -12710,3 +12710,173 @@ Processing by MoviesController#index as HTML
   Rendered movies/index.html.haml within layouts/application (3.2ms)
   Rendered layouts/_header.html.haml (0.2ms)
 Completed 200 OK in 108ms (Views: 107.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-02 12:56:02 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (10.0ms)
+  Rendered layouts/_header.html.haml (0.4ms)
+Completed 200 OK in 318ms (Views: 311.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/assets/wavegrid.png" for 127.0.0.1 at 2014-12-02 12:56:03 -0500
+
+
+Started GET "/movies/500-days-of-summer" for 127.0.0.1 at 2014-12-02 12:56:11 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"500-days-of-summer"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = '500-days-of-summer' LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mShowtime Load (0.1ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 2]]
+  Rendered movies/show.html.haml within layouts/application (17.6ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 133ms (Views: 117.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/stars/joseph-gordon-levitt" for 127.0.0.1 at 2014-12-02 12:56:13 -0500
+Processing by StarsController#show as HTML
+  Parameters: {"id"=>"joseph-gordon-levitt"}
+  [1m[36mStar Load (0.2ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."slug" = 'joseph-gordon-levitt' LIMIT 1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."star_id" = ?  [["star_id", 3]]
+  Rendered stars/show.html.haml within layouts/application (3.1ms)
+  Rendered layouts/_header.html.haml (0.4ms)
+Completed 200 OK in 103ms (Views: 100.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-02 12:56:25 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.haml within layouts/application (1.6ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 97ms (Views: 95.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/hackers" for 127.0.0.1 at 2014-12-02 12:56:27 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"hackers"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'hackers' LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShowtime Load (0.1ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (4.6ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 101ms (Views: 97.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stars/jonny-lee-miller" for 127.0.0.1 at 2014-12-02 12:56:41 -0500
+Processing by StarsController#show as HTML
+  Parameters: {"id"=>"jonny-lee-miller"}
+  [1m[36mStar Load (0.2ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."slug" = 'jonny-lee-miller' LIMIT 1[0m
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."star_id" = ?  [["star_id", 4]]
+  Rendered stars/show.html.haml within layouts/application (2.6ms)
+  Rendered layouts/_header.html.haml (0.2ms)
+Completed 200 OK in 112ms (Views: 110.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/hackers" for 127.0.0.1 at 2014-12-02 12:56:43 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"hackers"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'hackers' LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?  [["movie_id", 1]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mShowtime Load (0.1ms)[0m  [1mSELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC[0m  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (5.4ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 111ms (Views: 107.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stars/angelina-jolie" for 127.0.0.1 at 2014-12-02 12:56:44 -0500
+Processing by StarsController#show as HTML
+  Parameters: {"id"=>"angelina-jolie"}
+  [1m[35mStar Load (0.2ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."slug" = 'angelina-jolie' LIMIT 1
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" INNER JOIN "roles" ON "movies"."id" = "roles"."movie_id" WHERE "roles"."star_id" = ?[0m  [["star_id", 5]]
+  Rendered stars/show.html.haml within layouts/application (2.1ms)
+  Rendered layouts/_header.html.haml (0.3ms)
+Completed 200 OK in 106ms (Views: 104.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/hackers" for 127.0.0.1 at 2014-12-02 12:56:46 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"hackers"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."slug" = 'hackers' LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles"  WHERE "roles"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35mStar Load (0.1ms)[0m  SELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mStar Load (0.1ms)[0m  [1mSELECT  "stars".* FROM "stars"  WHERE "stars"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mShowtime Load (0.1ms)[0m  SELECT "showtimes".* FROM "showtimes"  WHERE "showtimes"."movie_id" = ?  ORDER BY created_at ASC  [["movie_id", 1]]
+  Rendered movies/show.html.haml within layouts/application (5.5ms)
+  Rendered layouts/_header.html.haml (0.2ms)
+Completed 200 OK in 109ms (Views: 105.1ms | ActiveRecord: 0.5ms)
