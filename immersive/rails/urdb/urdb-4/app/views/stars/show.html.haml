@@ -1,0 +1,17 @@
+#headshot= image_tag @star.headshot
+
+#star
+	#info
+		#name
+			%h1= @star.name
+		#bio
+			%p= @star.bio
+		#movies
+			- if @star.movies
+				%h2.centered Movies
+				%ul
+					- @star.movies.each do |movie|
+						%li
+							= link_to movie do
+								= image_tag(movie.image)
+								= "#{movie.title}"
