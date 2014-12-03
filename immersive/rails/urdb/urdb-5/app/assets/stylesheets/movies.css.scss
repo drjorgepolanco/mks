@@ -1,0 +1,84 @@
+table.movies {
+	width: 100%;
+	font-size: 2em;
+
+	td.centered {
+		text-align: center;
+	}
+}
+
+#poster {
+	@include grid-column(3);
+	padding: 0px;
+}
+
+#movie {
+	@include grid-column(9);
+
+	#info {
+		@include grid-row;
+	}
+}
+
+#cast, #movies {
+  img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  a {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+  }
+
+  span.character {
+    font-weight: bold;
+  }
+
+  li:nth-child(odd) {
+    background-color: #D3D3D3;
+  }
+
+  ul {
+    list-style-type: none;
+    background-color: white;
+    max-width: 400px;
+  }
+}
+
+#showtimes {
+  @include grid-row;
+  margin-top: 20px;
+
+  h2, table, form {
+    @include grid-row;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  form {
+    margin-top: 30px;
+
+    input.button {
+      margin-top: 8px;
+    }
+  }
+
+  .location {
+    @include grid-column(6);
+    padding-left: 0;
+  }
+
+  .time {
+    @include grid-column(3);
+    padding-left: 0;
+  }
+
+  .submit {
+    @include grid-column(3);
+    padding-left: 0;
+  }
+}
