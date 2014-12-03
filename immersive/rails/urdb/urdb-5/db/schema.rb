@@ -11,6 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203014823) do
+ActiveRecord::Schema.define(version: 20141203054353) do
+
+  create_table "movies", force: true do |t|
+    t.string   "title"
+    t.string   "poster_url"
+    t.string   "trailer_url"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "nation"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "character"
+    t.integer  "movie_id"
+    t.integer  "star_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["movie_id"], name: "index_roles_on_movie_id"
+  add_index "roles", ["star_id"], name: "index_roles_on_star_id"
+
+  create_table "showtimes", force: true do |t|
+    t.string   "location"
+    t.string   "time"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "showtimes", ["movie_id"], name: "index_showtimes_on_movie_id"
+
+  create_table "stars", force: true do |t|
+    t.string   "name"
+    t.string   "headshot_url"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
