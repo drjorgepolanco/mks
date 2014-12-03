@@ -16,10 +16,12 @@ class MoviesController < ApplicationController
 
 	def create
 		@movie = Movie.new(movie_params)
-		if @movie.save
-			format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
-		else
-			format.html { render action: 'new' }
+		respond_to do |format|
+			if @movie.save
+				format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
+			else
+				format.html { render action: 'new' }
+			end
 		end
 	end
 
@@ -27,17 +29,18 @@ class MoviesController < ApplicationController
 	end
 
 	def update
-		respond_to |format|
-		if @movie.update(movie_params)
-			format.html { redirect_to @movie, notice: 'The movie was successfully updated.' }
-		else
-			format.html { render action: 'edit' }
+		respond_to do |format|
+			if @movie.update(movie_params)
+				format.html { redirect_to @movie, notice: 'The movie was successfully updated.' }
+			else
+				format.html { render action: 'edit' }
+			end
 		end
 	end
 
 	def destroy
 		@movie.destroy
-		respond_to |format|
+		respond_to do |format|
 			format.html { redirect_to movies_path }
 		end
 	end
