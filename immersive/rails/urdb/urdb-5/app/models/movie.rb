@@ -6,10 +6,10 @@ class Movie < ActiveRecord::Base
 	validates :title, :poster_url, presence: true
 
 	def rotten_finder
-		RottenMovie.find(title: title, limit: 1)
-	end
-
-	def snippet
-		description.truncate 50
-	end
+    RottenMovie.find(title: title, limit: 1)
+  end
+  
+  def snippet
+    description.truncate 50
+  end
 end
