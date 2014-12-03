@@ -1,7 +1,7 @@
 class ShowtimesController < ApplicationController
 	def create
 		@movie = Movie.find(params[:movie_id])
-		@showtime = @movie.showtimes.new(showtimes_params)
+		@showtime = @movie.showtimes.new(showtime_params)
 		if @showtime.save
 			redirect_to @showtime.movie, notice: "Showtime was successfully created."
 		else
