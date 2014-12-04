@@ -1,3 +1,23 @@
-- @menu_items.each do |item|
-	= link_to item.name, item
-	= image_tag(item.image)
+.row
+	.large-3.medium-3.small-11.columns.pad-top-ten.pad-right
+		.large-12.medium-12.small-12.columns.pad-right
+			= form_for @menu_item do |f|
+				= f.text_field :name
+				.centered
+					= f.submit "Add Item", class: 'button expand'
+	.large-9.medium-9.columns
+		- @menu_items.each do |item|
+			.large-12.medium-12.small-12.columns.item
+				.large-8.medium-8.columns		
+					= link_to image_tag(item.image), item
+				.large-4.medium-4.columns
+					%h5.centered.bold= link_to item.name, item
+					- if item.ingredients
+						%h6.bold Ingredients
+						%ul
+							- item.ingredients.each do |ingredient|
+								%li
+									= ingredient.name
+
+
+				
