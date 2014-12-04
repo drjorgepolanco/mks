@@ -5,11 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-taco = MenuItem.create(name: "Fish Taco", price: "$3.50", image: "http://images.nymag.com/bestofny/food/2006/mercadito_560.jpg")
-lasagna = MenuItem.create(name: "Lasagna", price: "$5.00", image: "http://static.communitytable.com/wp-content/uploads/2010/12/sorvino-lasagna_jimfranco.jpg")
-pork_chops = MenuItem.create(name: "Pork Chops", price: "$4.50", image: "http://www.grillingcompanion.com/wp-content/uploads/2011/11/BBQPorkChops.jpg")
-chow_fan = MenuItem.create(name: "Chow Fan", price: "$2.50", image: "http://labofedibles.files.wordpress.com/2007/08/friedrice.jpg")
-eggplant_parmigiana = MenuItem.create(name: "Eggplant Parmigiana", price: "$6.00", image: "http://italianfoodnaplesflorida.com/wp-content/uploads/2012/06/Eggplant-Parmigiana.jpg")
+taco = MenuItem.create(name: "Fish Taco", price: "$3.50", image: "http://casanovafishtacos.com/wp-content/uploads/2012/10/newtaco-1024x577.jpg")
+lasagna = MenuItem.create(name: "Lasagna", price: "$5.00", image: "http://upload.wikimedia.org/wikipedia/commons/6/6b/Lasagna_(1).jpg")
+pork_chops = MenuItem.create(name: "Pork Chops", price: "$4.50", image: "http://www.vodkitchen.com/wp-content/uploads/2010/12/D72_5595.jpg")
+chow_fan = MenuItem.create(name: "Chow Fan", price: "$2.50", image: "http://3.bp.blogspot.com/_WJjc0N1hIH4/TP1hdJZnqeI/AAAAAAAAOBE/37uM7UdYxFk/s1600/ham%2Byu%2Bkai%2Blap%2Bchow%2Bfan.JPG")
+eggplant_parmigiana = MenuItem.create(name: "Eggplant Parmigiana", price: "$6.00", image: "http://angsarap.net/wp-content/uploads/2012/03/eggplant-parmigiana.jpg")
 
 mako = Ingredient.create(name: "Mako")
 rice = Ingredient.create(name: "Rice")
