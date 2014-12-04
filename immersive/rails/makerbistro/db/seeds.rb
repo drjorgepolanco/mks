@@ -23,16 +23,25 @@ pasta = Ingredient.create(name: "Pasta")
 salt = Ingredient.create(name: "Salt")
 tortilla = Ingredient.create(name: "Tortilla")
 butter = Ingredient.create(name: "Butter")
-
+pork = Ingredient.create(name: "Pork")
+lime = Ingredient.create(name: "Lime")
+pepper = Ingredient.create(name: "Pepper")
 
 taco.recipes.create(ingredient: tortilla)
 taco.recipes.create(ingredient: mako)
 taco.recipes.create(ingredient: salt)
+taco.recipes.create(ingredient: pepper)
 
 lasagna.recipes.create(ingredient: pasta)
 lasagna.recipes.create(ingredient: ground_beef)
 lasagna.recipes.create(ingredient: salt)
 lasagna.recipes.create(ingredient: tomato_sauce)
+
+pork_chops.recipes.create(ingredient: pork)
+pork_chops.recipes.create(ingredient: salt)
+pork_chops.recipes.create(ingredient: lime)
+pork_chops.recipes.create(ingredient: basil)
+pork_chops.recipes.create(ingredient: pepper)
 
 chow_fan.recipes.create(ingredient: rice)
 chow_fan.recipes.create(ingredient: eggs)
