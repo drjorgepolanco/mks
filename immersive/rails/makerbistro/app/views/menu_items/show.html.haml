@@ -1,0 +1,23 @@
+.row
+	.large-12.medium-12.columns
+		= image_tag @menu_item.image
+	.large-12.medium-12.columns.centered
+		= @menu_item.name
+	.large-12.medium-12.columns
+		.large-4.medium-4.columns
+			= form_for [@menu_item, @ingredient] do |f|
+				= f.label :name
+				= f.text_field :name
+				= f.submit "Add Ingredient", class: 'button expand'
+		.large-8.medium-8.columns
+			%ul
+				- @menu_item.ingredients.each do |ingredient|
+					%li
+						= ingredient.name
+
+
+
+
+
+
+
