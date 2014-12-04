@@ -11,13 +11,14 @@
     = csrf_meta_tags
 
   %body
-    = render "layouts/header"
-
-    - if notice
-      .alert-box.success= notice
-    - elsif alert
-      .alert-box.alert= alert
-
-    = yield
-    = javascript_include_tag "application"
+    .row
+      = render "layouts/header"
+    .row
+      - if notice
+        .alert-box.success= notice
+      - elsif alert
+        .alert-box.alert= alert
+    .row
+      = yield
+      = javascript_include_tag "application"
 
