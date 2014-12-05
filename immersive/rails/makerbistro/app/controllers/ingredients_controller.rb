@@ -7,7 +7,7 @@ class IngredientsController < ApplicationController
 		if @menu_item.save
 			redirect_to @menu_item, notice: "The ingredient was successfully created!"
 		else
-			redirect_to @menu_item, notice: "There was a problem creating the ingredient. Please, try again!"
+			redirect_to @menu_item, alert: "This ingredient already exist!"
 		end
 	end
 
@@ -21,4 +21,3 @@ class IngredientsController < ApplicationController
 			@new_ingredient = params.require(:ingredient).permit(:name)
 		end
 end
-
