@@ -7,8 +7,8 @@ class MenuItemsController < ApplicationController
 	end
 
 	def show
-		@current_ingredients = @menu_item.ingredients
-		@new_ingredient = @menu_item.ingredients.new
+		@ingredients = @menu_item.ingredients
+		@ingredient = @menu_item.ingredients.new
 	end
 
 	def new
