@@ -7,8 +7,8 @@ class MenuItemsController < ApplicationController
 	end
 
 	def show
-		@ingredients = @menu_item.ingredients
-		@ingredient = @menu_item.ingredients.build
+		@current_ingredients = @menu_item.ingredients
+		@new_ingredient = @menu_item.ingredients.new
 	end
 
 	def new
@@ -21,7 +21,7 @@ class MenuItemsController < ApplicationController
 			if @menu_item.save
 				format.html { redirect_to @menu_item, notice: "The menu item was successfully created!" }
 			else
-				format.html { render action: 'new' }
+				format.html { redirect_to root_path, alert: "This menu item already exist!" }
 			end
 		end
 	end
@@ -49,7 +49,7 @@ class MenuItemsController < ApplicationController
 	private
 
 	def menu_item_params
-		params.require(:menu_item).permit(:name)
+		params.require(:menu_item).permit(:name, :image)
 	end
 
 	def set_menu_item	
