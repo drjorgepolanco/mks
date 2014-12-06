@@ -1,7 +1,7 @@
 ##Data Structure Modeling
 
 ###The Restaurant
-<br>
+
 **Write an array and/or hash representation of the following data:**
 
 Nick's new favorite restaurant is Patrick's Pizza Palace. It is located at 716 Congress and last received a health score of 100! 
