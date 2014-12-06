@@ -22,3 +22,14 @@ puts books[:gourd_of_flies][:author]
 
 puts books[:enterprise_app_architecture][:name]
 #=> Patterns of Enterprise Application Architecture
+
+
+
+# ARRAY OF HASHES VERSION
+# ***********************
+
+# books = [
+# 	{:name => "Gourd of the Flies", :author => "J. W. Gourding"},
+# 	{:name => "Design Patterns", :author => ["John Vlissides", "Richard Helm", "Ralph Johnson", "Erich Gamma"]},
+# 	{:name => "Domain Driven Design", :author => "Eric Evans"}
+# ]
