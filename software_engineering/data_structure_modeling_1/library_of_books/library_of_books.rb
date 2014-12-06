@@ -18,5 +18,7 @@ books = {
 }
 
 puts books[:gourd_of_flies][:author]
+#=> J. W. Gourding
 
 puts books[:enterprise_app_architecture][:name]
+#=> Patterns of Enterprise Application Architecture
