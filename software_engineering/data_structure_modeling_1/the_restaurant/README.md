@@ -3,7 +3,7 @@
 ###The Restaurant
 
 
-#####the_restaurant.rb
+#####`the_restaurant.rb`
 
 **Write an array and/or hash representation of the following data:**
 
@@ -15,7 +15,7 @@ Kate's favorite meal combo is a calzone for an appetizer, a slice of pizza for t
 
 Sometimes they go with Harsh, who is a vegetarian. He usually orders garlic knots, spaghetti & eggplant, and cheesecake.
 
-#####the_restaurant_2.rb
+#####`the_restaurant_2.rb`
 ######* Completely completed with my head's complexion...
 
 Considering the description of Patrick's Pizza Palace **create a new Ruby class** (or more if you deem it necessary) **to encapsulate this information.**
