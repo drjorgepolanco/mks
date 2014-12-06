@@ -128,6 +128,7 @@ end
 # - 1 unit of Cookies
 
 
+# ================================================
 
 puts "The ingredients we currently have in stock, sorted by amount are:"
 @all_ingredients = @recipes.each do |key, value|
@@ -136,7 +137,7 @@ puts "The ingredients we currently have in stock, sorted by amount are:"
 	end
 	puts @ingredients
 end
-
+#=>
 # The ingredients we currently have in stock are:
 # pepper
 # {"name"=>"Pepper", "measurement"=>"portion", "amount"=>1}
