@@ -10,6 +10,7 @@ end
 
 
 class Person
+	include Meal
 	attr_accessor :name, :vegetarian
 
 	def initialize(name, vegetarian=false)
@@ -19,8 +20,6 @@ class Person
 end
 
 class Nick < Person
-	include Meal
-
 	def initialize(name)
 		super(name)
 	end
@@ -33,16 +32,12 @@ class Nick < Person
 end
 
 class Kate < Person
-	include Meal
-
 	def initialize(name)
 		super(name)
 	end
 end
 
 class Harsh < Person
-	include Meal
-
 	def initialize(name, vegetarian)
 		super(name, vegetarian)
 	end
