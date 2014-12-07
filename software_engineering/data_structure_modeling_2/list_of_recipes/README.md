@@ -27,7 +27,7 @@ Assuming we will need to sort ingredients by amount, write an array (or hash) an
 	- cookies
 	
 
-####`list_of_recipes_1.rb`
+###list_of_recipes_1.rb
 Very complex **HASH** representation of this structure. Display:
 
 - Names of the current recipes.
@@ -35,10 +35,10 @@ Very complex **HASH** representation of this structure. Display:
 - All available ingredients with amounts.
 - All ingredients sorted by amount.
 
-####`list_of_recipes_2.rb`
+###list_of_recipes_2.rb
 Simple **HASH** representation with **Arrays**.
 
-####`list_of_recipes_3.rb`
+###list_of_recipes_3.rb
 **Object** representation of the same structure.
 
 #####Results:
