@@ -95,7 +95,7 @@ module GettersSetters
     attr_reader :age
     attr_writer :secret
     attr_accessor :name
-    
+
     def initialize(name, age)
       @name = name
       @age = age
@@ -131,7 +131,7 @@ class ArrayProblems
   # # # # # # #
 
   def self.add_cake_to_array(array)
-    # TODO: Complete this method
+    array.push('cake')
   end
 
   # # # # # # #
