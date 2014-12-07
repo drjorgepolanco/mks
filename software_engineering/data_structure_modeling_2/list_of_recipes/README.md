@@ -25,7 +25,8 @@ Assuming we will need to sort ingredients by amount, write an array (or hash) an
 	- 1 avocado
 	- 1 soup
 	- cookies
-	
+
+<br>	
 
 ###list_of_recipes_1.rb
 Very complex **HASH** representation of this structure. Display:
@@ -35,8 +36,12 @@ Very complex **HASH** representation of this structure. Display:
 - All available ingredients with amounts.
 - All ingredients sorted by amount.
 
+<br>
+
 ###list_of_recipes_2.rb
 Simple **HASH** representation with **Arrays**.
+
+<br>
 
 ###list_of_recipes_3.rb
 **Object** representation of the same structure.
