@@ -2,34 +2,95 @@
 	:apple_salad => {
 		"name" => "Apple Salad",
 		"serving" => 4,
-		"ingredients" 	=> {
-			:greens 		=> {"name" => "Mixed Greens", 	"measurement" => "oz", 			  "amount" => 6},
-			:mustard 		=> {"name" => "Honey Mustard", 	"measurement" => "tbs", 			"amount" => 1},
-			:almonds 		=> {"name" => "Almonds", 				"measurement" => "tbs", 			"amount" => 2},
-			:apples 		=> {"name" => "Apples", 				"measurement" => "unit", 		  "amount" => 4},
-			:salt 			=> {"name" => "Salt", 					"measurement" => "portion", 	"amount" => 1},
-			:pepper 		=> {"name" => "Pepper", 				"measurement" => "portion", 	"amount" => 1}
+		"ingredients" => {
+			:greens => {
+				"name" => "Mixed Greens", 
+				"measurement" => "oz", 
+				"amount" => 6
+				},
+			:mustard => {
+				"name" => "Honey Mustard", 
+				"measurement" => "tbs", 
+				"amount" => 1
+				},
+			:almonds => {
+				"name" => "Almonds", 
+				"measurement" => "tbs", 
+				"amount" => 2
+				},
+			:apples => {
+				"name" => "Apples", 
+				"measurement" => "unit", 
+				"amount" => 4
+				},
+			:salt => {
+				"name" => "Salt", 
+				"measurement" => 
+				"portion", 
+				"amount" => 1
+				},
+			:pepper => {
+				"name" => "Pepper", 
+				"measurement" => "portion", 
+				"amount" => 1
+			}
 		}
 	},
 	:bean_burgers => {
 		"name" => "Bean Burgers",
 		"serving" => 4,
 		"ingredients" 	=> {
-			:beans 			=> {"name" => "Black Beans", 		"measurement" => "lbs", 			"amount" => 2},
-			:buns 			=> {"name" => "Buns", 					"measurement" => "unit", 		  "amount" => 4},
-			:lettuce 		=> {"name" => "Lettuce", 				"measurement" => "unit",		 	"amount" => 1},
-			:tomatoes 	=> {"name" => "Tomatoes", 			"measurement" => "unit", 			"amount" => 8, "form" => "sliced thinly"},
-			:feta 			=> {"name" => "Feta Cheese",		"measurement" => "cup",				"amount" => 1},
-			:mustard 		=> {"name" => "Mustard",				"measurement" => "portion",		"amount" => 1}
+			:beans => {
+				"name" => "Black Beans", 
+				"measurement" => "lbs", 
+				"amount" => 2
+				},
+			:buns => {
+				"name" => "Buns", 
+				"measurement" => "unit", 
+				"amount" => 4
+				},
+			:lettuce => {
+				"name" => "Lettuce", 
+				"measurement" => "unit", 
+				"amount" => 1
+				},
+			:tomatoes => {
+				"name" => "Tomatoes", 
+				"measurement" => "unit", 
+				"amount" => 8, 
+				"form" => "sliced thinly"
+				},
+			:feta => {
+				"name" => "Feta Cheese", 
+				"measurement" => "cup", 
+				"amount" => 1},
+			:mustard => {
+				"name" => "Mustard",	
+				"measurement" => "portion", 
+				"amount" => 1
+			}
 		}
 	},
 	:avocado_soup => {
 		"name" => "Avocado Soup",
 		"serving" => 2,
 		"ingredients" 	=> {
-			:avocado 		=> {"name" => "Avocado",				"measurement" => "unit",			"amount" => 1},
-			:soup 			=> {"name" => "Soup",						"measurement" => "portion",		"amount" => 3},
-			:cookies 		=> {"name" => "Cookies",				"measurement" => "unit",			"amount" => 2}
+			:avocado 		=> {
+				"name" => "Avocado", 
+				"measurement" => "unit",	
+				"amount" => 1
+				},
+			:soup 			=> {
+				"name" => "Soup",	
+				"measurement" => "portion",	
+				"amount" => 3
+				},
+			:cookies 		=> {
+				"name" => "Cookies", 
+				"measurement" => "unit",	
+				"amount" => 2
+			}
 		}
 	}
 }
