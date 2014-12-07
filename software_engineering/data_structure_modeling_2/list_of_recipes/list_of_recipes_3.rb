@@ -24,7 +24,7 @@ class Recipe
 	def show_ingredients
 		puts "The #{@name} has the following ingredients:"
 		@ingredients.each do |ingredient|
-			puts "- #{ingredient.name}"
+			puts "- #{ingredient.amount} #{ingredient.measurement} of #{ingredient.name}"
 		end
 	end
 end
