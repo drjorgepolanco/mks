@@ -1,26 +1,12 @@
-require 'library_of_books_1'
+require_relative 'library_of_books_1'
 
-class Library
-	def initialize
-		@collection = {}
-	end
+@library = {}
 
-	def add_books(book)
-		book.each do |title, author|
-			@collection[title] = author
-		end
-	end
+@books.each do |k, v|
+	@library[v[:title]] = v[:author]
 end
 
-class Book
-	attr_accessor :title, :author
-
-	def initialize(title, author)
-		@title = author
-		@author = author
-	end
-end
-
-design_patterns = Book.new(@books[:design_patterns][:title], @books[:design_patterns][:author])
-
-puts design_patterns
+puts "The books we currently have in stock are:"
+puts @library.keys
+puts "We currently have books of the following authors:"
+puts @library.values
