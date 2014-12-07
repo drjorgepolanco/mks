@@ -84,6 +84,7 @@ module GettersSetters
     end
 
     def secret=(secret)
+      @secret = secret
     end
   end
 
