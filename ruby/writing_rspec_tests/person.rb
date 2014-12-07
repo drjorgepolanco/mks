@@ -11,8 +11,13 @@ class Person
 
 	def test_person
 		p = Person.new(500)
-		puts p.money
+		if p.money != 500
+			raise "did not initialize properly"
+		end
+
 		p.get_paid(200)
-		puts p.money
+		if p.money != 700
+			raise "person did not get paid"
+		end
 	end
 end
