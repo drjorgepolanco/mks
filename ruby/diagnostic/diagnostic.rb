@@ -46,8 +46,9 @@ module ClassesAndInstances
       @animals = []
     end
 
-    # TODO: Write a method `adopt` that takes one paramater `animal`
-    # and adds it to its animals array
+    def adopt(animal)
+      @animals << animal
+    end
   end
 
   # # # # # # # # # # # #
