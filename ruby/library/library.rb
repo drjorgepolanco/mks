@@ -14,8 +14,17 @@ class Book
 			@status = 'checked_out'
 			true
 		else
-			puts "The book has been checked_out already."
+			puts "The book can't be checked out twice."
 			false
+		end
+	end
+
+	def check_in
+		if @status == 'checked_out'
+			@status = 'available'
+			true
+		else
+			puts "The book is already available."
 		end
 	end
 end
