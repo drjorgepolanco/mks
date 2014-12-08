@@ -45,8 +45,34 @@ describe Borrower do
 end
 
 describe Library do
+	let(:lib) { Library.new }
 	it "starts with an empty array of books" do
-		lib = Library.new
 		expect(lib.books.count).to eq(0)
 	end
+
+	it "add new books and assigns it an id" do
+		lib.register_new_book("Nausea", "Jean-Paul Sartre")
+		expect(lib.books.count).to eq(1)
+
+		created_book = lib.books.first
+		expect(created_book.title).to eq('Nausea')
+		expect(created_book.author).to eq('Jean-Paul Sartre')
+		expect(created_book.id).to_not be_nil
+	end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
