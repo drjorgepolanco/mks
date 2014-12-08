@@ -173,15 +173,17 @@ describe Library do
 		lib.register_new_book("The Art of Seduction", "Robert Greene")
 
 		book_one = lib.books[0]
+		book_two = lib.books[1]
 
 		# No books has been checked out so far.
 		expect(lib.borrowed_books.count).to eq(0)
 
 		borrower = Borrower.new("Juan")
 		book = lib.check_out_book(book_one.id, borrower)
+		book = lib.check_out_book(book_two.id, borrower)
 
 		# The should be now one book checked out.
-		expect(lib.borrowed_books.count).to eq(1)
+		expect(lib.borrowed_books.count).to eq(2)
 		expect(lib.borrowed_books.first).to be_a(Book)
 	end
 end
