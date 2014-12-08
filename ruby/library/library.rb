@@ -61,4 +61,8 @@ class Library < Book
 			end
 		end
 	end
+
+	def get_borrower(book_id)
+		@books[book_id].borrower.name
+	end
 end
