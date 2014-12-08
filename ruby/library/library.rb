@@ -75,4 +75,12 @@ class Library < Book
 			false
 		end
 	end
+
+	def available_books
+		@books.select do |book|
+			if book.status == 'available'
+				book
+			end
+		end
+	end
 end
