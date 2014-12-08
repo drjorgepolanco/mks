@@ -35,11 +35,18 @@ describe Book do
 
 		expect(book.status).to eq('available')
 	end
+end
 
-	describe Borrower do
-		it "has a name" do
-			borrower = Borrower.new("Jorge")
-			expect(borrower.name).to eq("Jorge")
-		end
+describe Borrower do
+	it "has a name" do
+		borrower = Borrower.new("Jorge")
+		expect(borrower.name).to eq("Jorge")
+	end
+end
+
+describe Library do
+	it "starts with an empty array of books" do
+		lib = Library.new
+		expect(lib.books.count).to eq(0)
 	end
 end
