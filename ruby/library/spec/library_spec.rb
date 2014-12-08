@@ -77,8 +77,17 @@ describe Library do
 
 		expect(book).to be_a(Book)
 		expect(book.title).to eq("La La Land")
-
 		expect(book.status).to eq('checked_out')
+	end
+
+	it "knows who borrowed a book" do
+		lib.register_new_book("Learning you a Haskell for Great Good", "Miram Lipovaca")
+		book_id = lib.books.first.id
+
+		borrower = Borrower.new('Juan')
+		book = lib.check_out_book(book_id, borrower)
+
+		expect(lib.get_borrower(book_id)).to eq("Juan")
 	end
 end
 
