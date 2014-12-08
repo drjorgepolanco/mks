@@ -28,4 +28,11 @@ describe Book do
 
 		expect(book.status).to eq('checked_out')
 	end
+
+	it "can be checked in" do
+		book.checked_out
+		book.check_in
+
+		expect(book.status).to eq('available')
+	end
 end
