@@ -89,6 +89,23 @@ describe Library do
 
 		expect(lib.get_borrower(book_id)).to eq("Juan")
 	end
+
+	it "does not allow a book to be checked out twice in a row" do
+		lib.register_new_book = Book.new("The Rails 4 Way", "Obie Fernandez")
+		book_id = lib.books.first.id
+
+		borrower = Borrower.new('Juan')
+		book = lib.check_out_book(book_id, borrower)
+
+		expect(book).to be_a(Book)
+
+		book_again = lib.check_out_book(book_id, borrower)
+		expect(book_again).to be_nil
+
+		other_borrower = Borrower.new("Julito")
+		book_again = lib.check_out_book(book_id, other_borrower)
+		expect(book_again).to be_nil
+	end
 end
 
 
