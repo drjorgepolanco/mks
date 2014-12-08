@@ -30,8 +30,16 @@ end
 
 class Borrower
 	attr_accessor :name
-	
+
 	def initialize(name)
 		@name = name
+	end
+end
+
+class Library
+	attr_accessor :books
+	
+	def initialize
+		@books = []
 	end
 end
