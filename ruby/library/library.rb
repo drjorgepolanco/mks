@@ -1,12 +1,14 @@
 class Book
-	attr_accessor :title, :author, :status, :id, :borrower
+	attr_accessor :title, :author, :status, :id, :borrower, :year, :edition
 
-	def initialize(title, author, status='available', id=nil, borrower=nil)
+	def initialize(title, author, status='available', id=nil, borrower=nil, year=nil, edition='1st')
 		@title = title
 		@author = author
 		@status = status
 		@id = id
 		@borrower = borrower
+		@year = year
+		@edition = edition
 	end
 
 	def check_out
