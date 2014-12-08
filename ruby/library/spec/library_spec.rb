@@ -106,6 +106,17 @@ describe Library do
 		book_again = lib.check_out_book(book_id, other_borrower)
 		expect(book_again).to be_nil
 	end
+
+	it "allows a Borrower to check a book back in" do
+		lib.register_new_book("The Rails 4 Way", "Obie Bermudez")
+		book_id = lib.books.first.id
+
+		borrower = Borrower.new("Juan")
+		book = lib.check_out_book(book_id, borrower)
+
+		lib.check_in_book(book)
+		expect(book.status).to eq('available')
+	end
 end
 
 
