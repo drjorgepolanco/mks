@@ -1,5 +1,4 @@
 class Book
-
 	attr_accessor :title, :author, :status
 	attr_reader :id
 
@@ -26,5 +25,13 @@ class Book
 		else
 			puts "The book is already available."
 		end
+	end
+end
+
+class Borrower
+	attr_accessor :name
+	
+	def initialize(name)
+		@name = name
 	end
 end
