@@ -1,11 +1,12 @@
 class Book
-	attr_accessor :title, :author, :status, :id
+	attr_accessor :title, :author, :status, :id, :borrower
 
-	def initialize(title, author, status='available', id=nil)
+	def initialize(title, author, status='available', id=nil, borrower=nil)
 		@title = title
 		@author = author
 		@status = status
 		@id = id
+		@borrower = borrower
 	end
 
 	def check_out
@@ -36,16 +37,28 @@ class Borrower
 	end
 end
 
-class Library
-	attr_accessor :books
+class Library < Book
+	attr_accessor :books, :books_borrowed
 
 	def initialize
 		@books = []
+		@books_borrowed = []
 	end
 
 	def register_new_book(title, author)
 		new_book = Book.new(title, author)
 		@books << new_book
-		new_book.id = @books.length
+		new_book.id = @books.length - 1
+	end
+
+	def check_out_book(book_id, borrower)
+		if @books_borrowed.length < 2
+			if @books[book_id].status == 'available'
+				@books[book_id].status = 'checked_out'
+				@books[book_id].borrower = borrower
+				@books_borrowed << borrower
+				@books[book_id]
+			end
+		end
 	end
 end
