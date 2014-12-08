@@ -59,6 +59,14 @@ describe Library do
 		expect(created_book.author).to eq('Jean-Paul Sartre')
 		expect(created_book.id).to_not be_nil
 	end
+
+	it "can add multiple books" do
+		lib.register_new_book("Book One", "Juanito Tre Diente")
+		lib.register_new_book("Book Two", "Julito Trucupei")
+		lib.register_new_book("Book Three", "Juan de los Palotes")
+
+		expect(lib.books.count).to eq(3)
+	end
 end
 
 
