@@ -137,6 +137,20 @@ describe Library do
 		book = lib.check_out_book(book_three.id, borrower)
 		expect(book).to be_nil
 	end
+
+	it "returns a list of books available" do
+		lib.register_new_book("The Rails 4 Way", "Obie Bermudez")
+		lib.register_new_book("La La Land", "Green Velvet")
+		lib.register_new_book("The Art of Seduction", "Robert Greene")
+
+		expect(lib.available_books.count).to eq(3)
+		expect(lib.available_books.first).to be_a(Book)
+
+		borrower = Borrower.new("Juan")
+		book = lib.check_out_book(lib.available_books.first.id, borrower)
+
+		expect(lib.available_books.count).to eq(2)
+	end
 end
 
 
