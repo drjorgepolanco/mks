@@ -151,6 +151,21 @@ describe Library do
 
 		expect(lib.available_books.count).to eq(2)
 	end
+
+	it "allows a book to be checked out after it has been returned" do
+		lib.register_new_book("The Rails 4 Way", "Obie Bermudez")
+		book_id = lib.books.first.id
+
+		borrower = Borrower.new("Juan")
+		book = lib.check_out_book(book_id, borrower)
+		expect(lib.get_borrower(book_id)).to eq("Juan")
+
+		lib.check_in_book(book)
+
+		other_borrower = Borrower.new("Julito")
+		book = lib.check_out_book(book_id, other_borrower)
+		expect(lib.get_borrower(book_id)).to eq("Julito")
+	end
 end
 
 
