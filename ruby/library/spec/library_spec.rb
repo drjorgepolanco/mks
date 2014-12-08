@@ -67,6 +67,19 @@ describe Library do
 
 		expect(lib.books.count).to eq(3)
 	end
+
+	it "allows a Borrower to check out a book by its id" do
+		lib.register_new_book("La La Land", "Green Velvet")
+		book_id = lib.books.first.id
+
+		juan = Borrower.new('Juan')
+		book = lib.check_out_book(book_id, juan)
+
+		expect(book).to be_a(Book)
+		expect(book.title).to eq("La La Land")
+
+		expect(book.status).to eq('checked_out')
+	end
 end
 
 
