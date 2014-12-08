@@ -9,4 +9,10 @@ describe Book do
 		expect(book.author).to eq("Albert Camus")
 		expect(book.id).to be_nil
 	end
+
+	it "has a default status of available" do
+		book = Book.new
+
+		expect(book.status).to eq("available")
+	end
 end
