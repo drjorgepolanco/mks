@@ -65,4 +65,14 @@ class Library < Book
 	def get_borrower(book_id)
 		@books[book_id].borrower.name
 	end
+
+	def check_in_book(book)
+		if book.status == 'checked_out'
+			book.status = 'available'
+			true
+		else
+			puts "The book is already available"
+			false
+		end
+	end
 end
