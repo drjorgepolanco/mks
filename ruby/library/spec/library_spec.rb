@@ -117,6 +117,26 @@ describe Library do
 		lib.check_in_book(book)
 		expect(book.status).to eq('available')
 	end
+
+	it "does not allow a Borrower to check out more than one Book at any given time" do
+		lib.register_new_book("The Rails 4 Way", "Obie Bermudez")
+		lib.register_new_book("La La Land", "Green Velvet")
+		lib.register_new_book("The Art of Seduction", "Robert Greene")
+
+		borrower = Borrower.new("Juan")
+		book_one = lib.books[0]
+		book_two = lib.books[1]
+		book_three = lib.books[2]
+
+		book = lib.check_out_book(book_one.id, borrower)
+		expect(book.title).to eq("The Rails 4 Way")
+
+		book = lib.check_out_book(book_two.id, borrower)
+		expect(book.title).to eq("La La Land")
+
+		book = lib.check_out_book(book_three.id, borrower)
+		expect(book).to be_nil
+	end
 end
 
 
