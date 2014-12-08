@@ -35,4 +35,11 @@ describe Book do
 
 		expect(book.status).to eq('available')
 	end
+
+	describe Borrower do
+		it "has a name" do
+			borrower = Borrower.new("Jorge")
+			expect(borrower.name).to eq("Jorge")
+		end
+	end
 end
