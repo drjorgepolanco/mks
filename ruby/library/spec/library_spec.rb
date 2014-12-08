@@ -91,7 +91,7 @@ describe Library do
 	end
 
 	it "does not allow a book to be checked out twice in a row" do
-		lib.register_new_book = Book.new("The Rails 4 Way", "Obie Fernandez")
+		lib.register_new_book("The Rails 4 Way", "Obie Fernandez")
 		book_id = lib.books.first.id
 
 		borrower = Borrower.new('Juan')
