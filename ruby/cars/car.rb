@@ -21,3 +21,9 @@ class BigRig < Car
 		'BBBRRRAAAWWWHHH'
 	end
 end
+
+class Motorcycle < Car
+	def initialize
+		super('red', 2)
+	end
+end
