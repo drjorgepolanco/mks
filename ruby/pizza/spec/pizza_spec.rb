@@ -17,5 +17,11 @@ describe Topping do
 
   		expect(topping.name).to eq('olives')
   	end
+
+  	it "sets whether or not the topping is vegetatian" do
+  		topping = Topping.new('olives', vegetarian: true)
+
+  		expect(topping.vegetarian).to eq(true)
+  	end
   end
 end
