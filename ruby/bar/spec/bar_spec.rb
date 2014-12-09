@@ -33,4 +33,8 @@ describe Bar do
 	it 'has a default happy hour discount of zero' do
 		expect(@bar.happy_discount).to eq(0)
 	end
+
+	it 'can set its happy hour discount' do
+		expect { @bar.happy_discount = 0.5 }.to_not raise_error
+	end
 end
