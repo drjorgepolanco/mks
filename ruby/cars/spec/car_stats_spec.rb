@@ -9,12 +9,12 @@ describe 'CarStats' do
 	end
 
 	it 'calculates the most popular car color' do
-		pop_color = CarStats.calc_top_color(@cars)
-		expect(pop_color).to eq('red')
+		most_popular = CarStats.most_popular_color(@cars)
+		expect(most_popular).to eq('red')
 	end
 
 	it 'calculates the least popular car color' do
-		least_popular_color = CarStats.calc_least_popular_color(@cars)
-		expect(least_popular_color).to eq('white')
+		least_popular = CarStats.least_popular_color(@cars)
+		expect(least_popular).to eq('white')
 	end
 end
