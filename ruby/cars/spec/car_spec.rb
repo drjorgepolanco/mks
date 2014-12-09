@@ -16,4 +16,8 @@ describe 'Car' do
 	it 'honks' do
 		expect(@car.honk).to eq('meep')
 	end 
+
+	it 'has 4 wheels by default' do
+		expect(@car.wheel_count).to eq(4)
+	end
 end
