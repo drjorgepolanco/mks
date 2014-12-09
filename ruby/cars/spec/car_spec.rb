@@ -30,4 +30,8 @@ describe 'BigRig' do
 	it 'honks' do
 		expect(@truck.honk).to eq('BBBRRRAAAWWWHHH')
 	end
+
+	it 'has 18 wheels' do
+		expect(@truck.wheel_count).to eq(18)
+	end
 end
