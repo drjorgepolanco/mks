@@ -35,3 +35,11 @@ describe 'BigRig' do
 		expect(@truck.wheel_count).to eq(18)
 	end
 end
+
+describe 'Motorcycle' do
+	before { @bike = Motorcycle.new }
+
+	it 'is red by default' do
+		expect(@bike.color).to eq('red')
+	end
+end
