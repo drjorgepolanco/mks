@@ -67,6 +67,19 @@ describe Pizza do
   		expect(pizza.delivery_time).to eq(current_time + 60 * 30)
   	end
   end
+
+  describe '#late?' do
+    it "determines whether the delivery time is past" do
+      pizza = Pizza.new
+      pizza.deliver!
+      pizza.late?
+
+      late_time = Time.now + 60 * 31
+      early_time = Time.now + 60 * 15
+      expect(late_time - pizza.delivery_time).to be >= 60
+      expect(pizza.delivery_time - early_time).to be <= 60 * 15
+    end
+  end
 end
 
 describe Topping do
