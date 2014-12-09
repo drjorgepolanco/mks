@@ -20,7 +20,7 @@ describe Pizza do
   		pizza = Pizza.new
 
   		expect(pizza.toppings.size).to eq(1)
-  		expect(pizza.toppings).to eq('cheese')
+  		expect(pizza.toppings.first.name).to eq('cheese')
   	end
   end
 end
