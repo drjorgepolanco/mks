@@ -1,10 +1,8 @@
 require 'spec_helper'
 
 describe 'Car' do
-	before do
-		@car = Car.new('black')
-	end
-
+	before { @car = Car.new('black') }
+		
 	it 'initializes with a color' do
 		expect(@car.color).to eq('black')
 	end
@@ -19,5 +17,13 @@ describe 'Car' do
 
 	it 'has 4 wheels by default' do
 		expect(@car.wheel_count).to eq(4)
+	end
+end
+
+describe 'BigRig' do
+	before { @truck = BigRig.new('gray') }
+
+	it 'initializes with a color' do
+		expect(@truck.color).to eq('gray')
 	end
 end
