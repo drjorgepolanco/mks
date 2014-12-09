@@ -21,7 +21,7 @@ class Pizza
 	end
 
 	def late?
-		if Time.now - @delivery_time > 30 * 60
+		if Time.now - @delivery_time
 			true
 		else
 			puts "Your pizza will be coming soon!"
