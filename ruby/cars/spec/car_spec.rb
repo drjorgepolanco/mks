@@ -1,4 +1,4 @@
-require './car.rb'
+require 'spec_helper'
 
 describe 'Car' do
 	before do
