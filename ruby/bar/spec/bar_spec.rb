@@ -11,4 +11,8 @@ describe Bar do
 	it 'cannot change its name' do
 		expect { @bar.name = 'lolcat cave' }.to raise_error
 	end
+
+	it 'initializes with an empty menu' do
+		expect(@bar.menu_items.count).to eq(0)
+	end
 end
