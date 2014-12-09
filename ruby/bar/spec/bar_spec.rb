@@ -37,4 +37,30 @@ describe Bar do
 	it 'can set its happy hour discount' do
 		expect { @bar.happy_discount = 0.5 }.to_not raise_error
 	end
+
+	it 'only returns a discount when it\'s happy hour' do
+		@bar.happy_discount = 0.5
+
+		expect(@bar).to receive(:happy_hour?).and_return(false)
+		expect(@bar.happy_discount).to eq(0)
+
+		expect(@bar).to receive(:happy_hour?).and_return(true)
+		expect(@bar.happy_discount).to eq(0.5)
+
+		@bar.happy_discount = 0.3
+
+		expect(@bar).to receive(:happy_hour?).and_return(false)
+		expect(@bar.happy_discount).to eq(0)
+
+		expect(@bar).to receive(:happy_hour?).and_return(true)
+		expect(@bar.happy_discount).to eq(0.3)
+	end
 end
+
+
+
+
+
+
+
+

@@ -3,9 +3,9 @@ require 'time'
 class Bar
 	attr_reader :name, :menu_items
 
-	def initialize(name, menu_items = [])
+	def initialize(name)
 		@name = 'The Irish Yodel'
-		@menu_items = menu_items
+		@menu_items = []
 		@happy_discount = 0
 	end
 
@@ -19,6 +19,7 @@ class Bar
 	end
 
 	def happy_discount=(discount)
+		@happy_discount = discount
 	end
 
 	def happy_hour?
