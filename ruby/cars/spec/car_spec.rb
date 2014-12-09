@@ -26,4 +26,8 @@ describe 'BigRig' do
 	it 'initializes with a color' do
 		expect(@truck.color).to eq('gray')
 	end
+
+	it 'honks' do
+		expect(@truck.honk).to eq('BBBRRRAAAWWWHHH')
+	end
 end
