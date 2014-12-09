@@ -2,7 +2,7 @@ require './pizza'
 
 describe Pizza do
 	let(:pizza) { Pizza.new }
-	
+
   describe '.initialize' do
   	it "records all of the toppings" do
   		toppings = [
@@ -53,6 +53,18 @@ describe Pizza do
   		pizza.add_topping("ham")
 
   		expect(pizza.toppings).to include('ham')
+  	end
+  end
+
+  describe '#deliver!' do
+  	it "should return the current time" do
+  		pizza = Pizza.new
+
+  		current_time = Time.now
+  		expect(Time).to receive(:now).and_return(current_time)
+  		pizza.deliver!
+
+  		expect(pizza.delivery_time).to eq(current_time + 60 * 30)
   	end
   end
 end
