@@ -4,6 +4,8 @@ by [Jorge Polanco](http://www.drjorgepolanco.com/).
 
 Base Code taken from **github:** [makersquare/library-project](https://github.com/makersquare/library-project/blob/master/library.rb) and improved by me.
 
+See other version of this Project [here](https://github.com/drjorgepolanco/mks/tree/master/ruby/library), built with **Test Driven Development**.
+
 **To test:**
 
 1. Open Terminal
