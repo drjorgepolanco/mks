@@ -1,7 +1,8 @@
 require './pizza'
 
 describe Pizza do
-
+	let(:pizza) { Pizza.new }
+	
   describe '.initialize' do
   	it "records all of the toppings" do
   		toppings = [
@@ -14,10 +15,12 @@ describe Pizza do
   	end
 
   	it "defaults the toppings to cheese, when no toppings where provided" do
-  		pizza = Pizza.new
-
   		expect(pizza.toppings.size).to eq(1)
   		expect(pizza.toppings.first.name).to eq('cheese')
+  	end
+
+  	it "returns a delivery_time of nil if pizza has not been ordered for delivery" do
+  		expect(pizza.delivery_time).to be_nil
   	end
   end
 
