@@ -10,6 +10,10 @@ class Pizza
 			topping.vegetarian == true
 		end
 	end
+
+	def add_topping(topping)
+		@toppings << topping
+	end
 end
 
 class Topping
