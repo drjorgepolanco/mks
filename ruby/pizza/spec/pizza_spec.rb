@@ -1,9 +1,6 @@
 require './pizza'
 
 describe Pizza do
-  # it "exists" do
-  #   expect(Pizza).to be_a(Class)
-  # end
 
   describe '.initialize' do
   	it "records all of the toppings" do
@@ -22,7 +19,9 @@ describe Pizza do
   		expect(pizza.toppings.size).to eq(1)
   		expect(pizza.toppings.first.name).to eq('cheese')
   	end
+  end
 
+  describe '#vegetarian?' do
   	it "returns true if all toppings are vegetarian" do
   		toppings = [
   			Topping.new('pepperoni'),
@@ -43,13 +42,19 @@ describe Pizza do
   		expect(pizza.vegetarian?).to eq(true)
   	end
   end
+
+  describe '#add_topping' do
+  	it "adds a new topping to the pizza" do
+  		pizza = Pizza.new
+
+  		pizza.add_topping("ham")
+
+  		expect(pizza.toppings).to include('ham')
+  	end
+  end
 end
 
 describe Topping do
-  # it "exists" do
-  #   expect(Topping).to be_a(Class)
-  # end
-
   describe '.initialize' do
   	it "sets the name of the Topping" do
   		topping = Topping.new('olives')
