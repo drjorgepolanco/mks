@@ -29,4 +29,8 @@ describe Bar do
 		expect(item.name).to eq('Little Johnny')
 		expect(item.price).to eq(9.95)
 	end
+
+	it 'has a default happy hour discount of zero' do
+		expect(@bar.happy_discount).to eq(0)
+	end
 end
