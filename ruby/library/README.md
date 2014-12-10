@@ -1,6 +1,7 @@
-#Library Project with Tests
+#Library Project
+##Test Driven Development
 
-[MakerSquare](http://www.makersquare.com/) lessons.
+Base code taken from [makersquare/ruby-course](https://github.com/makersquare/ruby-course/tree/library)
 
 **See other version of this Project [here](https://github.com/drjorgepolanco/mks/tree/master/immersive/ruby/library).**
 
