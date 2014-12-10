@@ -25,9 +25,9 @@ describe Bar do
 
 	it 'can retrieve menu items' do
 		@bar.add_menu_item('Little Johnny', 9.95)
-		item = @bar.menu_items.first
-		expect(item.name).to eq('Little Johnny')
-		expect(item.price).to eq(9.95)
+		
+		item = @bar.get_item_by_name('Little Johnny')
+		expect(item).to eq('Little Johnny: $9.95')
 	end
 
 	it 'has a default happy hour discount of zero' do
@@ -38,7 +38,7 @@ describe Bar do
 		expect { @bar.happy_discount = 0.5 }.to_not raise_error
 	end
 
-	it 'only returns a discount when it\'s happy hour' do
+	it 'only returns a discount when xit\'s happy hour' do
 		@bar.happy_discount = 0.5
 
 		expect(@bar).to receive(:happy_hour?).and_return(false)
@@ -66,8 +66,19 @@ describe Bar do
 		expect(@bar.happy_discount).to eq(0)
 	end
 
+	describe '#get_price' do
+		it 'returns the price of the item' do
+			@bar.add_menu_item('Margarita', 4.75)
+			@bar.add_menu_item('Long Island Ice Tea', 3.40)
+			@bar.add_menu_item('Shiner Bock', 3.00)
+			@bar.add_menu_item('Coke', 1.50)
+
+			expect(@bar.get_price('Coke')).to eq(1.50)
+		end
+	end
+
 	describe '#happy_hour?' do
-		it 'knows when it is happy hour (3:00pm to 4:00pm)' do
+		it 'knows when it\'s happy hour (3:00pm to 4:00pm)' do
 			expect(Time).to receive(:now).and_return(Time.parse('2014-12-09 15:23:14 -0500'))
 
 			expect(@bar.happy_hour?).to eq(true)
@@ -96,11 +107,3 @@ describe Bar do
 		end
 	end
 end
-
-
-
-
-
-
-
-
