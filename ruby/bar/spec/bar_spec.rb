@@ -73,10 +73,26 @@ describe Bar do
 			expect(@bar.happy_hour?).to eq(true)
 		end
 
-		it "is not happy hour otherwise" do
+		it 'is not happy hour otherwise' do
 			expect(Time).to receive(:now).and_return(Time.parse('2014-12-09 18:12:40 -0500'))
 
 			expect(@bar.happy_hour?).to eq(false)
+		end
+	end
+
+	context 'during normal hours' do
+		it 'does not apply any discount' do
+			expect(Time).to receive(:now).and_return(Time.parse('2014-12-09 18:12:40 -0500'))
+
+			expect(@bar.happy_discount).to eq(0)
+		end
+	end
+
+	context 'during happy hour' do
+		it 'knows to provide a especial discount on mondays and wednesdays' do
+			expect(Time).to receive(:now).and_return(Time.parse('2014-12-08 15:49:32 -0500'))
+
+			expect(@bar.happy_discount).to eq(0.5)
 		end
 	end
 end
