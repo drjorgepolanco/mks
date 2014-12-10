@@ -30,9 +30,14 @@ class Bar
 
 	def happy_hour?
 		time = Time.now
-		if time.hour >= 15 && time.hour < 16
+		if (time.hour >= 15 && time.hour < 16) && (time.monday? || time.wednesday?)
+			@happy_discount = 0.5
+			true
+		elsif (time.hour >= 15 && time.hour < 16) 
+			@happy_discount = 0.3
 			true
 		else
+			@happy_discount = 0
 			false
 		end
 	end
