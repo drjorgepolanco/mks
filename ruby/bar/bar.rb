@@ -29,6 +29,12 @@ class Bar
 	end
 
 	def happy_hour?
+		time = Time.now
+		if time.hour >= 15 && time.hour < 16
+			true
+		else
+			false
+		end
 	end
 
 	def get_price
