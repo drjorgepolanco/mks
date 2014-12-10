@@ -72,6 +72,12 @@ describe Bar do
 
 			expect(@bar.happy_hour?).to eq(true)
 		end
+
+		it "is not happy hour otherwise" do
+			expect(Time).to receive(:now).and_return(Time.parse('2014-12-09 18:12:40 -0500'))
+
+			expect(@bar.happy_hour?).to eq(false)
+		end
 	end
 end
 
