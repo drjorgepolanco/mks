@@ -107,3 +107,38 @@ describe Bar do
 		end
 	end
 end
+
+describe MenuItem do
+	before { @item = MenuItem.new('Beer', 2.00) }
+
+	it 'initializes with a name, price and it can get or not a discount' do
+		expect(@item.name).to eq('Beer')
+		expect(@item.price).to eq(2.00)
+		expect(@item.gets_discount).to eq(true)
+	end
+
+	it 'can retrieve the price' do
+		expect(@item.get_price).to eq(2.00)
+	end
+
+	context 'at any given time' do
+		before { @bar = Bar.new('The Irish Yodel') }
+
+		it 'should be able to remove the discount' do
+			@item = @bar.add_menu_item('Cosmo', 5.40)
+
+			expect(Time).to receive(:now).and_return(Time.parse('2014-12-08 15:49:32 -0500'))
+			@item.remove_discount
+			expect(@item.get_price).to eq(5.40)
+		end
+
+		it 'should be able to add the discount' do
+			@item = @bar.add_menu_item('Cosmo', 5.40)
+
+			@item.add_discount(30)
+			expect(@item.price).to eq(3.78)
+		end
+	end
+end
+
+
