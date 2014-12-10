@@ -9,6 +9,7 @@ class Bar
 
 	def add_menu_item(name, price)
 		@menu_items[name] = price
+		MenuItem.new(name, price)
 	end
 
 	def get_item_by_name(name)
@@ -44,7 +45,7 @@ class Bar
 	def happy_hour?
 		time = Time.now
 		if (time.hour >= 15 && time.hour < 16) && (time.monday? || time.wednesday?)
-			@happy_discount = 0.50 
+			@happy_discount = 0.5
 			true
 		elsif time.hour >= 15 && time.hour < 16
 			@happy_discount = 0.3
@@ -54,3 +55,42 @@ class Bar
 		end
 	end
 end
+
+class MenuItem
+	attr_reader :name
+	attr_accessor :price, :gets_discount
+
+	def initialize(name, price, gets_discount=true)
+		@name = name
+		@price = price
+		@gets_discount = gets_discount
+	end
+
+	def remove_discount
+		@gets_discount = false
+	end
+
+	def add_discount(percentage)
+		@price = @price * (1 - percentage.to_f / 100)
+	end
+
+	def get_price
+		time = Time.now
+		if @gets_discount == true
+			if (time.hour >= 15 && time.hour < 16) && (time.monday? || time.wednesday?)
+				@price = @price * @happy_discount
+			elsif time.hour >= 15 && time.hour < 16
+				@price = @price * (1.0 - @happy_discount)
+			else
+				@price
+			end
+		else
+			@price
+		end
+	end
+end
+
+
+
+
+
