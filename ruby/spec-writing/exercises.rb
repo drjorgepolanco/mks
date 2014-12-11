@@ -7,10 +7,8 @@ module Exercises
     return array.size
   end
 
-  # Exercise 2
-  #  - Returns the second element of an array
   def self.ex2(array)
-    # TODO
+    array.first.next
   end
 
   # Exercise 3
