@@ -43,5 +43,15 @@ describe 'Array' do
 			expect(result).to eq(27)
 		end
 	end
+
+	describe 'Exercise 5' do
+		it 'puts every element of the array' do
+			expect(STDOUT).to receive(:puts).and_return('a')
+			expect(STDOUT).to receive(:puts).and_return('b')
+			expect(STDOUT).to receive(:puts).and_return('c')
+			expect(STDOUT).to receive(:puts).and_return('d')
+			Exercises.ex5(array)
+		end
+	end
 end
 
