@@ -35,7 +35,6 @@ class ArrayProblems
   end
 
   def self.list_my_hats(array)
-    # Create an array of sized hats
     array.map {|x| "#{x[:size]} #{x[:style]}"}
   end
 end
@@ -43,15 +42,9 @@ end
 
 class MethodReturns
 
-  def self.include?(array, search_item)
-    # TODO: Make this method return true or false depending whether
-    #       or not the search_item exists in the array.
-    array.each do |elem|
-      if elem == search_item
-        true
-      end
-    end
-    false
+  def self.include?(array, item)
+    # return true if item exists in array, false if not
+    array.include?(item) ? true : false
   end
 
   def self.get_name
