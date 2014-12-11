@@ -95,31 +95,23 @@ module Exercises
     end
   end
   
-  # Write a method that takes two characters and returns an
-  # ordered array with all characters need to fill the range
+  # Takes two characters and returns an ordered 
+  # array with all characters need to fill the range
   def self.ex12(x, y)
-    array = []
-    while x != y do
-      array << x
-      x = x.next
-    end
-    array << y
-    array
-  end
-end
+    characters = [x, y]
+    characters.sort!
+    result = (characters[0]..characters[1]).to_a
+    result
 
-module Extensions
-  # Extension Exercise
-  #  - Takes an `array` of strings. Returns a hash with two keys:
-  #    :most => the string(s) that occures the most # of times as its value.
-  #    :least => the string(s) that occures the least # of times as its value.
-  #  - If any tie for most or least, return an array of the tying strings.
-  #
-  # Example:
-  #   result = Extensions.extremes(['x', 'x', 'y', 'z'])
-  #   expect(result).to eq({ :most => 'x', :least => ['y', 'z'] })
-  #
-  def self.extremes(array)
-    # TODO
+    # Option B
+    # ========
+
+    # array = []      
+    # while x != y do
+    #   array << x
+    #   x = x.next
+    # end
+    # array << y
+    # array
   end
 end
