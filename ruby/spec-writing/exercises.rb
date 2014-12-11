@@ -36,19 +36,17 @@ module Exercises
     array.each {|x| puts x}
   end
 
-  # Exercise 6
-  #  - Updates the last item in the array to 'panda'
-  #  - If the last item is already 'panda', update
-  #    it to 'GODZILLA' instead
+  #  Updates the last item in the array to 'panda'
+  #  If the last item is already 'panda', update to 'GODZILLA'
   def self.ex6(array)
     array[-1] == 'panda' ? array[-1] = 'GODZILLA' : array[-1] = 'panda'
   end
 
-  # Exercise 7
-  #  - If the string `str` exists in the array,
-  #    add `str` to the end of the array
+  # If `str` exists in array, add it to the end of array
   def self.ex7(array, str)
-    # TODO
+    if array.include? str
+      array << str
+    end
   end
 
   # Exercise 8

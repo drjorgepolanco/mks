@@ -71,5 +71,14 @@ describe 'Array' do
 			end
 		end
 	end
+
+	describe 'Exercise 7' do
+		it "adds the string 'str' to array if it exists in the array" do
+			array_str = ['s', 24, 'cacao', 'sully', 'str', 1, 'lucky', 35]
+			str = 'str'
+			result = Exercises.ex7(array_str, str)
+			expect(result[-1]).to eq(str)
+		end
+	end
 end
 
