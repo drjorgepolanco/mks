@@ -49,6 +49,7 @@ class MethodReturns
 
   def self.get_name
     puts "Bob"
+    return "Bob"
   end
 
 end

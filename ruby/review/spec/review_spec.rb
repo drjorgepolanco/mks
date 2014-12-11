@@ -88,9 +88,9 @@ describe "Ruby Review: You" do
       expect(result).to eq(false)
     end
 
-    xyou "know what puts returns" do
+    you "know what puts returns" do
       result = MethodReturns.get_name
-      expect(result).to eq "Bob"
+      expect(result).to eq("Bob")
     end
 
   end
@@ -98,13 +98,13 @@ describe "Ruby Review: You" do
 
   describe "Your knowledge of scope in Ruby" do
 
-    xyou "know about method scope" do
+    you "know about method scope" do
       bob = Scopes::Person.new
-      expect(bob.jump(10)).to eq "I can jump 10 inches!"
-      expect(bob.last_jump_height).to eq "I last jumped 10 inches."
+      expect(bob.jump(10)).to eq("I can jump 10 inches!")
+      expect(bob.last_jump_height).to eq("I last jumped 10 inches.")
 
-      expect(bob.jump(2)).to eq "I can jump 2 inches!"
-      expect(bob.last_jump_height).to eq "I last jumped 2 inches."
+      expect(bob.jump(2)).to eq("I can jump 2 inches!")
+      expect(bob.last_jump_height).to eq("I last jumped 2 inches.")
     end
 
     xyou "know about block scope" do
@@ -115,10 +115,10 @@ describe "Ruby Review: You" do
       finder = Scopes::Finder.new(data)
 
       person = finder.find_first(1000)
-      expect(person[:name]).to eq "Sally"
+      expect(person[:name]).to eq("Sally")
 
       person = finder.find_first(100)
-      expect(person[:name]).to eq "Joe"
+      expect(person[:name]).to eq("Joe")
 
       person = finder.find_first(999)
       expect(person).to eq nil
