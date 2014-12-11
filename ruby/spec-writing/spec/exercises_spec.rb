@@ -13,8 +13,8 @@ describe 'Exercise 0' do
 end
 
 describe 'Array' do
-	let(:array) {['a', 'b', 'c', 'd']}
-	let(:array_num) {[1, 2, 3, 4]}
+	let(:array) 		{['a', 'b', 'c', 'd']}
+	let(:array_num) {[1, 2, 3, 4, 1, 9, 2, 27, 8]}
 	
 	describe 'Exercise 1' do
 		it 'returns the number of elements in an array' do
@@ -33,7 +33,14 @@ describe 'Array' do
 	describe 'Exercise 3' do
 		it 'returns the sum of the given array of numbers' do
 			result = Exercises.ex3(array_num)
-			expect(result).to eq(10)
+			expect(result).to eq(57)
+		end
+	end
+
+	describe 'Exercise 4' do
+		it 'returns the max number of the given array' do
+			result = Exercises.ex4(array_num)
+			expect(result).to eq(27)
 		end
 	end
 end

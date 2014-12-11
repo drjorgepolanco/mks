@@ -3,14 +3,17 @@ module Exercises
     str == "whishes" ? 'nope' : str * 3
   end
 
+  # returns the number of elements in an array
   def self.ex1(array)
     return array.size
   end
 
+  # returns the second element of an array
   def self.ex2(array)
     array.first.next
   end
 
+  # returns the sum of the given array of numbers
   def self.ex3(array)
     array.reduce(:+) #                => Option A
 
@@ -23,10 +26,9 @@ module Exercises
     # array.map(&:to_i).reduce(:+)    => Option D
   end
 
-  # Exercise 4
-  #  - Returns the max number of the given array
+  # Returns the max number of the given array
   def self.ex4(array)
-    # TODO
+    array.max
   end
 
   # Exercise 5
