@@ -41,22 +41,17 @@ end
 
 
 class MethodReturns
-
   def self.include?(array, item)
-    # return true if item exists in array, false if not
     array.include?(item) ? true : false
   end
 
   def self.get_name
-    puts "Bob"
-    return "Bob"
+    "Bob"
   end
-
 end
 
 
 module Scopes
-
   class Person
     def jump(height)
       @jump_height = height
@@ -80,9 +75,7 @@ module Scopes
           @found = person
         end
       end
-
       @found
     end
   end
-
 end
