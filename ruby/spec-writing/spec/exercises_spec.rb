@@ -109,5 +109,25 @@ describe 'Array' do
 			end
 		end
 	end
+
+	describe 'Exercise 10' do
+		context "when it's happy hour (between 4 and 6 pm)" do
+			it "returns true 'happy hour'" do
+				time = Time.now
+				expect(Time).to receive(:now).and_return(Time.parse("16:30"))
+				result = Exercises.ex10(time)
+				expect(result).to eq(true)
+			end
+		end
+
+		context "when is it not happy hour (anythime outside 4 and 6 pm" do
+			it "returns false: 'normal prices'" do
+				time = Time.now
+				expect(Time).to receive(:now).and_return(Time.parse("18:30"))
+				result = Exercises.ex10(time)
+				expect(result).to eq(false)
+			end
+		end
+	end
 end
 
