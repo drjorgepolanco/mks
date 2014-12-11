@@ -11,7 +11,7 @@ describe 'Project' do
     expect(project.name).to eq("Project One")
   end
 
-  xit "automatically gets an id upon creation" do
+  it "automatically gets an id upon creation" do
     expect(project.id).to be_a(Fixnum)
   end
 
