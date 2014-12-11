@@ -85,11 +85,14 @@ module Exercises
     end
   end
   
-  # Exercise 11
-  #  - Returns the sum of two numbers if they are both integers
-  #  - Raises an error if both numbers are not integers
-  def self.ex11
-    # TODO
+  # Returns the sum of two numbers if they are both integers
+  # Raises an error if both numbers are not integers
+  def self.ex11(x, y)
+    if x.class == Fixnum && y.class == Fixnum
+      x + y
+    else
+      raise "An error has occurred"
+    end
   end
   
   # Exercise 12
