@@ -15,6 +15,9 @@ module GettersSetters
       @skill = "bedside manners"
     end
     # TODO: Write a setter method for @skill
+    def skill=(skill)
+      @skill = skill
+    end
   end
 
 end
