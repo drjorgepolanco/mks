@@ -40,16 +40,16 @@ describe "Ruby Review: You" do
 			expect(pets).to eq([{ :chipmunk => 'Joel'}, { :snake => 'Monty'}, { :cat => 'Pogo'}])
 		end
 
-		xyou "know how to use the map method part 1" do
+		you "know how to use the map method part 1" do
 			wardrobe_items = [
 				{:name => 'coat', :size => 'medium'},
 				{:name => 'hat', :size => 'large'}
 			]
 
-			result = ArrayProblems.list_wardrobe_items_sizes(wardrobe_items)
+			result = ArrayProblems.list_wardrobe_item_sizes(wardrobe_items)
 			expect(result).to eq(['medium', 'large'])
 
-			expect(@source).to include_code(:map).in_class_method(:ArrayProblems, :list_wardrobe_items_sizes)
+			expect(@source).to include_code(:map).in_class_method(:ArrayProblems, :list_wardrobe_item_sizes)
 		end
 
 		xyou "know how to use map method part 2" do

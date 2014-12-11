@@ -26,17 +26,9 @@ class ArrayProblems
     array.push({:cat => 'Pogo'})
   end
 
-  # # # # # # #
-  # Arrays  2 #
-  # # # # # # #
-
   def self.list_wardrobe_item_sizes(array)
-    # TODO: Use the map method to create an array of wardrobe item sizes
+    array.map {|x| x[:size]}
   end
-
-  # # # # # # #
-  # Arrays  3 #
-  # # # # # # #
 
   def self.tell_me_the_weather(array)
     # TODO: Use the map method to create an array of weather descriptions
