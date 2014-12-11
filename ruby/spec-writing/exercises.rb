@@ -1,3 +1,5 @@
+require 'time'
+
 module Exercises
   def self.ex0(str)
     str == "whishes" ? 'nope' : str * 3
@@ -49,10 +51,8 @@ module Exercises
     end
   end
 
-  # Exercise 8
-  #  - `people` is an array of hashes. Each hash is like the following:
-  #    { :name => 'Bob', :occupation => 'Builder' }
-  #    Iterate through `people` and print out their name and occupation.
+  # `people` is an array of hashes.
+  # Iterate through `people` and print out their name and occupation.
   def self.ex8(people)
     people.each do |item|
       values = item.values
@@ -60,12 +60,17 @@ module Exercises
     end
   end
 
-  # Exercise 9
-  #  - Returns `true` if the given time is in a leap year
-  #    Otherwise, returns `false`
-  # Hint: Google for the wikipedia article on leap years
+  # Returns `true` if the given time is in a leap year
   def self.ex9(time)
-    # TODO
+    if time.year % 4 != 0
+      false
+    elsif time.year % 100 != 0
+      true
+    elsif time.year % 400 != 0
+      false
+    else
+      true
+    end
   end
 
   # Exercise 10

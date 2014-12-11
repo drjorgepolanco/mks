@@ -91,5 +91,23 @@ describe 'Array' do
 			expect($stdout.string).to match('The Builder is Bob\n')
 		end
 	end
+
+	describe 'Exercise 9' do
+		context 'when the given time is in a leap year' do
+			it 'returns true' do
+				expect(Time).to receive(:now).and_return(Time.new(2012))
+				result = Exercises.ex9(Time.now)
+				expect(result).to eq(true)
+			end
+		end
+
+		context 'when the given time is not a leap year' do
+			it 'returns false' do
+				expect(Time).to receive(:now).and_return(Time.new(2014))
+				result = Exercises.ex9(Time.now)
+				expect(result).to eq(false)
+			end
+		end
+	end
 end
 
