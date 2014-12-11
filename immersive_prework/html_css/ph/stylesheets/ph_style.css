@@ -1,0 +1,174 @@
+#main_box {
+	background-color: #C2C2BE;
+	padding:10px;
+	height: 250px;
+	width: 250px;
+}
+#title_box {
+	background-color: #E3E3E0;
+	color:#666666;
+	font-family: Helvetica;
+	font-size: 1em;
+	margin-bottom: 10px;
+	text-align: left;
+	height: 28px;
+}
+a {
+	color: #666666;
+	text-decoration: none;
+}
+#title_box:hover {
+	background-color: #666666;
+	color: #FFFFFF
+}
+#title_text {
+	float:left;
+	margin: 6px 0px 0px 8px;
+}
+#title_pic {
+	float:right;
+	height:24px;
+	width: 32px;
+	margin: 2px 4px 0px 0px;
+}
+#lines_box {
+	background-color: #C2C2BE;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 0.5em;
+	text-align: left;
+}
+#ph_14 {
+	background-color: #3E86B9;
+	padding:2px;
+}
+#ph_14:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_13 {
+	background-color: #3D93C1;
+	padding:2px;
+}
+#ph_13:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_12 {
+	background-color: #389DCA;
+	padding:2px;
+}
+#ph_12:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_11 {
+	background-color: #4FA8D0;
+	padding:2px;
+}
+#ph_11:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_10 {
+	background-color: #6AB6D8;
+	padding:2px;
+}
+#ph_10:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_9 {
+	background-color: #80C2DF;
+	padding:2px;
+}
+#ph_9:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_8 {
+	background-color: #97CAE2;
+	padding:2px;
+}
+#ph_8:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_7 {
+	background-color: #27B48A;
+	padding:2px;
+}
+#ph_7:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+}
+#ph_6 {
+	background-color: #EBB4C9;
+	padding:2px;
+}
+#ph_6:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+}
+#ph_5 {
+	background-color: #EAA2BC;
+	padding:2px;
+}
+#ph_5:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_4 {
+	background-color: #E892B1;
+	padding:2px;
+}
+#ph_4:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+}
+#ph_3 {
+	background-color: #E67FA4;
+	padding:2px;
+}
+#ph_3:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+#ph_2 {
+	background-color: #E46E96;
+	padding:2px;
+}
+#ph_2:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+}
+#ph_1 {
+	background-color: #E1608B;
+	padding:2px;
+}
+#ph_1:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+}
+#ph_0 {
+	background-color: #DF4780;
+	padding:2px;
+}
+#ph_0:hover {
+	color: #333333;
+	border:1px solid #FFFFFF;
+
+}
+
+* {
+	transition: all .3s; 
+}
