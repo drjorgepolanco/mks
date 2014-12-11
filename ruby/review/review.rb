@@ -22,12 +22,8 @@ end
 
 class ArrayProblems
 
-  # # # # # # #
-  # Arrays  1 #
-  # # # # # # #
-
   def self.add_cat_to_array(array)
-    # TODO: Complete this method
+    array.push({:cat => 'Pogo'})
   end
 
   # # # # # # #
