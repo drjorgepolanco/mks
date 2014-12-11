@@ -53,5 +53,23 @@ describe 'Array' do
 			Exercises.ex5(array)
 		end
 	end
+
+	describe 'Exercise 6' do
+		context 'when the last item of array is panda' do
+			it "modifies the last item of the array to become 'GODZILLA'" do
+				array_panda = ['kwik', 'ruby', 'x', 'panda']
+				result = Exercises.ex6(array_panda)
+				expect(result).to eq('GODZILLA')
+			end
+		end
+
+		context 'when the last item of array is not panda' do
+			it "updates last item of the array to become 'panda'" do
+				array_no_panda = ['rails', 'matz', 'rspec', 'sinatra']
+				result = Exercises.ex6(array_no_panda)
+				expect(result).to eq('panda')
+			end
+		end
+	end
 end
 
