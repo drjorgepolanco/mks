@@ -55,11 +55,11 @@ RSpec::Matchers.define :include_code do |word|
     @module = module_name
   end
 
-  failure_message_for_should do |source|
+  failure_message do |source|
     self.instance_exec "expected your code to include `#{word}`", &construct_message
     @msg
   end
-  failure_message_for_should_not do |source|
+  failure_message_when_negated do |source|
     self.instance_exec "expected your code to not include `#{word}`", &construct_message
     @msg
   end
@@ -98,11 +98,11 @@ RSpec::Matchers.define :include_method do |method_name|
     @line_count = count
   end
 
-  failure_message_for_should do |source|
+  failure_message do |source|
     self.instance_exec "expected your code to include the method `#{method_name}`", &construct_message
     @msg
   end
-  failure_message_for_should_not do |source|
+  failure_message_when_negated do |source|
     self.instance_exec "expected your code to not include the method `#{method_name}`", &construct_message
     @msg
   end
@@ -138,11 +138,11 @@ RSpec::Matchers.define :include_class_method do |class_name, method_name|
     @line_count = count
   end
 
-  failure_message_for_should do |source|
+  failure_message do |source|
     self.instance_exec "expected your code to include the class method `#{method_name}`", &construct_message
     @msg
   end
-  failure_message_for_should_not do |source|
+  failure_message_when_negated do |source|
     self.instance_exec "expected your code to not include the class method `#{method_name}`", &construct_message
     @msg
   end
@@ -182,13 +182,13 @@ RSpec::Matchers.define :include_method_call do |method_name, *args|
     @module = module_name
   end
 
-  failure_message_for_should do |source|
+  failure_message do |source|
     pretty_args = args.map(&:inspect).join(',')
     msg = "expected your code to include the method call `#{method_name}(#{pretty_args})`"
     self.instance_exec msg, &construct_message
     @msg
   end
-  failure_message_for_should_not do |source|
+  failure_message_when_negated do |source|
     pretty_args = args.map(&:inspect).join(',')
     msg = "expected your code to not include the method call `#{method_name}(#{pretty_args})`"
     self.instance_exec msg, &construct_message
