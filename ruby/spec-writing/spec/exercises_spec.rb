@@ -80,5 +80,16 @@ describe 'Array' do
 			expect(result[-1]).to eq(str)
 		end
 	end
+
+	describe 'Exercise 8' do
+		before { $stdout = StringIO.new }
+		after(:all) { $stdout = STDOUT }
+
+		it "iterates through a hash and prints out key and value" do
+			people = [{name: 'Bob', occupation: 'Builder'}]
+			result = Exercises.ex8(people)
+			expect($stdout.string).to match('The Builder is Bob\n')
+		end
+	end
 end
 

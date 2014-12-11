@@ -54,7 +54,10 @@ module Exercises
   #    { :name => 'Bob', :occupation => 'Builder' }
   #    Iterate through `people` and print out their name and occupation.
   def self.ex8(people)
-    # TODO
+    people.each do |item|
+      values = item.values
+      puts "The #{values.pop} is #{values.shift}"
+    end
   end
 
   # Exercise 9
