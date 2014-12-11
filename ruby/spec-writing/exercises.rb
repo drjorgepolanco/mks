@@ -11,10 +11,16 @@ module Exercises
     array.first.next
   end
 
-  # Exercise 3
-  #  - Returns the sum of the given array of numbers
   def self.ex3(array)
-    # TODO
+    array.reduce(:+) #                => Option A
+
+    # array.inject {|sum, x| sum + x} => Option B
+
+    # 0 instead of nil if array empty
+    # array.inject(0, :+)             => Option C
+
+    # sum only numbers & convert to integer strings of numbers
+    # array.map(&:to_i).reduce(:+)    => Option D
   end
 
   # Exercise 4
