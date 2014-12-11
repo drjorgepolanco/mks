@@ -13,19 +13,27 @@ describe 'Exercise 0' do
 end
 
 describe 'Array' do
-	before { @array = ['a', 'b', 'c', 'd']}
+	let(:array) {['a', 'b', 'c', 'd']}
+	let(:array_num) {[1, 2, 3, 4]}
 	
 	describe 'Exercise 1' do
 		it 'returns the number of elements in an array' do
-			result = Exercises.ex1(@array)
+			result = Exercises.ex1(array)
 			expect(result).to eq(4)
 		end
 	end
 
 	describe 'Exercise 2' do
 		it 'returns the second element of an array' do
-			result = Exercises.ex2(@array)
+			result = Exercises.ex2(array)
 			expect(result).to eq('b')
+		end
+	end
+
+	describe 'Exercise 3' do
+		it 'returns the sum of the given array of numbers' do
+			result = Exercises.ex3(array_num)
+			expect(result).to eq(10)
 		end
 	end
 end
