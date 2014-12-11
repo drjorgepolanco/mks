@@ -1,37 +1,22 @@
-# # # # # # #
-# Problem 1 #
-# # # # # # #
-
 module GettersSetters
-
-  # # # # # #
-  # Setters #
-  # # # # # #
-
   class Doctor
     attr_reader :skill
 
     def initialize
       @skill = "bedside manners"
     end
-    # TODO: Write a setter method for @skill
+
     def skill=(skill)
       @skill = skill
     end
   end
-
 end
 
 
 class HashProblems
-  # # # # # # #
-  # Hashes  1 #
-  # # # # # # #
-
   def self.update_top_compartment_item(wardrobe_hash)
-    # TODO: Complete this method by writing A SINGLE LINE
+    wardrobe_hash["top compartment"][:item] = "fake beard"
   end
-
 end
 
 
