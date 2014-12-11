@@ -95,13 +95,16 @@ module Exercises
     end
   end
   
-  # Exercise 12
-  #  - Write a method that takes two characters and returns an
-  #    ordered array with all characters need to fill the range
-  #    Eg.
-  #       Exercises.ex12('c', 'g') => ['c', 'd', 'e', 'f', 'g']
-  def self.ex12
-    # TODO
+  # Write a method that takes two characters and returns an
+  # ordered array with all characters need to fill the range
+  def self.ex12(x, y)
+    array = []
+    while x != y do
+      array << x
+      x = x.next
+    end
+    array << y
+    array
   end
 end
 

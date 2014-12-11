@@ -145,3 +145,11 @@ describe 'Exercise 11' do
 		end
 	end
 end
+
+describe 'Exercise 12' do
+	it 'returns an ordered array of characters needed to fill range between 2 other characters' do
+		result = Exercises.ex12('j','p')
+		array = ['j', 'k', 'l', 'm', 'n', 'o', 'p']
+		expect(result).to eq(array)
+	end
+end
