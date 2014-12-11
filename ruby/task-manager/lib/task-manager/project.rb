@@ -1,0 +1,2 @@
+class TM::Project
+end
