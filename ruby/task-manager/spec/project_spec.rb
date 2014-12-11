@@ -1,13 +1,12 @@
 require 'spec_helper'
 
 describe 'Project' do
+	let(:project) { TM::Project.new("Project One")}
   it "exists" do
     expect(TM::Project).to be_a(Class)
   end
 
-  it "can be created with a name" do
-  	project = Project.new("Weight loss")
-
-  	expect(project.name).to eq("Weight loss")
+  it "is created with a name" do
+  	expect(project.name).to eq("Project One")
   end
 end
