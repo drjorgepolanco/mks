@@ -60,7 +60,7 @@ module Exercises
     end
   end
 
-  # Returns `true` if the given time is in a leap year
+  # leap year ? true : false
   def self.ex9(time)
     if time.year % 4 != 0
       false
@@ -73,8 +73,7 @@ module Exercises
     end
   end
 
-  # Returns "happy hour" if it is between 4 and 6pm
-  # Otherwise, returns "normal prices"
+  # between 4 & 6pm ? "happy hour" : "normal prices"
   def self.ex10(time)
     time = Time.now
     if time.hour >= 16 && time.hour < 18
