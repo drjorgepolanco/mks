@@ -5,7 +5,7 @@ describe "Ruby Review: You" do
 		you "know how to write a setter method" do
 			doctor = GettersSetters::Doctor.new
 			doctor.skill = 'patient management'
-			expect(doctor.skil).to eq('patient management')
+			expect(doctor.skill).to eq('patient management')
 
 			expect(@source).to_not include_code(:attr_writer).in(:Doctor).for(:GettersSetters)
 		end
