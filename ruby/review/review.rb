@@ -31,7 +31,7 @@ class ArrayProblems
   end
 
   def self.tell_me_the_weather(array)
-    # TODO: Use the map method to create an array of weather descriptions
+    array.map {|x| "It is #{x}"}
   end
 
   # # # # # # #

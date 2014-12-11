@@ -52,79 +52,82 @@ describe "Ruby Review: You" do
 			expect(@source).to include_code(:map).in_class_method(:ArrayProblems, :list_wardrobe_item_sizes)
 		end
 
-		xyou "know how to use map method part 2" do
-			weather = ['drizzly', 'cold']
+		you "know how to use the map method part 2" do
+      weather = ["drizzly", "cold"]
 
-			result = ArrayProblems.tell_me_the_weather(weather)
-			expect(result).to eq(['It is drizzly', 'It is cold'])
+      result = ArrayProblems.tell_me_the_weather(weather)
+      expect(result).to eq(["It is drizzly", "It is cold"])
 
-			expect(@souce).to include_code(:map).in_class_method(:ArrayProblems, :tell_me_the_weather)
-		end
+      expect(@source).to include_code(:map).in_class_method(:ArrayProblems, :tell_me_the_weather)
+    end
 
 		xyou "know how to use the map method part 3" do
-			hat_collection = [
-				{:size => 'medium', :style => 'cap'},
-				{:size => 'small', :style => 'fedora'}
-			]
+      hat_collection = [
+        { :size => "medium", :style => "cap"},
+        { :size => "small", :style => "fedora"} ]
 
-			result = ArrayProblems.list_my_hats(hat_collection)
-			expect(result).to eq(['medium cap', 'small fedora'])
+      result = ArrayProblems.list_my_hats(hat_collection)
+      expect(result).to eq(["medium cap", "small fedora"])
 
-			expect(@source).to include_code(:map).in_class_method(:ArrayProblems, :list_my_hats)
-		end
-	end
+      expect(@source).to include_code(:map).in_class_method(:ArrayProblems, :list_my_hats)
+    end
+  end
 
-	describe "your knowledge of implicit returns" do
-		xyou "know how to explicitly return a statement" do
-			numbers_array = [4, 5, 2]
-			result = MethodReturns.include?(numbers_array, 2)
-			expect(result).to eq(true)
 
-			result = MethodReturns.include?(numbers_array, 4)
-			expect(result).to eq(true)
+  describe "Your knowledge of implicit returns" do
 
-			result = MethodReturns.include?(numbers_array, 7)
-			expect(result).to eq(false)
-		end
+    xyou "know how to explicitly return a statement" do
+      numbers_array = [4,5,2]
+      result = MethodReturns.include?(numbers_array, 2)
+      expect(result).to eq(true)
 
-		xyou "know what puts returns" do
-			result = MethodReturns.get_name
-			expect(result).to eq('Bob')
-		end
-	end
+      result = MethodReturns.include?(numbers_array, 4)
+      expect(result).to eq(true)
 
-	describe "your knowledge of scope in Ruby" do
-		xyou "know about method scope" do
-			bob = Scopes::Person.new
-			expect(bob.jump(10)).to eq('I can jump 10 inches!')
-			expect(bob.last_jump_height).to eq('I last jumped 10 inches.')
+      result = MethodReturns.include?(numbers_array, 7)
+      expect(result).to eq(false)
+    end
 
-			expect(bob.jump(2)).to eq("I can jump 2 inches!")
-      expect(bob.last_jump_height).to eq("I last jumped 2 inches.")
-		end
+    xyou "know what puts returns" do
+      result = MethodReturns.get_name
+      expect(result).to eq "Bob"
+    end
 
-		xyou "know about block scope" do
-			data = [
-				{:name => "Joe", :salary => 100},
-        {:name => "Sally", :salary => 1000}
-			]
+  end
 
-			finder = Scopes::Finder.new(data)
 
-			person = finder.find_first(1000)
-			expect(person[:name]).to eq('Sally')
+  describe "Your knowledge of scope in Ruby" do
 
-			person = finder.find_first(100)
-			expect(person[:name]).to eq('Joe')
+    xyou "know about method scope" do
+      bob = Scopes::Person.new
+      expect(bob.jump(10)).to eq "I can jump 10 inches!"
+      expect(bob.last_jump_height).to eq "I last jumped 10 inches."
 
-			person = finder.find_first(999)
-			expect(person[:name]).to be_nil
+      expect(bob.jump(2)).to eq "I can jump 2 inches!"
+      expect(bob.last_jump_height).to eq "I last jumped 2 inches."
+    end
 
-			expect(@source).to_not include_code(:return).in(:Finder).for(:Scopes)
-		end
-	end
+    xyou "know about block scope" do
+      data = [
+        { :name => "Joe", :salary => 100 },
+        { :name => "Sally", :salary => 1000 }
+      ]
+      finder = Scopes::Finder.new(data)
 
-	before(:all) do
-		@source = RubyParser.new.parse(File.read('review.rb'), './review.rb')
-	end
+      person = finder.find_first(1000)
+      expect(person[:name]).to eq "Sally"
+
+      person = finder.find_first(100)
+      expect(person[:name]).to eq "Joe"
+
+      person = finder.find_first(999)
+      expect(person).to eq nil
+
+      expect(@source).to_not include_code(:return).in(:Finder).for(:Scopes)
+    end
+  end
+
+  before(:all) do
+    @source = RubyParser.new.parse(File.read('review.rb'), './review.rb')
+  end
 end
