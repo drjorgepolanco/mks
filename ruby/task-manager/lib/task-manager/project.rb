@@ -11,14 +11,19 @@ class TM::Project
 		@task_list = []
 	end
 
-	def add_task(description, priority)
+	def add_task(description, priority, status='incomplete')
 		project_id = @id
-		new_task = TM::Task.new(description, priority: priority, project_id: project_id)
+		new_task = TM::Task.new(description, priority: priority, status: status, project_id: project_id)
 		@task_list << new_task
 	end
 
 	def mark_as_complete(id)
 		task = @task_list.find {|item| item.id == id}
 		task.status = 'complete'
+	end
+
+	def complete_tasks
+		tasks = @task_list.select {|item| item.status == 'complete'}
+		tasks.sort_by! {|task| task.created_at }
 	end
 end
