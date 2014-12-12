@@ -22,11 +22,13 @@ describe 'Project' do
     end
   end
 
-  # describe '#mark_as_complete' do
-  #   it "marks the task as complete" do
-  #     project.add_task("Do first thing", priority: 3)
-  #     project.mark_as_complete(1)
-  #     expect()
-  #   end
-  # end
+  describe '#mark_as_complete' do
+    it "marks the task as complete" do
+      new_task = project.add_task("Do first thing", priority: 3)
+      single_task = new_task.first
+      id = single_task.id
+      project.mark_as_complete(id)
+      expect(single_task.status).to eq('complete')
+    end
+  end
 end
