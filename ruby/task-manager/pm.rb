@@ -12,4 +12,9 @@ class TM::Manager
 		new_project = TM::Project.new(name)
 		@project_list << new_project
 	end
+
+	def add_task_to_project(project_id, description, priority, status='incomplete')
+		project = @project_list[project_id - 1] 
+		new_task = project.add_task(description, priority, status)
+	end
 end
