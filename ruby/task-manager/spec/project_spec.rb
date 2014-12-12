@@ -16,8 +16,7 @@ describe 'Project' do
   end
 
   it "can add tasks to an existing project" do
-    task = TM::Task.new("Do first thing")
-    project.add_task(task)
+    project.add_task("Do first thing", 3)
     expect(project.task_list.count).to eq(1)
   end
 end

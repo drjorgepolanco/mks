@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Task' do
 	let(:project) { TM::Project.new("The Project Name") }
-	let(:task) { TM::Task.new("Task One") }
+	let(:task) { TM::Task.new("Task One", 3) }
 
   it "exists" do
     expect(TM::Task).to be_a(Class)
@@ -14,12 +14,12 @@ describe 'Task' do
 	  end
 
 	  it "belongs to a project" do
-	  	project.add_task(task)
+	  	project.add_task("Task One", 3)
 	  	expect(task.project_id).to eq(1)
 	  end
 
 	  it "starts with a priority number" do
-	  	expect(task.priority).to eq(1)
+	  	expect(task.priority).to eq(3)
 	  end
 	end
 end
