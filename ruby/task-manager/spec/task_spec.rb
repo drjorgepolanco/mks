@@ -21,5 +21,9 @@ describe 'Task' do
 	  it "starts with a priority number" do
 	  	expect(task.priority).to eq(3)
 	  end
+
+	  it "starts with status 'incomplete'" do
+	  	expect(task.status).to eq('incomplete')
+	  end
 	end
 end
