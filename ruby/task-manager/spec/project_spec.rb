@@ -17,18 +17,44 @@ describe 'Project' do
 
   describe '#add_task' do
     it "can add tasks to an existing project" do
-      project.add_task("Do first thing", priority: 3)
+      project.add_task("Do first thing", 3)
       expect(project.task_list.count).to eq(1)
     end
   end
 
   describe '#mark_as_complete' do
     it "marks the task as complete" do
-      new_task = project.add_task("Do first thing", priority: 3)
+      new_task = project.add_task("Do first thing", 3)
       single_task = new_task.first
       id = single_task.id
       project.mark_as_complete(id)
       expect(single_task.status).to eq('complete')
+    end
+  end
+
+  describe '#complete_tasks' do
+    context "when there is only one task completed" do
+      it "returns the complete task" do
+        project.add_task("This is the first task", 3)
+        project.add_task("This is the second task", 2, 'complete')
+        project.add_task("This is the third task", 1)
+
+        expect(project.complete_tasks.length).to eq(1)
+        expect(project.complete_tasks).to eq([project.task_list[1]])
+      end
+    end
+
+    context "when there are many tasks completed" do
+      it 'retrieves a list of all completed tasks, sorted by creation date' do
+        project.add_task("This is the first task", 3, 'complete')
+        project.add_task("This is the second task", 2)
+        project.add_task("This is the third task", 1, 'complete')
+        project.add_task("This is the fourth task", 4)
+        project.add_task("This is the fifth task", 5, 'complete')
+
+        expect(project.complete_tasks.length).to eq(3)
+        expect(project.complete_tasks).to eq([project.task_list[0], project.task_list[2], project.task_list[4]])
+      end
     end
   end
 end
