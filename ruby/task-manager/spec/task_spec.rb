@@ -14,7 +14,6 @@ describe 'Task' do
 	  end
 
 	  it "belongs to a project" do
-	  	project.add_task("Task One", 3)
 	  	expect(task.project_id).to eq(1)
 	  end
 
@@ -24,6 +23,10 @@ describe 'Task' do
 
 	  it "starts with status 'incomplete'" do
 	  	expect(task.status).to eq('incomplete')
+	  end
+
+	  it "has its own id" do
+	  	expect(task.id).to be_a(Fixnum)
 	  end
 	end
 end
