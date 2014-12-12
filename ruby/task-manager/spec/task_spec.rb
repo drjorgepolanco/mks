@@ -28,5 +28,11 @@ describe 'Task' do
 	  it "has its own id" do
 	  	expect(task.id).to be_a(Fixnum)
 	  end
+
+	  it "has a creation date and time" do
+	  	created_at = Time.now
+	  	expect(Time).to receive(:now).and_return(created_at)
+	  	expect(task.created_at).to eq(created_at)
+	  end
 	end
 end

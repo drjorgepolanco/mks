@@ -1,5 +1,5 @@
 class TM::Task
-	attr_reader :description, :project_id, :id
+	attr_reader :description, :project_id, :id, :created_at
 	attr_accessor :priority, :status
 
 	@@task_counter = 0
@@ -12,5 +12,6 @@ class TM::Task
 		@@task_counter += 1
 		@id = @@task_counter
 		@status = status
+		@created_at = Time.now
 	end
 end
