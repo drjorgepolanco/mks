@@ -28,7 +28,36 @@ class TM::Project
 
 	def incomplete_tasks
 		tasks = @task_list.select {|task| task.status == 'incomplete'}
-		tasks.sort_by! {|task| [task.priority, task.created_at]}
+		incomplete_tasks = tasks.sort_by! {|task| [task.priority, task.created_at]}
+		puts " "
+		puts "The project '#{@name.split(/ |\_/).map(&:capitalize).join(' ')}' has the following 'incomplete' tasks:"
+		puts "====|=|===========================|=|==========|=|============|=|================="
+		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
+		puts "====|=|===========================|=|==========|=|============|=|================="
+		incomplete_tasks.each do |task|
+			if task.priority == 1
+				task.priority = 'high'
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|   #{task.priority}   |-| #{task.status} |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|   #{task.priority}   |-| #{task.status} |=| #{task.description}"
+				end
+			elsif task.priority == 2
+				task.priority = 'medium'
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status} |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status} |=| #{task.description}"
+				end
+			else
+				task.priority = 'low'
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|   #{task.priority}    |-| #{task.status} |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|   #{task.priority}    |-| #{task.status} |=| #{task.description}"
+				end
+			end
+		end
 	end
 
 	def tasks
