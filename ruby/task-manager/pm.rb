@@ -27,4 +27,9 @@ class TM::Manager
 		project = @project_list[project_id - 1]
 		project.complete_tasks
 	end
+
+	def show_incomplete_tasks(project_id)
+		project = @project_list[project_id - 1]
+		project.incomplete_tasks
+	end
 end
