@@ -4,12 +4,13 @@ class TM::Task
 
 	@@task_counter = 0
 	
-	def initialize(description, priority=1, status='incomplete', project_id=1, id=1)
+	def initialize(description, priority: 1, status: 'incomplete', project_id: 1, id: 1)
 		@description = description
 		@project_id = project_id
 		@priority = priority
 		@status = status
 		@@task_counter += 1
 		@id = @@task_counter
+		@status = status
 	end
 end

@@ -15,8 +15,18 @@ describe 'Project' do
     expect(project.id).to be_a(Fixnum)
   end
 
-  it "can add tasks to an existing project" do
-    project.add_task("Do first thing", 3)
-    expect(project.task_list.count).to eq(1)
+  describe '#add_task' do
+    it "can add tasks to an existing project" do
+      project.add_task("Do first thing", priority: 3)
+      expect(project.task_list.count).to eq(1)
+    end
   end
+
+  # describe '#mark_as_complete' do
+  #   it "marks the task as complete" do
+  #     project.add_task("Do first thing", priority: 3)
+  #     project.mark_as_complete(1)
+  #     expect()
+  #   end
+  # end
 end

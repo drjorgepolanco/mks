@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Task' do
 	let(:project) { TM::Project.new("The Project Name") }
-	let(:task) { TM::Task.new("Task One", 3) }
+	let(:task) { TM::Task.new("Task One", priority: 3) }
 
   it "exists" do
     expect(TM::Task).to be_a(Class)
