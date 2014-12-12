@@ -1,6 +1,5 @@
 class TM::Project
-	attr_reader :name, :id
-	attr_accessor :task_list
+	attr_reader :name, :id, :task_list
 
 	@@counter = 0
 
