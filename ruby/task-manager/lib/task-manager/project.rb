@@ -18,12 +18,17 @@ class TM::Project
 	end
 
 	def mark_as_complete(id)
-		task = @task_list.find {|item| item.id == id}
+		task = @task_list.find {|task| task.id == id}
 		task.status = 'complete'
 	end
 
 	def complete_tasks
-		tasks = @task_list.select {|item| item.status == 'complete'}
-		tasks.sort_by! {|task| task.created_at }
+		tasks = @task_list.select {|task| task.status == 'complete'}
+		tasks.sort_by! {|task| task.created_at}
+	end
+
+	def incomplete_tasks
+		tasks = @task_list.select {|task| task.status == 'incomplete'}
+		tasks.sort_by! {|task| task.created_at}
 	end
 end
