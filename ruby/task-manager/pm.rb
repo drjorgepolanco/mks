@@ -32,4 +32,16 @@ class TM::Manager
 		project = @project_list[project_id - 1]
 		project.incomplete_tasks
 	end
+
+	def show_projects
+		puts " ID |-| PROJECT NAME "
+		puts "====|=|=============="
+		@project_list.each do |project|
+			if project.id >= 1 && project.id <= 9
+				puts "  #{project.id} |-| #{project.name.split(/ |\_/).map(&:capitalize).join(' ')}"
+			else
+				puts " #{project.id} |-| #{project.name.split(/ |\_/).map(&:capitalize).join(' ')}"
+			end
+		end
+	end
 end
