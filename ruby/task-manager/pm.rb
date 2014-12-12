@@ -22,4 +22,9 @@ class TM::Manager
 		project = @project_list.find {|project| project.id == project_id}
 		project.mark_as_complete(task_id)
 	end
+
+	def show_complete_tasks(project_id)
+		project = @project_list[project_id - 1]
+		project.complete_tasks
+	end
 end
