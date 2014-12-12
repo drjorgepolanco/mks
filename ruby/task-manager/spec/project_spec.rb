@@ -15,9 +15,9 @@ describe 'Project' do
     expect(project.id).to be_a(Fixnum)
   end
 
-  xit "can add tasks to an existing project" do
-    task = TM::Task.new("Do first thing", 'high', 1)
-    project.new_task(task)
-    expect(project.tasks.first).to eq(task)
+  it "can add tasks to an existing project" do
+    task = TM::Task.new("Do first thing")
+    project.add_task(task)
+    expect(project.task_list.count).to eq(1)
   end
 end
