@@ -16,8 +16,8 @@ class TM::Project
 		@task_list << new_task
 	end
 
-	def mark_as_complete(id)
-		task = @task_list.find {|task| task.id == id}
+	def mark_as_complete(task_id)
+		task = @task_list.find {|task| task.id == task_id}
 		task.status = 'complete'
 	end
 
