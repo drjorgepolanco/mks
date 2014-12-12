@@ -29,6 +29,6 @@ class TM::Project
 
 	def incomplete_tasks
 		tasks = @task_list.select {|task| task.status == 'incomplete'}
-		tasks.sort_by! {|task| task.created_at}
+		tasks.sort_by! {|task| [task.priority, task.created_at]}
 	end
 end
