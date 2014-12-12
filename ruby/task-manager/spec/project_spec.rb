@@ -57,4 +57,30 @@ describe 'Project' do
       end
     end
   end
+
+  describe '#incomplete_tasks' do
+    context "when there is only one incompleted task" do
+      it "returns the incompleted task" do
+        project.add_task("This is the first task", 3, 'complete')
+        project.add_task("This is the second task", 2, 'complete')
+        project.add_task("This is the third task", 1)
+
+        expect(project.incomplete_tasks.length).to eq(1)
+        expect(project.incomplete_tasks).to eq([project.task_list[2]])
+      end
+    end
+
+    context "when there are many incompleted tasks" do
+      it 'retrieves a list of all incompleted tasks, sorted by creation date' do
+        project.add_task("This is the first task", 3)
+        project.add_task("This is the second task", 2, 'complete')
+        project.add_task("This is the third task", 1)
+        project.add_task("This is the fourth task", 4, 'complete')
+        project.add_task("This is the fifth task", 5)
+
+        expect(project.incomplete_tasks.length).to eq(3)
+        expect(project.incomplete_tasks).to eq([project.task_list[0], project.task_list[2], project.task_list[4]])
+      end
+    end
+  end
 end
