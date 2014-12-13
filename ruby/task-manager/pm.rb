@@ -45,4 +45,9 @@ class TM::Manager
 			end
 		end
 	end
+
+	def show_tasks(project_id)
+		project = @project_list.find {|project| project.id == project_id}
+		project.tasks
+	end
 end
