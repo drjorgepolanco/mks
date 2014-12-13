@@ -34,25 +34,25 @@ Base coden taken from [makersquare/ruby-course](https://github.com/makersquare/r
     
 ###### #complete_tasks
 
-**when there is only one task completed**
+when there is only one task completed
    
    	returns the complete task
    	
-**when there are many tasks completed**
+when there are many tasks completed
 
 	retrieves a list of all completed tasks, sorted by creation date
 	
 ###### #incomplete_tasks
 
-**when there is only one incompleted task**
+when there is only one incompleted task
 
 	returns the incompleted task
 	
-**when there are many incompleted tasks with different priorities**
+when there are many incompleted tasks with different priorities
 
 	retrieves a list of all incompleted tasks sorted by priority
 	
-**when there are many incompleted tasks with same priorities**
+when there are many incompleted tasks with same priorities
 	
 	retrieves a list of all incompleted tasks sorted by date
 
