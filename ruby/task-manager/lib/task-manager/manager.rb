@@ -32,8 +32,9 @@ class TM::Manager
 	end
 
 	def show_projects
-		puts " ID |-| PROJECT NAME "
-		puts "====|=|=============="
+		puts "====|=|===================="
+		puts " ID |-|    PROJECT NAME    "
+		puts "====|=|===================="
 		@project_list.each do |project|
 			if project.id >= 1 && project.id <= 9
 				puts "  #{project.id} |-| #{project.name.split(/ |\_/).map(&:capitalize).join(' ')}"

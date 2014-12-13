@@ -24,9 +24,9 @@ class TM::Project
 	def complete_tasks
 		puts " "
 		puts "The project \"#{@name.split(/ |\_/).map(&:capitalize).join(' ').colorize(:bold)}\" has the following \"complete\" tasks:"
-		puts "====|=|===========================|=|==========|=|============|=|================="
-		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
-		puts "====|=|===========================|=|==========|=|============|=|================="
+		puts "====|=|===========================|=|==========|=|============|=|====================="
+		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|     DESCRIPTION     "
+		puts "====|=|===========================|=|==========|=|============|=|====================="
 		tasks = @task_list.select {|task| task.status == 'complete'}
 		# tasks.sort_by! {|task| task.created_at}
 		tasks.sort! { |task_one, task_two| task_one.created_at <=> task_two.created_at}
@@ -59,9 +59,9 @@ class TM::Project
 	def incomplete_tasks
 		puts " "
 		puts "The project \"#{@name.split(/ |\_/).map(&:capitalize).join(' ').colorize(:bold)}\" has the following \"incomplete\" tasks:"
-		puts "====|=|===========================|=|==========|=|============|=|================="
-		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
-		puts "====|=|===========================|=|==========|=|============|=|================="
+		puts "====|=|===========================|=|==========|=|============|=|====================="
+		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|     DESCRIPTION     "
+		puts "====|=|===========================|=|==========|=|============|=|====================="
 		tasks = @task_list.select {|task| task.status == 'incomplete'}
 		tasks.sort_by! {|task| [task.priority, task.created_at]}
 		tasks.each do |task|
@@ -93,9 +93,9 @@ class TM::Project
 	def tasks
 		puts " "
 		puts "The project '#{@name.split(/ |\_/).map(&:capitalize).join(' ').colorize(:bold)}' has the following tasks:"
-		puts "====|=|===========================|=|==========|=|============|=|================="
-		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
-		puts "====|=|===========================|=|==========|=|============|=|================="
+		puts "====|=|===========================|=|==========|=|============|=|====================="
+		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|     DESCRIPTION     "
+		puts "====|=|===========================|=|==========|=|============|=|====================="
 		@task_list.each do |task|
 			if task.status == 'incomplete'
 				if task.priority == 1 || task.priority == ' high '.colorize(:red)
