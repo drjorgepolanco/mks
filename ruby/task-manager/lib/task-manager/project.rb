@@ -28,7 +28,8 @@ class TM::Project
 		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
 		puts "====|=|===========================|=|==========|=|============|=|================="
 		tasks = @task_list.select {|task| task.status == 'complete'}
-		tasks.sort_by! {|task| task.created_at}
+		# tasks.sort_by! {|task| task.created_at}
+		tasks.sort! { |task_one, task_two| task_one.created_at <=> task_two.created_at}
 		tasks.each do |task|
 			if task.priority == 1 || task.priority == ' high '
 				task.priority = ' high '
