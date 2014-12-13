@@ -96,4 +96,17 @@ describe 'Project' do
       end
     end
   end
+
+  describe '#tasks' do
+    it 'retrieves a list of all tasks' do
+      project.add_task("This is the first task", 1)
+      project.add_task("This is the second task", 2, 'complete')
+      project.add_task("This is the third task", 1)
+      project.add_task("This is the fourth task", 4, 'complete')
+      project.add_task("This is the fifth task", 1)
+
+      expect(project.tasks.count).to eq(5)
+      expect(project.tasks).to eq([project.task_list[0], project.task_list[1], project.task_list[2], project.task_list[3], project.task_list[4]])
+    end
+  end
 end
