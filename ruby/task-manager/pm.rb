@@ -1,4 +1,5 @@
 require_relative './lib/task-manager'
+require 'colorize'
 
 class TM::Manager
 	attr_reader :project_list, :name
