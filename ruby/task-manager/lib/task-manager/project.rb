@@ -22,12 +22,127 @@ class TM::Project
 	end
 
 	def complete_tasks
+		puts " "
+		puts "The project \"#{@name.split(/ |\_/).map(&:capitalize).join(' ').colorize(:bold)}\" has the following \"complete\" tasks:"
+		puts "====|=|===========================|=|==========|=|============|=|================="
+		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
+		puts "====|=|===========================|=|==========|=|============|=|================="
 		tasks = @task_list.select {|task| task.status == 'complete'}
 		tasks.sort_by! {|task| task.created_at}
+		tasks.each do |task|
+			if task.priority == 1 || task.priority == ' high '
+				task.priority = ' high '
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+				end
+			elsif task.priority == 2 || task.priority == 'medium'
+				task.priority = 'medium'
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+				end
+			else
+				task.priority = ' low  '
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+				end
+			end
+		end
 	end
 
 	def incomplete_tasks
+		puts " "
+		puts "The project \"#{@name.split(/ |\_/).map(&:capitalize).join(' ').colorize(:bold)}\" has the following \"incomplete\" tasks:"
+		puts "====|=|===========================|=|==========|=|============|=|================="
+		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
+		puts "====|=|===========================|=|==========|=|============|=|================="
 		tasks = @task_list.select {|task| task.status == 'incomplete'}
 		tasks.sort_by! {|task| [task.priority, task.created_at]}
+		tasks.each do |task|
+			if task.priority == 1 || task.priority == ' high '.colorize(:red)
+				task.priority = ' high '.colorize(:red)
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+				end
+			elsif task.priority == 2 || task.priority == 'medium'.colorize(:yellow)
+				task.priority = 'medium'.colorize(:yellow)
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+				end
+			else
+				task.priority = ' low  '.colorize(:light_yellow)
+				if task.id >= 1 && task.id <= 9											
+					puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+				else
+					puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+				end
+			end
+		end
+	end
+
+	def tasks
+		puts " "
+		puts "The project '#{@name.split(/ |\_/).map(&:capitalize).join(' ').colorize(:bold)}' has the following tasks:"
+		puts "====|=|===========================|=|==========|=|============|=|================="
+		puts " ID |-|        DATE CREATED       |-| PRIORITY |-|   STATUS   |-|   DESCRIPTION  "
+		puts "====|=|===========================|=|==========|=|============|=|================="
+		@task_list.each do |task|
+			if task.status == 'incomplete'
+				if task.priority == 1 || task.priority == ' high '.colorize(:red)
+					task.priority = ' high '.colorize(:red)
+					if task.id >= 1 && task.id <= 9											
+						puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+					else
+						puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+					end
+				elsif task.priority == 2 || task.priority == 'medium'.colorize(:yellow)
+					task.priority = 'medium'.colorize(:yellow)
+					if task.id >= 1 && task.id <= 9											
+						puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+					else
+						puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+					end
+				else
+					task.priority = ' low  '.colorize(:light_yellow)
+					if task.id >= 1 && task.id <= 9											
+						puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+					else
+						puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-| #{task.status.colorize(:red)} |=| #{task.description}"
+					end
+				end
+			else
+				if task.priority == 1 || task.priority == ' high '
+					task.priority = ' high '
+					if task.id >= 1 && task.id <= 9											
+						puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+					else
+						puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+					end
+				elsif task.priority == 2 || task.priority == 'medium'
+					task.priority = 'medium'
+					if task.id >= 1 && task.id <= 9											
+						puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+					else
+						puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+					end
+				else
+					task.priority = ' low  '
+					if task.id >= 1 && task.id <= 9											
+						puts "  #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+					else
+						puts " #{task.id} |-| #{task.created_at} |-|  #{task.priority}  |-|  #{task.status.colorize(:green)}  |=| #{task.description}"
+					end
+				end
+			end
+		end
 	end
 end
