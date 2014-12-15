@@ -1,6 +1,3 @@
-Module AR
-end
-
 require 'active_record'
 require 'active_record_tasks'
 
