@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Basic Exercises</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+   // Prompts the user twice: first name and last name
+   // alerts a greeting with both names, but last name in uppercase
+      var firstName = prompt("What's your name?");
+      var lastName = prompt("What's your last name?");
+      alert('Hello ' + firstName + ' ' + lastName.toUpperCase());
+
+    
+   // Prompts user for a string and alerts the string all uppercase
+      var saySomething = prompt('Doode! Tell me something!?')
+      alert(saySomething.toUpperCase());
+
+
+   // The Bouncer
+      var greeting = prompt("Hello man! How old are you?");
+      if (greeting <= 0 || greeting >= 100) {
+        console.log("Not true!");
+      } else if (greeting < 21) {
+        console.log('Sorry, you are not allowed in.');
+      } else if (greeting >= 21) {
+        console.log('Welcome!');
+      } else {
+        console.log('Sorry, that was not a number.')
+      };
+
+
+
+    </script>
+
+  </body>
+</html>
