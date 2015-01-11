@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Objects with Variables</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    // The Petshop
+
+      var petShop = {
+        dog: 'Pinkie',
+        cat: 'Musa',
+        bird: 'Tookiti',
+        mouse: 'Ratonsky'
+      };
+
+      var wantedPetType = prompt("What kind of pet would you like?");
+
+    // Based on user input, alert the message "X is happy to have a new home!"
+    // If the pet is not in the shop, tell you don't have that pet in stock.
+
+      for (var pet in petShop) {
+        if (wantedPetType in petShop) {
+          console.log(petShop[wantedPetType] + " is happy to have a new home!");
+        } else {
+          console.log("Sorry, we don't have those pets available.");
+        };
+      };
+
+    </script>
+
+  </body>
+</html>
