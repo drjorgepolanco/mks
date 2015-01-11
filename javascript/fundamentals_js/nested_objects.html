@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Nested Objects</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    // Create a bob object with a job property that points to an object. 
+    // In this nested object, create a name property that points to builder, 
+    // as well as a salary property that points to 300.
+
+    describe('Bob', function() {
+      it('has a job', function() {
+        expect(bob['job']).toEqual(jasmine.any(Object));
+        expect(bob['job']['name']).toEqual('builder');
+        expect(bob['job']['salary']).toEqual(300);
+      });
+    });
+
+    </script>
+
+  </body>
+</html>
