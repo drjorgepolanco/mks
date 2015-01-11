@@ -4,21 +4,35 @@
 </head>
 <body>
 
-<label id="response">D: </label>
-<br />
-<input id="poke" type="button" value="Poke" />
 
+<input id="poke" type="button" value="Poke" />
+<br />
+<br />
+<label id="response"></label>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
+
   var whinyPerson = {
     pokeCount: 0
   };
 
-  // Finish this script by:
   // Write a function assigned to whinyPerson.poke that increments pokeCount and 
   // adds (not replaces) an "ow!" message, with a space, to the response label.
   // The new "ow!" message should have a number of exclamation marks equal to pokeCount.
   // Call your new poke function when the user clicks the poke button.
+
+  whinyPerson['poke'] = function() {
+  	this.pokeCount += 1;
+  	$('#response').append('ow!');
+  	for (var i = 0; i < this.pokeCount; i += 1) {
+  		$('#response').append('!');
+  	}
+  	$('#response').append('\n');
+  };
+
+  $('#poke').on('click', function() {
+  	whinyPerson.poke();
+  })
 
 </script>
 
