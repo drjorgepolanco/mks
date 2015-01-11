@@ -24,6 +24,29 @@
       });
     });
 
+    // Write a single, additional line of code to modify business so that the 
+    // following code executes correctly:
+
+    var address = {
+      street: '716 Congress Ave',
+      city: 'Austin',
+      state: 'Texas',
+      zip: 78701
+    };
+
+    var business = {
+      name: 'MakerSquare'
+    };
+
+    // Write code here
+    business['address'] = address
+
+    describe('MakerSquare', function() {
+      it('is located in austin', function() {
+        expect(business['address']['city']).toEqual('Austin');
+      });
+    });
+
     </script>
 
   </body>
