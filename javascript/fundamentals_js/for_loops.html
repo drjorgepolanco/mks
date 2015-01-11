@@ -22,16 +22,16 @@
   // Call your new poke function when the user clicks the poke button.
 
   whinyPerson['poke'] = function() {
-  	this.pokeCount += 1;
-  	$('#response').append('ow!');
-  	for (var i = 0; i < this.pokeCount; i += 1) {
-  		$('#response').append('!');
-  	}
-  	$('#response').append('\n');
+    this.pokeCount += 1;
+    $('#response').append('ow!');
+    for (var i = 0; i < this.pokeCount; i += 1) {
+      $('#response').append('!');
+    }
+    $('#response').append('\n');
   };
 
   $('#poke').on('click', function() {
-  	whinyPerson.poke();
+    whinyPerson.poke();
   });
 
 </script>
