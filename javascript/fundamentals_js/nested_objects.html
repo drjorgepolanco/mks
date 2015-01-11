@@ -9,6 +9,13 @@
     // In this nested object, create a name property that points to builder, 
     // as well as a salary property that points to 300.
 
+    var bob = {
+      job: {
+        name: 'builder',
+        salary: 300
+      }
+    };
+
     describe('Bob', function() {
       it('has a job', function() {
         expect(bob['job']).toEqual(jasmine.any(Object));
