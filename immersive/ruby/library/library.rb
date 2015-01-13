@@ -67,7 +67,7 @@ class Library
       book.checked_out = true
       book.current_user = user
       user.books << book
-      puts "The user #{user.name} has checket out the book \"#{book.title}\"."
+      puts "The user #{user.name} has checked out the book \"#{book.title}\"."
     else
       puts "Sorry, this book is currently unavailable."
     end

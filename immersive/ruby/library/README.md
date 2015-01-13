@@ -54,23 +54,23 @@ See other version of this Project [here](https://github.com/drjorgepolanco/mks/t
 ---------------------------------------------------------------
 ####Checking out two books for Jorge
 
-The user **Jorge** has checket out the book **"The Rails 4 Way"**.
+The user **Jorge** has checked out the book **"The Rails 4 Way"**.
 
-The user **Jorge** has checket out the book **"The Ruby Programming Language"**.
+The user **Jorge** has checked out the book **"The Ruby Programming Language"**.
 
 ---------------------------------------------------------------
 ####Checking out two books for Massiel
 
-The user **Massiel** has checket out the book **"My Sister's Grave"**.
+The user **Massiel** has checked out the book **"My Sister's Grave"**.
 
-The user **Massiel** has checket out the book **"The Obituary Society"**.
+The user **Massiel** has checked out the book **"The Obituary Society"**.
 
 ---------------------------------------------------------------
 ####Checking out two books for Edgar
 
-The user **Edgar** has checket out the book **"41: A Portrait of My Father"**.
+The user **Edgar** has checked out the book **"41: A Portrait of My Father"**.
 
-The user **Edgar** has checket out the book **"Old Fashioned"**.
+The user **Edgar** has checked out the book **"Old Fashioned"**.
 
 ---------------------------------------------------------------
 ####Showing all books with their current status
@@ -105,7 +105,7 @@ This user already has already borrowed two books. Please, advise to return one b
 ---------------------------------------------------------------
 ####This book should still be available since it failed before
 
-The user **Omar** has checket out the book **"Eloquent Ruby"**.
+The user **Omar** has checked out the book **"Eloquent Ruby"**.
 
 ---------------------------------------------------------------
 ####This book should fail since it's already checked out
