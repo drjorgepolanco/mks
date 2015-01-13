@@ -10,8 +10,8 @@ window.clearPosts = function(){
 window.displayPost = function(post){
   var postDiv = $("<hr>" + "<div class='post' id='post" + post.id + "'>" +
   "<h3>" + post.status + "</h3>" +
-  "<button class='like-button'>Click to like or unlike</button>" +
-  "<p class='like-count'>This has " + post.likes + " likes</p>" + "<br>" +
+  "<button class='like-button'>like or unlike</button>" +
+  "<p class='like-count'>Likes: " + post.likes + "</p>" + "<br>" +
   "<form><input type='text' class='commentField'>" +
   "<input class='submit-comment' type='submit' value='Add Comment'></form>" +
   "<div class='comments'></div>" + "</div>");
@@ -35,7 +35,7 @@ window.displayComment = function(postId, comment){
   var post = $('#post' + postId);
   var commentHTML = "<hr><p class='comment'>" + comment.comments + "</p>"
   post.children('.comments').append(commentHTML);
-};
+}
 
 // Call unload, on page loads
 $(document).ready(function(){
