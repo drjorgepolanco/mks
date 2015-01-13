@@ -2,37 +2,37 @@
   "firstName": "Jorge",
   "lastName": "Polanco",
   "address": {
-  	"streetAddress": "2238 Elm St.",
-  	"city": "Bronx",
-  	"state": "NY",
-  	"zipCode": 10453
+    "streetAddress": "2238 Elm St.",
+    "city": "Bronx",
+    "state": "NY",
+    "zipCode": 10453
   },
   "hobbies": {
-  	"activeLife": "Sky Diving",
-  	"inactiveLife": "coding"
+    "activeLife": "Sky Diving",
+    "inactiveLife": "coding"
   },
   "phoneNumbers": [
-  	{
-  		"type": "cellphone",
-  		"number": "534-345-3453"
-  	},
-  	{
-  		"type": "work",
-  		"number": "434-366-6420"
-  	}
+    {
+      "type": "cellphone",
+      "number": "534-345-3453"
+    },
+    {
+      "type": "work",
+      "number": "434-366-6420"
+    }
   ],
   "aspirations": [
-  	{
-  		"type": "financial",
-  		"goal": "1 billion dollar"
-  	},
-  	{
-  		"type": "professional",
-  		"goal": "Sr. Ruby Developer"
-  	},
-  	{
-  		"type": "health",
-  		"goal": "150 pounds by March 30, 2015"
-  	}
+    {
+      "type": "financial",
+      "goal": "1 billion dollar"
+    },
+    {
+      "type": "professional",
+      "goal": "Sr. Ruby Developer"
+    },
+    {
+      "type": "health",
+      "goal": "150 pounds by March 30, 2015"
+    }
   ]
 }
