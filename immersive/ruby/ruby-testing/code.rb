@@ -1,15 +1,15 @@
 require_relative 'testing'
 
 class Calculator
-	include MakerTests
+  include MakerTests
 
-	def add(x, y)
-		x + y
-	end
+  def add(x, y)
+    x + y
+  end
 
-	def sub(x, y)
-		x - y
-	end
+  def sub(x, y)
+    x - y
+  end
 end
 
 calc = Calculator.new

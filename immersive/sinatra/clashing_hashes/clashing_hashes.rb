@@ -5,11 +5,11 @@ require 'sinatra/reloader'
 require 'twitter'
 
 get '/' do
-	@name = "Jorgito"
-	@show_description = true
-	erb :index
+  @name = "Jorgito"
+  @show_description = true
+  erb :index
 end
 
 post '/twitter' do
-	erb :twitter
+  erb :twitter
 end
