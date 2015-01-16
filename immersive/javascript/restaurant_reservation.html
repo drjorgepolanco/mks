@@ -4,8 +4,19 @@
 </head>
 <body>
 <script type="text/javascript">
+  /*
+  Write a simplified restaurant reservation directory:
 
-  reservations = {
+  - Assign three variables to three different names
+    - We'll call each of these a reservation
+
+  - Prompt the user for a name
+    - If the name is a reservation, welcome the user and mark the reservation as claimed
+    - If the name is a claimed reservation, tell the user that reservation has already been taken
+    - Otherwise, tell the user they need to make a reservation
+  */
+
+  var reservations = {
     mike: "available",
     dave: "available",
     tuck: "claimed"
@@ -21,16 +32,16 @@
         break;
       }
       else {
-        console.log("Your reservation has already been claimed.");
+        alert("The reservation for " + name.toUpperCase() + " has already been claimed.");
+        break;
       }
     }
     else {
-      console.log("Sorry, we can't find your reservation.");
+      alert("Sorry, we can't find your reservation. You need to make a new one.");
+      break;
     } 
   };
   console.log(reservations);
-
-  
 
 </script>
 </body>
