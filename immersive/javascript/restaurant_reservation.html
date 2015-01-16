@@ -23,6 +23,10 @@
   };
   console.log(reservations);
 
+  function addReservation(reservationName) {
+    reservations[reservationName] = "available";
+  };
+
   var name = prompt("Under what name do you have your reservation?");
   for (var reservation in reservations) {
     if (reservations.hasOwnProperty(name)) {
@@ -38,6 +42,14 @@
     }
     else {
       alert("Sorry, we can't find your reservation. You need to make a new one.");
+      var newReservation = confirm("Do you want to make a new reservation?");
+      if (newReservation == true) {
+        var reservationName = prompt("Under what name do you want to make your reservation?");
+        addReservation(reservationName); 
+      }
+      else {
+        console.log("Have a wonderful day!");
+      }
       break;
     } 
   };
