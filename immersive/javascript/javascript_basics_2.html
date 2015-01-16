@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Restaurant Reservation</title>
+  <title>JavaScript Basics 2</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -12,20 +12,44 @@
   - If the number is even, alert that they are an even steven.
 */
   
-  var number = prompt("Please, tell me a number:")
-  if (!isNaN(number)) {
-    if (number % 7 == 0) {
-      alert("You are lucky!");
-    }
-    else if (number % 2 == 0) {
-      alert("You are an even steven!");
+  // var number = prompt("Please, tell me a number:");
+  // if (!isNaN(number)) {
+  //   if (number % 7 == 0) {
+  //     alert("You are lucky!");
+  //   }
+  //   else if (number % 2 == 0) {
+  //     alert("You are an even steven!");
+  //   }
+  //   else {
+  //     alert("Thank you!");
+  //   };
+  // } else {
+  //   alert("That's not a number!");
+  // };
+
+/*
+  Partner Exercise #3.3
+
+  Write a function welcome that:
+  - Takes two parameters name1 and name2
+  - If two parameters are present, returns "Welcome, #{name1} and #{name2}!"
+  - If only one parameter is present, returns "Welcome, #{name1}!"
+*/
+
+  function welcome(name1, name2) {
+    if (name2 === undefined) {
+      return("Welcome, " + name1 + "!");
     }
     else {
-      alert("Thank you!");
-    };
-  } else {
-    alert("That's not a number!");
+      return("Welcome, " + name1 + " and " + name2 + "!");
+    }
   };
+
+  var result = welcome('Alice', 'Bob');
+  console.log('Result should be "Welcome, Alice and Bob!"', result);
+
+  var result = welcome('Alice');
+  console.log('Result should be "Welcome, Alice!"', result);
 
 </script>
 </body>
