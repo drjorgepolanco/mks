@@ -1,5 +1,19 @@
 <html>
 
+<!-- Finish the lockbox by replacing the alert with code to show the box element. -->
+
+<!-- Create a button inside the #box element with the text "Close Box". Create a 
+click event handler for this button. When the button is clicked, it should hide 
+the #box element. -->
+
+<!-- Create a label on the top of the page that reads "Clicks: 0":
+Create a click event handler for the entire document.
+Whenever any click happens, it should update your label to "Clicks: X", where X 
+is the total number of clicks that have happened since the page was loaded.
+In your event handler, trigger a 'new-click-count' event that passes along the 
+total number of clicks. -->
+
+
 <head>
   <title>Functions in jQuery</title>
   <style type="text/css">
@@ -8,14 +22,28 @@
     }
     #box {
       display: none;
+      height: 200px;
+      width: 200px;
+      background-color: #ff3300;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
+  <label>Clicks: </label>
+  <label id="clicks"></label>
+
   <div class="spacer">
     Scroll down (all the way down)
+  </div>
+
+  <div id="box">
+    <h1>
+      <strong>Surprise!</strong>
+    </h1> 
+    <a id="close" href="#">close</a>
   </div>
 
   <p>
@@ -23,14 +51,19 @@
     <a id="open-link" href="#">Open the box</a>
   </p>
 
-  <p id="box">Surprise!</p>
-
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript">
+
     $('#open-link').on('click', function (e) {
       e.preventDefault();
-      $("#box").show();
+      $('#box').show();
     });
+
+    $('#close').on('click', function (e) {
+      e.preventDefault();
+      $('#box').hide();
+    });
+
   </script>
 
 </body>
