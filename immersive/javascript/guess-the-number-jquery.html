@@ -7,6 +7,9 @@
       text-align: center;
     }
     .response {
+      color: blue;
+    }
+    .landmine {
       color: red;
     }
     .tries {
@@ -34,7 +37,8 @@
     <label class="response"></label>
     <br>
     <br>
-    <label>Watch for land mines!</label>
+    <label><h3><strong>Watch for land mines!</strong></h3></label>
+    <br>
     <label class="landmine"></label>
     <br>
     <br>
@@ -51,12 +55,12 @@
     <label class="tries"></label>
     <br>
     <br>
-    <label>Total Games Won:</label>
+    <label><h4>Total Games Won:</h4></label>
     <br>
     <label class="wins"></label>
     <br>
     <br>
-    <label>Total Games Lost:</label>
+    <label><h4>Total Games Lost:</h4></label>
     <br>
     <label class="losses"></label>
   </div>
@@ -98,6 +102,7 @@
   var tries = 1;
   var wins = 0;
   var losses = 0;
+  var userNumber = 0;
 
   function repeat() {
     $(".tries").text(tries);
@@ -111,33 +116,45 @@
     $(".user-input").val("");
     $(".response").text("");
     $(".tries").text("");
+    $(".landmine").text("");
     secret = parseInt(Math.random() * 100, 10) + 1;
     landMine = parseInt(Math.random() * 100, 10) + 1;
   };
 
+  function landMineAdvisor() {
+    if (userNumber < landMine) {
+      $(".landmine").text("You are " + (landMine -  userNumber) + " numbers away from the landmine.");
+    }
+    else {
+      $(".landmine").text("You are " + (userNumber - landMine) + " numbers away from the landmine.");
+    }
+  }
+
   function guess() {
     $(".user-input").focus();
     $(".submit-button").on('click', function(e) {
-      var number = $(".user-input").val();
-      if (!isNaN(number)) {
-        if (number > 100 || number < 1) {
+      userNumber = $(".user-input").val();
+      if (!isNaN(userNumber)) {
+        if (userNumber > 100 || userNumber < 1) {
           $(".response").text("The number needs to be between 1 and 100.");
           repeat();
         }
         else {
-          if (number == landMine) {
+          if (userNumber == landMine) {
             alert("Sorry, you lost the game.");
             losses += 1;
             $(".losses").text(losses);
             newGame();
           }
           else {
-            if (number > secret) {
+            if (userNumber > secret) {
               $(".response").text("Pick lower");
+              landMineAdvisor();
               repeat();
             }
-            else if (number < secret) {
+            else if (userNumber < secret) {
               $(".response").text("Pick higher");
+              landMineAdvisor();
               repeat();
             }
             else {
