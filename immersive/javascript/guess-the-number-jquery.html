@@ -73,6 +73,14 @@
     });
   };
   guess();
+
+  $(".new-game-button").on("click", function(e) {
+    alert("New Game Started!");
+    $(".user-input").val("");
+    $(".response").text("");
+    secret;
+    guess();
+  });
   
 
 </script>
