@@ -8,7 +8,15 @@
   <br>
   <input class="user-input" type="text" />
   <input class="submit-button" type="button" value="Guess" />
+  <input class="clear-button" type="button" value="Clear" />
   <input class="new-game-button" type="button" value="New Game" />
+  <br>
+  <label>Tries:</label>
+  <label class="tries"></label>
+  <br>
+  <label>Total Games Won:</label>
+  <label class="wins"></label>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
@@ -34,12 +42,14 @@
   - Display a message that a new game has started
 */
 
-  var secret = Math.ceil(Math.random() * 100);
-  var counter = 0;
+  
+  var secret = parseInt(Math.random() * 100, 10) + 1;
+  var tries = 1;
+  var wins = 0;
 
   function repeat() {
-    counter += 1;
-    guess();
+    $(".tries").text(tries);
+    tries += 1;
     $(".user-input").focus();
   };
 
@@ -49,7 +59,7 @@
       var number = $(".user-input").val();
       if (!isNaN(number)) {
         if (number > 100 || number < 1) {
-          $(".response").text("The number needs to be between 1 and 100.").fadeIn()
+          $(".response").text("The number needs to be between 1 and 100.");
           repeat();
         }
         else {
@@ -62,7 +72,9 @@
             repeat();
           }
           else {
-            $(".response").text("Congratulations! You win after " + counter + " tries!");
+            $(".response").text("Congratulations! You win after " + (tries - 1) + " tries!");
+            wins += 1;
+            $(".wins").text(wins);
           }
         }
       }
@@ -74,12 +86,19 @@
   };
   guess();
 
-  $(".new-game-button").on("click", function(e) {
+  $(".clear-button").on("click", function() {
+    $(".response").text("");
+    $(".user-input").val("");
+    $(".user-input").focus();
+  });
+
+  $(".new-game-button").on("click", function() {
     alert("New Game Started!");
+    tries = 1;
     $(".user-input").val("");
     $(".response").text("");
-    secret;
-    guess();
+    $(".tries").text("");
+    secret = parseInt(Math.random() * 100, 10) + 1;
   });
   
 
