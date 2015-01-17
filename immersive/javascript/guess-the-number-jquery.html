@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>Guess the Number</title>
+</head>
+<body>
+  <label>Pick a number from 1-100:</label>
+  <label class="response"></label>
+  <br>
+  <input class="user-input" type="text" />
+  <input class="submit-button" type="button" value="Guess" />
+  <input class="new-game-button" type="button" value="New Game" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+/*
+  GUESS THE NUMBER
+  ================
+
+  - Generate and stores a secret, random number
+  - Prompt the user for a number between 1 and 100
+  - Respond to the user's number:
+    - If higher, it says to pick lower
+    - If lower, it says to pick higher
+  - Repeat steps 2 and 3 until the user picks the correct number
+  - Congratulate the user when they win!
+
+  jQuery
+  ------
+  - Convert your exercise from above to use the html page, without using alert or prompt.
+  - Add a button that starts a new game. It should:
+  - Generate a new secret number
+  - Clear the value of the text box
+  - Display a message that a new game has started
+*/
+
+  var secret = Math.ceil(Math.random() * 100);
+  var counter = 0;
+
+  function repeat() {
+    counter += 1;
+    guess();
+    $(".user-input").focus();
+  };
+
+  function guess() {
+    $(".user-input").focus();
+    $(".submit-button").on('click', function(e) {
+      var number = $(".user-input").val();
+      if (!isNaN(number)) {
+        if (number > 100 || number < 1) {
+          $(".response").text("The number needs to be between 1 and 100.").fadeIn()
+          repeat();
+        }
+        else {
+          if (number > secret) {
+            $(".response").text("Pick lower");
+            repeat();
+          }
+          else if (number < secret) {
+            $(".response").text("Pick higher");
+            repeat();
+          }
+          else {
+            $(".response").text("Congratulations! You win after " + counter + " tries!");
+          }
+        }
+      }
+      else {
+        $(".response").text("That's not a number!");
+        repeat();
+      }
+    });
+  };
+  guess();
+  
+
+</script>
+</body>
+</html>
