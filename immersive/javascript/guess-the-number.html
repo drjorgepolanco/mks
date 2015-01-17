@@ -4,13 +4,27 @@
 </head>
 <body>
 <script type="text/javascript">
+
+/*
+  GUESS THE NUMBER
+  ================
+
+  - Generate and stores a secret, random number
+  - Prompt the user for a number between 1 and 100
+  - Respond to the user's number:
+    - If higher, it says to pick lower
+    - If lower, it says to pick higher
+  - Repeat steps 2 and 3 until the user picks the correct number
+  - Congratulate the user when they win!
+*/
+
   var secret = Math.ceil(Math.random() * 100);
   var counter = 0;
 
   function repeat() {
     counter += 1;
     guess();
-  }
+  };
 
   function guess() {
     var number = prompt("Please, write a number between 1 and 100:");
