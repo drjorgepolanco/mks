@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Guess the Number</title>
+</head>
+<body>
+<script type="text/javascript">
+  var secret = Math.ceil(Math.random() * 100);
+  function guess() {
+    var number = prompt("Please, tell me a number between 1 and 100:")
+    if (number > 100) {
+      console.log("Pick lower");
+      guess();
+    }
+    else if (number < 1) {
+      console.log("Pick higher");
+      guess();
+    }
+    else {
+      if (number === secret) {
+        console.log("Congratulations! You win!");
+      }
+      else {
+        guess();
+      }
+    }
+  };
+  guess();
+  
+
+</script>
+</body>
+</html>
