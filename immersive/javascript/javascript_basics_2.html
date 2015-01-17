@@ -4,6 +4,7 @@
 </head>
 <body>
 <script type="text/javascript">
+
 /*  
   Partner Review Exercise #2
 
@@ -15,16 +16,16 @@
   var number = prompt("Please, tell me a number:");
   if (!isNaN(number)) {
     if (number % 7 == 0) {
-      alert("You are lucky!");
+      console.log("You are lucky!");
     }
     else if (number % 2 == 0) {
-      alert("You are an even steven!");
+      console.log("You are an even steven!");
     }
     else {
-      alert("Thank you!");
+      console.log("Thank you!");
     };
   } else {
-    alert("That's not a number!");
+    console.log("That's not a number!");
   };
 
 /*
@@ -50,6 +51,30 @@
 
   var result = welcome('Alice');
   console.log('Result should be "Welcome, Alice!"', result);
+
+
+  // Extension 3
+
+  // Write a function sum() that returns the sum of all the arguments it is given:
+  
+  function sum() {
+    result = 0;
+    for (var i = 0; i < arguments.length; i += 1) {
+      result += arguments[i];
+    }
+    return result;
+  };
+
+  var result = sum(2, 2);
+  console.log('Result should be 4:', result);
+
+  var result = sum(1, 2, 3, 4);
+  console.log('Result should be 10:', result);
+
+  var result = sum();
+  console.log('Result should be 0:', result);
+
+
 
 </script>
 </body>
