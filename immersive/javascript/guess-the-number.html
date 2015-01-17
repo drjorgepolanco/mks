@@ -5,25 +5,34 @@
 <body>
 <script type="text/javascript">
   var secret = Math.ceil(Math.random() * 100);
+
   function guess() {
-    var number = prompt("Please, tell me a number between 1 and 100:")
-    if (number > 100) {
-      console.log("Pick lower");
-      guess();
-    }
-    else if (number < 1) {
-      console.log("Pick higher");
-      guess();
-    }
-    else {
-      if (number === secret) {
-        console.log("Congratulations! You win!");
-      }
-      else {
+    var number = prompt("Please, write a number between 1 and 100:");
+    if (!isNaN(number)) {
+      if (number > 100 || number < 1) {
+        console.log("The number needs to be between 1 and 100.")
         guess();
       }
+      else {
+        if (number > secret) {
+          alert("Pick lower");
+          guess();
+        }
+        else if (number < secret) {
+          alert("Pick higher");
+          guess();
+        }
+        else {
+          alert("Congratulations! You win!");
+        }
+      }
+    }
+    else {
+      alert("That's not a number!");
+      guess();
     }
   };
+
   guess();
   
 
