@@ -36,7 +36,6 @@
     <br>
     <label class="response"></label>
     <br>
-    <br>
     <label><h3><strong>Watch for land mines!</strong></h3></label>
     <br>
     <label class="landmine"></label>
@@ -103,6 +102,13 @@
   var wins = 0;
   var losses = 0;
   var userNumber = 0;
+  
+  function clear() {
+    $(".response").text("");
+    $(".landmine").text("");
+    $(".user-input").val("");
+    $(".user-input").focus();
+  };
 
   function repeat() {
     $(".tries").text(tries);
@@ -112,21 +118,37 @@
 
   function newGame() {
     alert("New Game Started!");
+    clear();
     tries = 1;
-    $(".user-input").val("");
-    $(".response").text("");
     $(".tries").text("");
-    $(".landmine").text("");
     secret = parseInt(Math.random() * 100, 10) + 1;
     landMine = parseInt(Math.random() * 100, 10) + 1;
-  };
+  };  
 
   function landMineAdvisor() {
     if (userNumber < landMine) {
-      $(".landmine").text("You are " + (landMine -  userNumber) + " numbers away from the landmine.");
+      if (landMine - userNumber <= 15) {
+        $(".landmine").text("Be careful! You are very near the landmine.").css("color", "red");
+      }
+      else if (landMine - userNumber > 15 && landMine - userNumber < 30) {
+        $(".landmine").text("Watch out! There are landmines around.").css("color", "orange");
+      }
+      else {
+        $(".landmine").text("Doing right, no landmines around.").css("color", "gray");
+      }
+      // $(".landmine").text("You are " + (landMine -  userNumber) + " numbers away from the landmine.");
     }
     else {
-      $(".landmine").text("You are " + (userNumber - landMine) + " numbers away from the landmine.");
+      if (userNumber - landMine <= 15) {
+        $(".landmine").text("Be careful! You are very near the landmine.").css("color", "red");
+      }
+      else if (userNumber - landMine > 15 && userNumber - landMine < 30) {
+        $(".landmine").text("Watch out! There are landmines around.").css("color", "orange");
+      }
+      else {
+        $(".landmine").text("Doing right, no landmines around.").css("color", "gray");;
+      }
+      // $(".landmine").text("You are " + (userNumber - landMine) + " numbers away from the landmine.");
     }
   }
 
@@ -176,13 +198,15 @@
   guess();
 
   $(".clear-button").on("click", function() {
-    $(".response").text("");
-    $(".user-input").val("");
-    $(".user-input").focus();
+    clear();
   });
 
   $(".new-game-button").on("click", function() {
     newGame();
+  });
+
+  $(document).on("click", function() {
+    $(".user-input").focus();
   });
   
 
