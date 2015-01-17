@@ -3,15 +3,23 @@
 <!-- Finish the lockbox by replacing the alert with code to show the box element. -->
 
 <!-- Create a button inside the #box element with the text "Close Box". Create a 
-click event handler for this button. When the button is clicked, it should hide 
-the #box element. -->
+     click event handler for this button. When the button is clicked, it should 
+     hide the #box element. -->
 
-<!-- Create a label on the top of the page that reads "Clicks: 0":
-Create a click event handler for the entire document.
-Whenever any click happens, it should update your label to "Clicks: X", where X 
-is the total number of clicks that have happened since the page was loaded.
-In your event handler, trigger a 'new-click-count' event that passes along the 
-total number of clicks. -->
+<!-- Create a label on the top of the page that reads "Clicks: 0": -->
+
+<!-- Create a click event handler for the entire document. -->
+
+<!-- Whenever any click happens, it should update your label to "Clicks: X", 
+     where X is the total number of clicks that have happened since the page 
+     was loaded. -->
+
+<!-- In your event handler, trigger a 'new-click-count' event that passes along 
+     the total number of clicks. -->
+
+<!-- Create an event handler that listens for your 'new-click-count' event above.
+     When the number of clicks is a multiple of 5, alert a statement that says: 
+     "New High Score: X!", where X is the number of clicks. -->
 
 
 <head>
@@ -53,6 +61,19 @@ total number of clicks. -->
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript">
+
+    var clicks = 0;
+    $(document).on('click', function () {
+      clicks += 1;
+      $('#clicks').text(clicks);
+      $(document).trigger('new-click-count', clicks);
+    });
+
+    $(document).on('new-click-count', function (e) {
+      if (clicks % 5 == 0) {
+        alert("New high score: " + clicks + "!");
+      };
+    });
 
     $('#open-link').on('click', function (e) {
       e.preventDefault();
