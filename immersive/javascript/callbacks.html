@@ -4,7 +4,15 @@
 </head>
 <body>
 
+  <!-- Partner Review Exercise #3 -->
   <a href="http://google.com" id="google-link">Click me</a>
+
+  <br>
+  <br>
+
+  <!-- Partner Review Exercise #4 -->
+  <label>Ow! (x<span id="poke-count">0</span>)</label>
+  <input id="poke" type="submit" value="poke" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
@@ -15,12 +23,46 @@
 
   // Write a Jquery click handler that prevents the link from directing the browser 
   // to Google, and instead alerts the user with a suitably snarky message.
+
   $("#google-link").on("click", function (e) {
     e.preventDefault();
     alert("No Google for you Dooode! Buahahaha!!");
   });
-
   
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #4
+  // --------------------------
+  
+  // Write a jQuery click handler that increments the number of pokes every time 
+  // the button is clicked.
+
+  var pokeCounter = 0;
+  $("#poke").on("click", function () {
+    pokeCounter += 1;
+    $("#poke-count").text(pokeCounter);
+  });
+
+  // --------------------------------------------------------------------------
+  // Partner Exercise #1
+  // -------------------
+
+  // Write a function doubleUp that takes one parameter and calls it as a function 
+  // twice:
+
+  function doubleUp(action) {
+    action();
+    action();
+  };
+
+  var punch = function () {
+    console.log('POWA!');
+  };
+  var kick = function () {
+    console.log('KIA!');
+  };
+
+  doubleUp(punch); // This should log a message twice
+  doubleUp(kick); // This should log a message twice
 
 
 </script>
