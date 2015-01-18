@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>Javascript Funky Keys</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+  
+
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #3.1
+  // ----------------------------
+
+  var magicTricks = {
+    "Disappearing Kings": {
+      difficulty: 4
+    },
+    "The Three Aces": {
+      difficulty: 2
+    }
+  };
+
+  // 1. Add a trick "The Bloodless Coup" to the magicTricks object with a difficulty of 8.
+  // 2. Change the "Disappearing Kings" difficulty to 5
+  magicTricks['The Bloodless Coup'] = {};
+  magicTricks['The Bloodless Coup'].difficulty = 8;
+
+  magicTricks['Disappearing Kings'].difficulty = 5;
+
+  console.log('Magic Tricks:', magicTricks);
+  // → Object {Disappearing Kings: Object, The Three Aces: Object, The Bloodless Coup: Object}
+  
+  console.log('Magic Tricks:', magicTricks['The Bloodless Coup']);
+  // → Object {difficulty: 8}
+  
+  console.log('Magic Tricks:', magicTricks['Disappearing Kings']);
+  // → Object {difficulty: 5}
+
+
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #3.2
+  // ----------------------------
+
+  var inventory = {
+    "NUTS AND BOLTS": {
+      boxes: 4
+    },
+    "TOOLBELTS": {
+      boxes: 2
+    },
+    "DRILLS": {
+      boxes: 4
+    }
+  };
+
+  // Write a function boxesRemaining such -->
+  function boxesRemaining(item) {
+    var boxOf = item.toUpperCase();
+    return inventory[boxOf].boxes; 
+  };
+
+  // --> that the following code executes correctly:
+  console.log("There should be 4 boxes of nuts and bolts remaining.", boxesRemaining('nuts and bolts'));
+  // → There should be 4 boxes of nuts and bolts remaining. 4
+
+  console.log("There should be 2 boxes of toolbelts remaining.", boxesRemaining('Toolbelts'));
+  // → There should be 2 boxes of toolbelts remaining. 2
+
+  console.log("There should be 4 boxes of drills remaining.", boxesRemaining('DRILLS'));
+  // → There should be 4 boxes of drills remaining. 4
+
+
+
+
+
+</script>
+</body>
+</html>
