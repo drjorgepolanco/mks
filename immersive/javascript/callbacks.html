@@ -219,15 +219,27 @@
   // Using Partner Exercise #4, change the following to use anonymous functions
   // when calling serveMessage():
 
-  // var result = serveMessage('Bob','call me', ask);
-  var result = serveMessage('Bob', 'call me', function () {
-    return 'Can you please ' + 'call me' + '?';
+  // var ask = function (request) {
+  //   return "Can you please " + request + "?";
+  // };
+
+  // var yell = function (request) {
+  //   return request.toUpperCase() + "!";
+  // };
+
+  var serveMessage = function (name, request, modifier) {
+    return name + ": " + modifier(request);
+  };
+
+  // var result = serveMessage('Bob', 'call me', ask);
+  var result = serveMessage('Bob', 'call me', function (request) {
+    return "Can you please " + request + "?";
   });
   console.log(result);
 
-  // result = serveMessage('Bob','call me', yell)
-  result = serveMessage('Bob', 'call me', function () {
-    return 'call me'.toUpperCase() + '!';
+  // result = serveMessage('Bob', 'call me', yell);
+  result = serveMessage('Bob', 'call me', function (request) {
+    return request.toUpperCase() + "!";
   });
   console.log(result);
 
