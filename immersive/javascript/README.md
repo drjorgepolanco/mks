@@ -43,4 +43,5 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
     - Functions
     - Functions as Callbacks
     - Anonymous Functions
+- [Javascript Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_objects.html): Introduction to Objects in JavaCript.
      
