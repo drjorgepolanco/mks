@@ -120,7 +120,7 @@
 
 
   // --------------------------------------------------------------------------
-  // Partner Exercise #3
+  // Partner Exercise #4
   // -------------------
 
   // - Write a yell function that takes a string and returns that string in all caps.
@@ -136,7 +136,7 @@
   };
 
   function ask(question) {
-    return("Can you please " + question + "?");
+    return "Can you please " + question + "?";
   };
 
   function serveMessage(stringOne, stringTwo, funk) {
@@ -158,6 +158,36 @@
   var ex4 = serveMessage('Bob', 'call me', yell);
   console.log("Ex4 should be 'Bob: CALL ME!':", ex4);
   // → Ex4 should be 'Bob: CALL ME!': Bob: CALL ME!
+
+
+  // --------------------------------------------------------------------------
+  // Partner Exercise #5
+  // -------------------
+
+  // Change the following code to use an anonymous function:
+
+  // var annoyUser = function () {
+  //   alert('Stop alerting yourself!');
+  // };
+  // setTimeout(annoyUser, 1000);
+  
+  setTimeout(function () {
+    alert('Stop alerting yourself!');
+  }, 1000);
+
+
+  // --------------------------------------------------------------------------
+  // Partner Exercise #6
+  // -------------------
+
+  // First add an html element so that the following code works
+
+  // Then change code to use an anonymous function:
+
+  var witherInPain = function () {
+    alert('ouch... *ouch cough*');
+  };
+  $('#my-button').on('click', witherInPain);
 
 </script>
 </body>
