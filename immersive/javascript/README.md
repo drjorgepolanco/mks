@@ -13,4 +13,4 @@ The correct order is as follows:
 - [JavaScript Functions](): Introduction to Js Functions.
 - [Lock Box](): Simple Js and jQuery exercise from lesson 3: **JavaScript Functions**.
 - [Guess the Number with jQuery](): This second version of the previuos [Number Guessing Game](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/guess-the-number.html), is considerable more complicated and touches Object Oriented Programming and a wonderful practice on **jQuery**, **Control Flow** and **Functions**. It is also using **Boostrap**.
-- [JavaScript Callbacks](): 
+- [JavaScript Callbacks](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/callbacks.html): 
