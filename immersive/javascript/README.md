@@ -35,6 +35,12 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
     - First-class Functions
     - jQuery Event Handlers
   - **New:** 
-    - Functions as Arguments.
-    - Functions as Callbacks.
-    - Anonymous Functions. 
+    - Functions as Arguments
+    - Functions as Callbacks
+    - Anonymous Functions
+- [Javascript Review](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review.html):
+  - **Review:**
+    - Functions
+    - Functions as Callbacks
+    - Anonymous Functions
+     
