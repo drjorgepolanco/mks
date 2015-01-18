@@ -235,14 +235,13 @@
   var result = serveMessage('Bob', 'call me', function (request) {
     return "Can you please " + request + "?";
   });
-  console.log(result);
+  console.log(result);    // → Bob: Can you please call me?
 
   // result = serveMessage('Bob', 'call me', yell);
   result = serveMessage('Bob', 'call me', function (request) {
     return request.toUpperCase() + "!";
   });
-  console.log(result);
-
+  console.log(result);    // → Bob: CALL ME!
   
   // --------------------------------------------------------------------------
   // Individual Exercise 1.1
