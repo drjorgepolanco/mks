@@ -7,7 +7,7 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 
 ###The correct order is as follows:
 
-- **[Restaurant Reservations](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/restaurant_reservation.html):** Final exercise of the first lesson **JavaScript Basics**.
+- **[Restaurant Reservation](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/restaurant_reservation.html):** Final exercise of the first lesson **JavaScript Basics**.
 - **[JavaScript Basics 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/javascript_basics_2.html):** Exercises from the 2nd lesson.
   - **Review:**
     - Variable Diagrams
@@ -38,12 +38,13 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
     - Functions as Arguments
     - Functions as Callbacks
     - Anonymous Functions
-- [Javascript Review](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review.html):
+- **[Javascript Review](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review.html):**
   - **Review:**
     - Functions
     - Functions as Callbacks
     - Anonymous Functions
-- [Javascript Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_objects.html): Introduction to Objects in JavaCript.
-- [Javascript Nested Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_nested_objects.html)
-- [Javascript Funky Keys](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_funky_keys.html)
+- **[Javascript Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_objects.html):** Introduction to Objects in JavaCript.
+- **[Javascript Nested Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_nested_objects.html)**
+- **[Javascript Funky Keys](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_funky_keys.html)**
+- **[Restaurant Reservation 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/restaurant_reservation_2.html):** A better implementation of the first try at the top of this list.
      
