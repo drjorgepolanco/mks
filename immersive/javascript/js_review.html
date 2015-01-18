@@ -1,0 +1,90 @@
+<html>
+<head>
+  <title>Javascript Review</title>
+</head>
+<body>
+
+  <!-- Partner Review Exercise #3 -->
+  <button id="fire-laser">Shoot!</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+  
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #2.2
+  // ----------------------------
+
+  // Fix the following code (1 syntax errors, 2 logic error) such that it alerts 
+  // BOOM! and logs 'You might be in danger' on the console.
+
+  var danger = function() {
+    alert('BOOM!');
+    return "danger";
+  };
+
+  console.log("You might be in " + danger());
+  // → You might be in danger
+
+  
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #2.3
+  // ----------------------------
+
+  // Write a function halve() such that the following code works:
+  
+  function halve(number) {
+    return number / 2;
+  };
+
+  console.log("halve(20) should be 10", halve(20));
+  console.log("halve(100) should be 50", halve(100));
+
+
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #3
+  // --------------------------
+
+  // 1. First add an html element so that the following code works
+  // 2. Then change code to use an anonymous function:
+
+  var health = 5;
+  // var fireQuadLaser = function() {
+  //   if (health === 1) {
+  //     console.log("You are dead.");
+  //   }
+  //   else {
+  //     health -= 1;
+  //     console.log("PEW PEW! Your health remaining is " + health);
+  //   }
+  // };
+  // $('#fire-laser').on('click', fireQuadLaser);
+  $('#fire-laser').on('click', function() {
+    if (health === 1) {
+      console.log("You are dead.");
+    }
+    else {
+      health -= 1;
+      console.log("PEW PEW! Your health remaining is " + health);
+    }
+  });
+
+
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #4.1
+  // ----------------------------
+
+  // 1. Write a function nag() that takes a string as an argument, and outputs an 
+  //    all-caps version of it to the console.
+  // 2. Use setInterval to call your nag function every 4 seconds.
+
+  function nag(string) {
+    console.log(string.toUpperCase());
+  };
+
+  setInterval(nag, 4000, "hola");
+
+
+
+</script>
+</body>
+</html>
