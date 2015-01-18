@@ -5,65 +5,65 @@
 <body>
 <script type="text/javascript">
   
-  // // --------------------------------------------------------------------------
-  // // Partner Review Exercise #3.1
-  // // ----------------------------
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #3.1
+  // ----------------------------
 
-  // // Write a function addFive such that the following code works:
+  // Write a function addFive such that the following code works:
   
-  // function addFive(number) {
-  //   return(number + 5);
-  // };
-  // console.log("addFive(3) should be 8:", addFive(3));
-  // console.log("addFive(6) should be 11:", addFive(6));
+  function addFive(number) {
+    return(number + 5);
+  };
+  console.log("addFive(3) should be 8:", addFive(3));
+  console.log("addFive(6) should be 11:", addFive(6));
   
-  // // --------------------------------------------------------------------------
-  // // Partner Review Exercise #3.2
-  // // ----------------------------
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #3.2
+  // ----------------------------
 
-  // // Write a javascript program that prompts three times and alerts once with all 
-  // // three strings concatenated in the opposite order they were prompted.
+  // Write a javascript program that prompts three times and alerts once with all 
+  // three strings concatenated in the opposite order they were prompted.
 
-  // function questions() {
-  //   var one = prompt("Tell me one thing:");
-  //   var two = prompt("Tell me a second thing:");
-  //   var three = prompt("Tell me a last thing:");
-  //   console.log(three + " " + two + " " + one);
-  // };
-  // questions();
+  function questions() {
+    var one = prompt("Tell me one thing:");
+    var two = prompt("Tell me a second thing:");
+    var three = prompt("Tell me a last thing:");
+    console.log(three + " " + two + " " + one);
+  };
+  questions();
 
-  // // --------------------------------------------------------------------------
-  // // Partner Review Exercise #3.3
-  // // ----------------------------
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #3.3
+  // ----------------------------
 
-  // // Write a javascript program that prompts the user for a password of your choice:
-  // // - If correct, it alerts an access granted message
-  // // - If not correct, it alerts an access denied message
-  // // - Only allow the user to try up to three times.
+  // Write a javascript program that prompts the user for a password of your choice:
+  // - If correct, it alerts an access granted message
+  // - If not correct, it alerts an access denied message
+  // - Only allow the user to try up to three times.
 
-  // function security() {
-  //   var counter = 1;
-  //   var password = "macaco21";
-  //   var input = function() {
-  //     var userPass = prompt("Please, enter your password?");
-  //     if (counter < 4) {
-  //       if (password == userPass) {
-  //         console.log("ACCESS GRANTED. Welcome back my friend!");
-  //       }
-  //       else {
-  //         console.log("Wrong password, please try again." +
-  //                     "You have " + (3 - counter) + " tries left.");
-  //         counter += 1;
-  //         input();
-  //       }
-  //     }
-  //     else {
-  //       console.log("Sorry, the system is locked now.");
-  //     }
-  //   };
-  //   input();
-  // };
-  // security();
+  function security() {
+    var counter = 1;
+    var password = "macaco21";
+    var input = function() {
+      var userPass = prompt("Please, enter your password?");
+      if (counter < 4) {
+        if (password == userPass) {
+          console.log("ACCESS GRANTED. Welcome back my friend!");
+        }
+        else {
+          console.log("Wrong password, please try again." +
+                      "You have " + (3 - counter) + " tries left.");
+          counter += 1;
+          input();
+        }
+      }
+      else {
+        console.log("Sorry, the system is locked now.");
+      }
+    };
+    input();
+  };
+  security();
 
   // --------------------------------------------------------------------------
   // Extensions
