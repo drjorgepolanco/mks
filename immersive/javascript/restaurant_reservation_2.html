@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Restaurant Reservations</title>
+</head>
+<body>
+
+<button id="claim">Claim a Reservatios</button>
+<button id="reserve">Make a Reservatios</button>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+var reservations = {
+  'Billy': { claimed: false }
+};
+
+$('#claim').on('click', function (e) {
+  var name = prompt("What is your name?");
+});
+
+$('#reserve').on('click', function (e) {
+  var name = prompt("What name should we reserve under?");
+});
+
+</script>
+</body>
+</html>
