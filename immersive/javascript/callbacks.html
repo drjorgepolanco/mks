@@ -61,8 +61,36 @@
     console.log('KIA!');
   };
 
-  doubleUp(punch); // This should log a message twice
-  doubleUp(kick); // This should log a message twice
+  doubleUp(punch); 
+  // → POWA!
+  // → POWA!
+  doubleUp(kick);  
+  // → KIA!
+  // → KIA!
+
+  // --------------------------------------------------------------------------
+  // Partner Exercise #2
+  // -------------------
+
+  // Write a function serveTime that takes one parameter and calls it as a function, 
+  // giving it the current time as an argument.
+
+  var logTime = function (time) {
+    console.log("The current time is:", time);
+  };
+
+  var alertTime = function (time) {
+    alert("The current time is: " + time);
+  };
+
+  function serveTime(time) {
+    var now = new Date();
+    time(now);
+  };
+
+  serveTime(logTime);
+  // → The current time is: Sat Jan 17 2015 21:48:40 GMT-0500 (EST)
+  serveTime(alertTime);
 
 
 </script>
