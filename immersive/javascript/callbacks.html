@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Callbacks</title>
+</head>
+<body>
+
+  <a href="http://google.com" id="google-link">Click me</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #3
+  // --------------------------
+
+  // Write a Jquery click handler that prevents the link from directing the browser 
+  // to Google, and instead alerts the user with a suitably snarky message.
+  $("#google-link").on("click", function (e) {
+    e.preventDefault();
+    alert("No Google for you Dooode! Buahahaha!!");
+  });
+
+  
+
+
+</script>
+</body>
+</html>
