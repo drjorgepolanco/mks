@@ -25,6 +25,55 @@
   console.log(song.album);           // → {title: "Beggars Banquet", year: 1968}
 
 
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #2.2
+  // ----------------------------
+
+  // Create a variable vegetarianOrders that sums together the number of vegetarian 
+  // items ordered (note: pasta primavera is vegetarian).
+
+  var orders = {
+    pizza: {
+      pepperoni: 1,
+      cheese: 3,
+      mushroom: 4
+    },
+    pasta: {
+      meatball: 2,
+      primavera: 1
+    }
+  };
+  
+  var pizzaOrders = orders['pizza'];
+  var pastaOrders = orders['pasta'];
+  var vegetarianOrders = pizzaOrders.cheese + pizzaOrders.mushroom + pastaOrders.primavera;
+
+  console.log("There were " + vegetarianOrders + " vegetarian items ordered.");
+  // → There were 8 vegetarian items ordered.
+
+
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #2.3
+  // ----------------------------
+
+  var address = {
+    street: "716 Congress Ave",
+    city: "Austin",
+    state: "Texas",
+    zip: 78701
+  };
+
+  var business = {
+    name: "MakerSquare"
+  };
+
+  // Write a single, additional line of code to modify business so that the 
+  // following code executes correctly:
+  business['address'] = address;
+
+  console.log("The value of business.address.city should be Austin:", business.address.city);
+
+
 
 
 
