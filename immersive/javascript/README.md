@@ -44,4 +44,6 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
     - Functions as Callbacks
     - Anonymous Functions
 - [Javascript Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_objects.html): Introduction to Objects in JavaCript.
+- [Javascript Nested Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_nested_objects.html)
+- [Javascript Funky Keys](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_funky_keys.html)
      
