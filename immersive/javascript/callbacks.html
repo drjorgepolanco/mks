@@ -14,6 +14,12 @@
   <label>Ow! (x<span id="poke-count">0</span>)</label>
   <input id="poke" type="submit" value="poke" />
 
+  <br>
+  <br>
+
+  <!-- Partner Exercise #6 -->
+  <button id="my-button" type="button">cough</button>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -184,10 +190,15 @@
 
   // Then change code to use an anonymous function:
 
-  var witherInPain = function () {
+  // var witherInPain = function () {
+  //   alert('ouch... *ouch cough*');
+  // };
+  // $('#my-button').on('click', witherInPain);
+  
+  $('#my-button').on('click', function () {
     alert('ouch... *ouch cough*');
-  };
-  $('#my-button').on('click', witherInPain);
+  });
+
 
 </script>
 </body>
