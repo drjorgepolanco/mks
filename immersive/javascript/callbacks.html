@@ -17,6 +17,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
 
+
   // --------------------------------------------------------------------------
   // Partner Review Exercise #3
   // --------------------------
@@ -29,6 +30,7 @@
     alert("No Google for you Dooode! Buahahaha!!");
   });
   
+
   // --------------------------------------------------------------------------
   // Partner Review Exercise #4
   // --------------------------
@@ -41,6 +43,7 @@
     pokeCounter += 1;
     $("#poke-count").text(pokeCounter);
   });
+
 
   // --------------------------------------------------------------------------
   // Partner Exercise #1
@@ -68,6 +71,7 @@
   // → KIA!
   // → KIA!
 
+
   // --------------------------------------------------------------------------
   // Partner Exercise #2
   // -------------------
@@ -92,6 +96,7 @@
   // → The current time is: Sat Jan 17 2015 21:48:40 GMT-0500 (EST)
   serveTime(alertTime);
 
+
   // --------------------------------------------------------------------------
   // Partner Exercise #3
   // -------------------
@@ -109,9 +114,50 @@
   };
 
   displayData(alert, logData, "IMPORTANT MESSAGE: I like your shirt.");
-  
+
   // Could also be (no need to use logData() function):
   // displayData(alert, console.log.bind(console), "IMPORTANT MESSAGE: I like your shirt.");
+
+
+  // --------------------------------------------------------------------------
+  // Partner Exercise #3
+  // -------------------
+
+  // - Write a yell function that takes a string and returns that string in all caps.
+
+  // - Write an ask function that takes a string and returns that string in the form of a question.
+
+  // - Write a serveMessage function that takes a string, another string, and a function:
+
+  // - It will call the given function with one string and prepend it with the other.
+
+  function yell(string) {
+    return string.toUpperCase() + "!";
+  };
+
+  function ask(question) {
+    return("Can you please " + question + "?");
+  };
+
+  function serveMessage(stringOne, stringTwo, funk) {
+    return stringOne + ": " + funk(stringTwo);
+  };
+
+  var ex1 = yell("what?");
+  console.log("Ex1 should be 'WHAT?!':", ex1);
+  // → Ex1 should be 'WHAT?': WHAT?!
+
+  var ex2 = ask("open the door");
+  console.log("Ex2 should be 'Can you please open the door?':", ex2);
+  // → Ex2 should be 'Can you please open the door?': Can you please open the door?
+
+  var ex3 = serveMessage('Bob', 'call me', ask);
+  console.log("Ex3 should be 'Bob: Can you please call me?':", ex3);
+  // → Ex3 should be 'Bob: Can you please call me?': Bob: Can you please call me?
+
+  var ex4 = serveMessage('Bob', 'call me', yell);
+  console.log("Ex4 should be 'Bob: CALL ME!':", ex4);
+  // → Ex4 should be 'Bob: CALL ME!': Bob: CALL ME!
 
 </script>
 </body>
