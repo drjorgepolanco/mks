@@ -84,6 +84,28 @@
   setInterval(nag, 4000, "hola");
 
 
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #4.1
+  // ----------------------------
+
+  // Write functions add, doMath, and subtract such that the following code executes correctly:
+
+  function add(x, y) {
+    return x + y;
+  };
+
+  function subtract(x, y) {
+    return x - y;
+  };
+
+  function doMath(action, x, y) {
+    return action(x, y);
+  };
+
+  console.log("doMath(add, 2, 2) should return 4", doMath(add, 2, 2));
+  console.log("doMath(subtract, 10, 7) should return 3", doMath(subtract, 10, 7));
+
+
 
 </script>
 </body>
