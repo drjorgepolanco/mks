@@ -23,6 +23,41 @@
   console.log("You can find great " + restaurant.cuisine + " food at " + restaurant.name);
 
 
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #2.2
+  // ----------------------------
+
+  // 1. Create an object person with your name and favorite_color.
+  // 2. Add a favorite_food value to the person object.
+  // 3. Output a string like the following to the console, filled in with values 
+  //    from your person object:
+  //    "My name is Matt, my favorite color is excitement, and my favorite food is tree bark."
+
+  var person = {
+    name: "Jorge",
+    favorite_color: "black"
+  };
+
+  person.favorite_food = "ropa vieja";
+  console.log("My name is " + person.name + ", my favorite color is " + person.favorite_color +
+              ", and my favorite food is " + person.favorite_food + ".");
+
+
+  // --------------------------------------------------------------------------
+  // Partner Review Exercise #2.3
+  // ----------------------------
+
+  var book = {
+    title: "A Tale of Two Cities",
+    author: "Tom Clancy"
+  };
+
+  // Write additional code to update the value of the author property so that 
+  // the following code executes correctly:
+  book['author'] = "Charles Dickens";
+
+  console.log("The author of " + book.title + " should be Charles Dickens:", book.author);
+
 
 
 </script>
