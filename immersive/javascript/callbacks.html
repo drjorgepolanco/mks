@@ -1,6 +1,15 @@
 <html>
 <head>
   <title>Callbacks</title>
+  
+  <!-- Individual Exercise 1.1 -->
+  <style>
+    .jumping-bean {
+      position: absolute; top: 10px; right: 10px;
+      font-size: 2em;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -18,7 +27,10 @@
   <br>
 
   <!-- Partner Exercise #6 -->
-  <button id="my-button" type="button">cough</button>
+  <button id="my-button">cough</button>
+
+  <!-- Individual Exercise 1.1 -->
+  <button class='jumping-bean'>how u bean</button>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
@@ -186,7 +198,7 @@
   // Partner Exercise #6
   // -------------------
 
-  // First add an html element so that the following code works
+  // First add an html element so that the following code works:
 
   // Then change code to use an anonymous function:
 
@@ -194,10 +206,54 @@
   //   alert('ouch... *ouch cough*');
   // };
   // $('#my-button').on('click', witherInPain);
-  
+
   $('#my-button').on('click', function () {
     alert('ouch... *ouch cough*');
   });
+
+
+  // --------------------------------------------------------------------------
+  // Partner Exercise #7
+  // -------------------
+
+  // Using Partner Exercise #4, change the following to use anonymous functions
+  // when calling serveMessage():
+
+  // var result = serveMessage('Bob','call me', ask);
+  var result = serveMessage('Bob', 'call me', function () {
+    return 'Can you please ' + 'call me' + '?';
+  });
+  console.log(result);
+
+  // result = serveMessage('Bob','call me', yell)
+  result = serveMessage('Bob', 'call me', function () {
+    return 'call me'.toUpperCase() + '!';
+  });
+  console.log(result);
+
+  
+  // --------------------------------------------------------------------------
+  // Individual Exercise 1.1
+  // -----------------------
+
+  // Write a jQuery event handler moveButton so that the button will randomly 
+  // change its position each time the user clicks it:
+
+  var randomNum = function() {
+    return Math.ceil(Math.random() * 600) + 'px';
+  };
+
+  function moveButton() {
+    var movement = {
+      top: randomNum(),
+      right: randomNum()
+    };
+    $('.jumping-bean').css(movement);
+  };
+
+  $(document).on('click', '.jumping-bean', moveButton);
+
+
 
 
 </script>
