@@ -92,6 +92,26 @@
   // → The current time is: Sat Jan 17 2015 21:48:40 GMT-0500 (EST)
   serveTime(alertTime);
 
+  // --------------------------------------------------------------------------
+  // Partner Exercise #3
+  // -------------------
+
+  // It would be handy if we could display any data we wish in an alert and on 
+  // the console in one go. Write the missing function to make the code work.
+
+  function logData(data) {
+    console.log(data);
+  };
+
+  var displayData = function (alertDataFunc, logDataFunc, data) {
+    alertDataFunc(data);
+    logDataFunc(data);
+  };
+
+  displayData(alert, logData, "IMPORTANT MESSAGE: I like your shirt.");
+  
+  // Could also be (no need to use logData() function):
+  // displayData(alert, console.log.bind(console), "IMPORTANT MESSAGE: I like your shirt.");
 
 </script>
 </body>
