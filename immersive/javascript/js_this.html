@@ -16,11 +16,11 @@ var bagOfChips = {
   count: 2,
   takeChip: function () {
     if (this.count === 0) {
-      alert('No chips left!');
+      console.log('No chips left!');
     }
     else {
       this.count -= 1;
-      alert('munch');
+      console.log('munch');
     }
   }
 };
@@ -147,6 +147,37 @@ console.log('Music player should be playing "Giant Steps":', musicPlayer.current
 
 musicPlayer.play('Blue Glasses');
 console.log('Music player should be playing "Blue Glasses":', musicPlayer.currentlyPlaying);
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #2.2
+// ----------------------------
+
+// Fix the following code (3 syntax errors, 1 logic errors) so that the spies 
+// each reveal their secrets.
+
+var revealSecret = function () {
+  return this.secret;
+};
+
+var incept = function (person, func) {
+  person.inception = func;
+  var result = person.inception();
+  console.log(person.name + " said: " + result)
+};
+
+var spy = {
+  name: "Mr. Smith",
+  secret: "I like pie"
+};
+incept(spy, revealSecret);
+
+var otherSpy = {
+  name: "Dr. Tran",
+  secret: "I can lick my elbow"
+};
+incept(otherSpy, revealSecret);
+
 
 </script>
 </body>
