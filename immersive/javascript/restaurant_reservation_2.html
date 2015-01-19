@@ -16,92 +16,92 @@ var reservations = {
   'milly': { claimed: false }
 };
 
-function capitalize(string) {
-	return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
-};
-
 function newRes(newName) {
-	reservations[newName] = {};
-	reservations[newName].claimed = false;
-	console.log("A new reservation has been created for " + newName + ".");
+  reservations[newName] = {};
+  reservations[newName].claimed = false;
+  alert("A new reservation has been created for '" + newName + "'.");
 };
 
 function resCheck(name) {
-	for (reservation in reservations) {
-		// 2.2 Check if there is a reservation under that name
-		if (name in reservations) {
+  for (reservation in reservations) {
+    // 2.2 Check if there is a reservation under that name
+    if (name in reservations) {
       if (reservations[name].claimed == false) {
-      	var userChoice = confirm("There is an unclaimed reservation under that name." +
-      		                       "\n" + "Do you want to claim this one?");
-      	if (userChoice == true) {
-      		reservations[name].claimed = true;
-      		console.log("Welcome to the Restaurant!");
-      		break;
-      	}
-      	else {
-      		// 2.3 If there is a reservation under that name, ask the user for another name
-      		var newName = prompt("Tell me another name to create you a new reservation:");
-      		// 2.4 Otherwise create the reservation
-      		newRes(newName);
-      		break;
-      	}
+        var userChoice = confirm("There is an unclaimed reservation under that name." +
+                                 "\n" + "Do you want to claim this one?");
+        if (userChoice == true) {
+          reservations[name].claimed = true;
+          alert("Hi " + name + "! Welcome to the Restaurant!");
+          break;
+        }
+        else {
+          // 2.3 If there is a reservation under that name, ask the user for another name
+          var newName = prompt("Tell me another name to create you a new reservation:");
+          // 2.4 Otherwise create the reservation
+          if (newName != "") {
+            newRes(newName);
+          }
+          break;
+        }
       }
       else {
-      	// 2.3 If there is a reservation under that name, ask the user for another name
+        // 2.3 If there is a reservation under that name, ask the user for another name
         var newName = prompt("There is a claimed reservation under that name." + "\n" +
-      			                 "Tell me another name to create you a new reservation:");
+                             "Tell me another name to create you a new reservation:");
         // 2.4 Otherwise create the reservation
-      	newRes(newName);
-      	break;
+        if (newName != "") {
+          newRes(newName);
+        }
+        break;
       }
-		}
-		else {
-      newRes(name);
+    }
+    else {
       // 2.4 Otherwise create the reservation
+      if (name != "") {
+        newRes(name);
+      }
       break;
-		}
-	};
+    }
+  };
 };
 
-
 $('#claim').on('click', function (e) {
-	// 1.1 Prompt the user for their name
+  // 1.1 Prompt the user for their name
   var name = prompt("What is your name?");
   // 1.2 Check if there is a reservation under that name
   for (reservation in reservations) {
-  	// 1.3 If the reservation exists and is unclaimed, welcome the user
-  	if (name in reservations && reservations[name].claimed == false) {
-  		console.log("Welcome to the Restaurant!");
-  		reservations[name].claimed = true;
-  		break;
-  	}
-  	// 1.4 If the reservation exists and is already claimed, inform the user
-  	else if (name in reservations && reservations[name].claimed == true) {
-  	  console.log("Sorry, your reservation has been already claimed.");
-  	  break;
-  	}
-  	else {
-  		// 1.5 If there is no reservation, tell the user there is nothing under their name
-  		console.log("Sorry, there are currently no reservations under that name.");
-  		break;
-  	}
-  	// console.log(reservations);
+    // 1.3 If the reservation exists and is unclaimed, welcome the user
+    if (name in reservations && reservations[name].claimed == false) {
+      alert("Hi " + name + "! Welcome to the Restaurant!");
+      reservations[name].claimed = true;
+      break;
+    }
+    // 1.4 If the reservation exists and is already claimed, inform the user
+    else if (name in reservations && reservations[name].claimed == true) {
+      alert("Sorry, your reservation has been already claimed.");
+      break;
+    }
+    else {
+      // 1.5 If there is no reservation, tell the user there is nothing under their name
+      alert("Sorry, there are currently no reservations under that name.");
+      break;
+    }
+    // console.log(reservations);
   };
 });
 
 $('#reserve').on('click', function (e) {
-	// 2.1 Prompt the user for a name
+  // 2.1 Prompt the user for a name
   var name = prompt("What name should we reserve under?");
   resCheck(name);
   console.log(reservations);
 });
 
+
 // -----------------------------------------------------------------------------
 // Individual Exercise #1
 // ----------------------
-
 // Write code to implement the claim reservation feature:
-
 // 1.1 Prompt the user for their name
 // 1.2 Check if there is a reservation under that name
 // 1.3 If the reservation exists and is unclaimed, welcome the user
@@ -112,18 +112,12 @@ $('#reserve').on('click', function (e) {
 // -----------------------------------------------------------------------------
 // Individual Exercise #2
 // ----------------------
-
 // Write code to implement the make a reservation feature:
-
 // 2.1 Prompt the user for a name
 // 2.2 Check if there is a reservation under that name
 // 2.3 If there exists a reservation under that name, inform the user that they 
 //     need to use a different name
 // 2.4 Otherwise create the reservation
-
-
-
-
 
 
 </script>
