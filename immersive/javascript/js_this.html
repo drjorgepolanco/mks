@@ -37,18 +37,18 @@ bagOfChips.takeChip();
 // call successfully.
 
 var water = function (amount) {
-  this.happiness += amount;
+  this.happiness += amount;   
   console.log('You watered the ' + this.plantType);
 };
 
 var greenHouse = {
   room1: {
     plantType: 'strawberries',
-    happiness: 3,
+    happiness: 3,             
     water: water
   },
   room2: {
-    plantType: 'eggplants',
+    plantType: 'eggplants',   
     happiness: 1,
     water: water
   }
@@ -59,6 +59,72 @@ console.log('Strawberries should have 5 happiness:', greenHouse.room1.happiness)
 
 greenHouse.room2.water(23);
 console.log('Eggplants should have 24 happiness:', greenHouse.room2.happiness);
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1.3
+// ----------------------------
+
+// Fix the following code (1 logic error) so that the alerts call successfully.
+
+var sprayPixieDust = function (person) {
+  person.pixieDust += 1;
+};
+
+var wendy = {
+  pixieDust: 0,            
+  fly: function () {
+    if (this.pixieDust < 2) {
+      return 'thump!';
+    }
+    else {
+      return 'I can fly!';
+    }
+  }
+};
+
+console.log('Wendy should not be able to fly (yet):', wendy.fly());
+
+sprayPixieDust(wendy);
+console.log('Wendy should STILL not be able to fly:', wendy.fly());
+
+sprayPixieDust(wendy);
+console.log('Can she fly now?', wendy.fly());
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #2.1
+// ----------------------------
+
+// Write a method stealCoins that takes a number parameter and decreases the 
+// wishing well's coin count by that amount.
+
+// Do not let the coinCount go below zero. Do not use the wishingWell variable 
+// in your function.
+
+var wishingWell = {
+  coinCount: 2,
+  wishToss: function () {
+    this.coinCount += 1;
+  },
+  stealCoins: function (amount) {
+    if (this.coinCount > 1) {
+      this.coinCount -= amount;
+    }
+    else {
+      this.coinCount = 0;
+    }
+  }
+};
+
+wishingWell.wishToss();
+console.log('Wishing well should have 3 coins:', wishingWell.coinCount);
+
+wishingWell.stealCoins(2);
+console.log('Wishing well should have 1 coin:', wishingWell.coinCount);
+
+wishingWell.stealCoins(5);
+console.log('Wishing well should have 0 coins:', wishingWell.coinCount);
 
 </script>
 </body>
