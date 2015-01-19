@@ -38,6 +38,43 @@ var pancake = pancakeHouse.makePancake();
 console.log('Pancake should be a pancake:', pancake.foodType);
 
 
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1.3
+// ----------------------------
+
+// Fix the following code (2 syntax errors) so that the alerts call successfully:
+
+var juggler = {
+  itemCount: 0,
+  juggle: function() {
+    this.itemCount += 1;
+    var fate = parseInt(Math.random() * 10);
+    if (this.itemCount > 2 && fate % 2 === 0) {
+      this.drop();
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  },
+  drop: function() {
+    console.log('ah!');
+    this.itemCount -= 1;
+  }
+};
+
+juggler.juggle();
+juggler.juggle();
+console.log('Juggler should be juggling two items:', juggler.itemCount);
+
+var dropCount = 0;
+
+dropCount += juggler.juggle();
+dropCount += juggler.juggle();
+dropCount += juggler.juggle();
+
+console.log('Total number of items should be 5:', juggler.itemCount + dropCount);
+console.log('Juggler should be juggling at least two times:', juggler.itemCount);
 
 </script>
 </body>
