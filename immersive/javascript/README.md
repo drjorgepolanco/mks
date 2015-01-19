@@ -47,4 +47,6 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[Javascript Nested Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_nested_objects.html)**
 - **[Javascript Funky Keys](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_funky_keys.html)**
 - **[Restaurant Reservation 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/restaurant_reservation_2.html):** A better implementation of the first try at the top of this list.
+- **[JavaScript Methods](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_methods.html)**
+- **[JavaScript keyword 'this'](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_this.html)**
      
