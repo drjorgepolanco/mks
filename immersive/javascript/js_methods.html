@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Functions</title>
+</head>
+<body>
+<script type="text/javascript">
+  
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1.1
+// ----------------------------
+
+// Fix the following code (2 syntax errors, 2 logic errors) so that the alerts 
+// call successfully:
+
+var pet = {
+  hunger: 2,
+  feed: function() {
+    this.hunger -= 1;
+  }
+};
+pet.feed();
+pet.feed();
+console.log('Pet hunger should be zero:', pet.hunger);
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1.2
+// ----------------------------
+
+// Fix the following code (1 syntax errors) so that the alerts call successfully:
+
+var pancakeHouse = {
+  makePancake: function() {
+    return { foodType: 'pankcake' };
+  }
+};
+var pancake = pancakeHouse.makePancake();
+console.log('Pancake should be a pancake:', pancake.foodType);
+
+
+
+</script>
+</body>
+</html>
