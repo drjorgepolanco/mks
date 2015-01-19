@@ -44,7 +44,8 @@ var bakery = {
       eggs: 1,
       sugar: 1, 
       butter: 1,
-      nuts: 3
+      nuts: 3,
+      nutella: 1
     },
     // TODO: Create required ingredients for cookie
     cookie: {
@@ -52,7 +53,8 @@ var bakery = {
       eggs: 1,
       sugar: 2,
       butter: 1,
-      chocolate: 2
+      chocolate: 2,
+      salt: 0.5
     }
   },
   make: function (goodType) {
@@ -60,24 +62,21 @@ var bakery = {
     var req = this.goodRequirements[goodType];
 
     // TODO: Only make if we have enough ingredients
-    for (var ingredient in req) {
-      if (ingredient in req) {
-        if (req[ingredient] <= this.supplies[ingredient]) {
-          this.supplies[ingredient] -= req[ingredient];
-          this.updateIngredientsList();
-          console.log('The bakery made a ' + goodType + '!');
-
-          // TODO: Add class goodType class to div
-          var goodDiv = $('<div>').addClass(goodType);
-          $('#bakery .display').append(goodDiv);
-          break;
-        }
-        else {
-          alert("We can't do this " + goodType + ", because we are out of " + ingredient);
-          break;
-        }
+    for (var i in req) {
+      if (this.supplies[i] >= req[i]) {
+        this.supplies[i] -= req[i];
+        this.updateIngredientsList();
       }
-    }
+      else {
+        alert("We can't do this " + goodType + ", because we are out of " + i);
+      }
+    };
+    console.log('The bakery made a ' + goodType + '!');
+
+    // TODO: Add class goodType class to div
+    var goodDiv = $('<div>').addClass(goodType);
+    $('#bakery .display').append(goodDiv);
+    console.log(this.supplies);
   },
   updateIngredientsList: function () {
     for (ingredient in this.supplies) {
