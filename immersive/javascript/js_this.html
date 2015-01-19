@@ -96,7 +96,7 @@ console.log('Can she fly now?', wendy.fly());
 // Partner Review Exercise #2.1
 // ----------------------------
 
-// Write a method stealCoins that takes a number parameter and decreases the 
+// Write a method stealCoins() that takes a number parameter and decreases the 
 // wishing well's coin count by that amount.
 
 // Do not let the coinCount go below zero. Do not use the wishingWell variable 
@@ -125,6 +125,28 @@ console.log('Wishing well should have 1 coin:', wishingWell.coinCount);
 
 wishingWell.stealCoins(5);
 console.log('Wishing well should have 0 coins:', wishingWell.coinCount);
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #2.2
+// ----------------------------
+
+// Write a method play() that changes what the musicPlayer is current playing.
+
+// Do not user musicPlayer variable in your function.
+
+var musicPlayer = {
+  currentlyPlaying: null,
+  play: function(song) {
+    this.currentlyPlaying = song;
+  }
+};
+
+musicPlayer.play('Giant Steps');
+console.log('Music player should be playing "Giant Steps":', musicPlayer.currentlyPlaying);
+
+musicPlayer.play('Blue Glasses');
+console.log('Music player should be playing "Blue Glasses":', musicPlayer.currentlyPlaying);
 
 </script>
 </body>
