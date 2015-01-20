@@ -139,7 +139,6 @@ var bakery = {
     console.log('Attempting to make a:', goodType);
     var req = this.goodRequirements[goodType];
 
-    // TODO: Only make if we have enough ingredients
     for (var i in req) {
       if (this.supplies[i] >= req[i]) {
         this.supplies[i] -= req[i];
@@ -151,7 +150,6 @@ var bakery = {
     };
     console.log('The bakery made a ' + goodType + '!');
 
-    // TODO: Add class goodType class to div
     var goodDiv = $('<div>').addClass(goodType);
     $('.bakery .display').append(goodDiv);
     console.log(this.supplies);
@@ -171,7 +169,6 @@ var bakery = {
 
 $('.bakery .make').on('click', function (e) {
   var goodType = $(e.currentTarget).data('good-type');
-  // TODO: Make the good
   bakery.make(goodType);
 });
 
