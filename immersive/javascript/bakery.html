@@ -1,24 +1,68 @@
 <html>
 <head>
   <title>Bakery Bonanza</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/css/foundation.min.css">
   <style type="text/css">
-  #bakery .display div { width: 200px; height: 200px; float: left; }
-  #bakery .display .cupcake { background: url("http://i.imgur.com/9ix2JRZ.jpg"); }
-  #bakery .display .cookie { background: url("http://i.imgur.com/Yxq78qn.jpg"); }
+    body {
+      background: url("http://www.hillphoenix.com/wp-content/uploads/2011/07/BMD_Bakery2_4863-2.jpg");
+    }
+    .back {
+      background-color: #fff;
+      background:rgba(255,255,255,0.8);
+    }
+    .bakery .display div { 
+      width: 200px; 
+      height: 200px; 
+      float: left; 
+    }
+    .bakery .display .cupcake { 
+      background: url("http://i.imgur.com/9ix2JRZ.jpg"); 
+    }
+    .bakery .display .cookie { 
+      background: url("http://d35brb9zkkbdsd.cloudfront.net/wp-content/uploads/2011/04/cookie.gif"); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+    }
+    .bakery .display .tiramisu { 
+      background: url("http://www.delish.com/cm/delish/images/1k/healthy-makeover-tiramisu-recipe-1110-Q0TWrq-bfOSzB-lg.jpg"); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+    }
+    .bakery .display .red_velvet { 
+      background: url("http://consumerrecipe.conagrafoods.com/uploadedImages/img_4456_3499.jpg"); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+    }
+    .bakery .display .pumpkin_pie { 
+      background: url("https://www.meals.com/imagesrecipes/18470lrg.jpg"); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+    }
+    .center {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-
-<div id="bakery">
-  <button class="make" data-good-type="cupcake">Make Cupcake</button>
-  <button class="make" data-good-type="cookie">Make Cookie</button>
-  <h4>Available Ingredients:</h4>
-  <ul class="ingredients"></ul>
-  <h3>Food Display Case</h3>
-  <div class="display"></div>
+<div class="row back">
+  <h1 class="center"><strong>The Bakery</strong></h1>
+  <div class="bakery large-12 large-centered columns center">
+    <button class="make center" data-good-type="cupcake">Make Cupcake</button>
+    <button class="make center" data-good-type="cookie">Make Cookie</button>
+    <button class="make center" data-good-type="tiramisu">Make Tiramisu</button>
+    <button class="make center" data-good-type="red_velvet">Make Red Velvet</button>
+    <button class="make center" data-good-type="pumpkin_pie">Make Pumpkin Pie</button>
+  </div>
+  <div class="bakery large-12 columns">
+    <h3><strong>Available Ingredients:</strong></h3>
+    <ul class="ingredients"></ul>
+    <hr>
+    <h3><strong>Food Display Case</strong></h3>
+  </div>
+  <div class="bakery">
+    <div class="display"></div>
+  </div>
 </div>
-
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -29,14 +73,20 @@ function capitalize(string) {
 var bakery = {
   supplies: {
     flour: 30,
-    eggs: 12,
-    sugar: 17,
-    spice: 16,
-    chocolate: 18,
+    eggs: 36,
+    sugar: 47,
+    chocolate: 23,
     salt: 13,
-    butter: 11,
+    butter: 35,
     nuts: 32,
-    nutella: 14
+    nutella: 14,
+    liqueur: 22,
+    marsala: 28,
+    cream: 31,
+    cocoa: 17,
+    soda: 34,
+    coloring: 23,
+    cinnamon: 27
   },
   goodRequirements: {
     cupcake: {
@@ -55,6 +105,34 @@ var bakery = {
       butter: 1,
       chocolate: 2,
       salt: 0.5
+    },
+    tiramisu: {
+      eggs: 1,
+      marsala: 0.5,
+      liqueur: 3,
+      sugar: 3,
+      cream: 2,
+      cocoa: 1
+    },
+    red_velvet: {
+      eggs: 1,
+      sugar: 2,
+      soda: 1,
+      cocoa: 1,
+      salt: 0.5,
+      cream: 1,
+      butter: 1,
+      nuts: 2,
+      coloring: 1
+    },
+    pumpkin_pie: {
+      eggs: 1,
+      sugar: 2,
+      cinnamon: 1,
+      salt: 0.5,
+      cream: 1,
+      butter: 1,
+      nuts: 2
     }
   },
   make: function (goodType) {
@@ -68,14 +146,14 @@ var bakery = {
         this.updateIngredientsList();
       }
       else {
-        alert("We can't do this " + goodType + ", because we are out of " + i);
+        alert("This " + goodType + " won't have " + i);
       }
     };
     console.log('The bakery made a ' + goodType + '!');
 
     // TODO: Add class goodType class to div
     var goodDiv = $('<div>').addClass(goodType);
-    $('#bakery .display').append(goodDiv);
+    $('.bakery .display').append(goodDiv);
     console.log(this.supplies);
   },
   updateIngredientsList: function () {
@@ -91,7 +169,7 @@ var bakery = {
   }
 };
 
-$('#bakery .make').on('click', function (e) {
+$('.bakery .make').on('click', function (e) {
   var goodType = $(e.currentTarget).data('good-type');
   // TODO: Make the good
   bakery.make(goodType);
