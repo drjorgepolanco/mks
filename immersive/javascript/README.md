@@ -11,7 +11,9 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[Guess the Number](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/guess-the-number.html):** Number guessing game with vanilla JavaScript, also part of the 2nd lesson: **JavaScript Basics 2**.
 - **[Guess the Number with jQuery](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/guess-the-number-jquery.html):** This second version of the previuos [Number Guessing Game](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/guess-the-number.html), is considerable more complicated and touches Object Oriented Programming and a wonderful practice on **jQuery**, **Control Flow** and **Functions**. It is also using **Boostrap**.
 - **[Restaurant Reservation 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/restaurant_reservation_2.html):** A better implementation of the first try at the top of this list.
-- **[Bakery Bonanza]():** A bakery that can bake baked goods, including cupcakes and cookies.
+- **[Bakery Bonanza](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/bakery):** A bakery that can bake baked goods, including cupcakes and cookies. See live project **[here](http://drjorgepolanco.com/js_apps/bakery/bakery.html)**.
+- **[Tic Tac Toe](https://github.com/drjorgepolanco/tic-tac-toe)**: See live project **[here](http://drjorgepolanco.com/js_apps/tic-tac-toe/index.html)**.
+
 
 ###Exercises:
 
