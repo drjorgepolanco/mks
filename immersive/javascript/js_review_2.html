@@ -237,13 +237,76 @@ function createBattery (charge) {
 
 var battery = createBattery(3);
 console.log('Battery should have 3 energy:', battery.energy);
+// → Battery should have 3 energy: 3
 
 battery.use(2);
 console.log('Battery should have 1 energy:', battery.energy);
+// → Battery should have 1 energy: 1
 
 battery.use(5);
 console.log('Battery should have 1 energy:', battery.energy);
+// → Battery should have 1 energy: 1
 
+
+// -----------------------------------------------------------------------------
+// Exercise #11
+// ------------
+
+// Fix the following code (3 minor errors) and complete result so that the code 
+// outputs "Surprise!"
+
+var house = {
+  room: {
+    emptyBox: {},
+    size: '50 sqft'
+  },
+  otherRoom: {
+    box: {
+      writtenNote: 'Surprise!'
+    },
+    size: '35 sqft'
+  }
+};
+
+var result = house.otherRoom.box.writtenNote;
+console.log("You find a written note:", result);
+// → You find a written note: Surprise!
+
+
+// -----------------------------------------------------------------------------
+// Exercise #12
+// ------------
+
+// Complete the missing lines so that the following code works:
+
+var calculator = {};
+// ???
+calculator.multiply = function (x, y) {
+  return x * y;
+};
+
+var result = calculator.multiply(3, 7);
+console.log('3 time 7 is', result);
+// → 3 time 7 is 21
+
+
+// -----------------------------------------------------------------------------
+// Exercise #13
+// ------------
+
+// Complete the missing lines so that the following code works:
+
+var createHorn = function () {
+  var horn = {};
+  horn.honk = function () {
+    return 'Honky Tonky sound';
+  };
+  return horn;
+};
+
+var myHorn = createHorn();
+console.log('Horn should honk a honky sound:', myHorn.honk());
+// → Horn should honk a honky sound: Honky Tonky sound
 
 </script>
 </body>
