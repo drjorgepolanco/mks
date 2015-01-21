@@ -164,17 +164,52 @@ console.log("Puppy should be fed:", puppy.mood);
 // -----------
 
 // Write a function createTrashCan that:
-
 // - Takes one parameter trashAmount
 // - Returns an object that:
 //   - Has one property trash with the value trashAmount
 
 var createTrashCan = function (trashAmount) {
-  return can = { trash: trashAmount }
+  return { trash: trashAmount }
 };
 
 var can = createTrashCan(2);
-console.log("Trash can should have 2 trash", can.trash);
+console.log("Trash can should have 2 trash:", can.trash);
+// → Trash can should have 2 trash: 2
+
+
+// -----------------------------------------------------------------------------
+// Exercise #9
+// -----------
+
+// Write a function createPetBat that:
+// - Takes one parameter happinessLevel
+// - Returns an object that:
+//   - Has a property 'happiness' with the value 'happinessLevel'
+//   - Run the following code to check your work:
+
+function createPetBat(happinessLevel) {
+  return { 
+    happiness: happinessLevel,
+    walkPetBat: function (walkAmount) {
+      this.happiness += walkAmount;
+    }
+  };
+};
+
+var bat = createPetBat(5);
+console.log('Bat should begin with happiness level 5: ', bat.happiness);
+// → Bat should begin with happiness level 5: 5
+
+
+// Update your function so that it returns the same object, but with:
+
+// - An additional property walkPetBat that points to a function. This function will:
+//   - Take one parameter walkAmount
+//   - Increases the value of happiness property by that walkAmount
+
+bat.walkPetBat(2);
+console.log('Bat has taken a walk of duration 2 and should have happiness of 7: ', bat.happiness);
+
 
 
 </script>
