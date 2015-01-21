@@ -209,7 +209,40 @@ console.log('Bat should begin with happiness level 5: ', bat.happiness);
 
 bat.walkPetBat(2);
 console.log('Bat has taken a walk of duration 2 and should have happiness of 7: ', bat.happiness);
+// → Bat has taken a walk of duration 2 and should have happiness of 7:  7
 
+
+// -----------------------------------------------------------------------------
+// Exercise #10
+// ------------
+
+// Write a function createBattery that:
+// - Takes one parameter charge
+// - Returns an object that:
+//   - Has a property energy with the value charge
+//   - Has a property use that points to a function that:
+//     - Takes one parameter amount
+//     - Deducts energy by that amount, unless amount is greater than energy
+
+function createBattery (charge) {
+  return {
+    energy: charge,
+    use: function (amount) {
+      while (this.energy > amount) {
+        this.energy -= amount;
+      }
+    }
+  };
+};
+
+var battery = createBattery(3);
+console.log('Battery should have 3 energy:', battery.energy);
+
+battery.use(2);
+console.log('Battery should have 1 energy:', battery.energy);
+
+battery.use(5);
+console.log('Battery should have 1 energy:', battery.energy);
 
 
 </script>
