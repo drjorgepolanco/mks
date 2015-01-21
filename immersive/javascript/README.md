@@ -55,4 +55,5 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[Javascript Funky Keys](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_funky_keys.html)**
 - **[JavaScript Methods](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_methods.html)**
 - **[JavaScript keyword 'this'](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_this.html)**
+- **[JavaScript Review 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_2.html)**
      
