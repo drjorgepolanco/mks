@@ -1,0 +1,8 @@
+#templates { 
+	display: none; 
+}
+#store .item {
+  background: #ddd;
+  padding: 1px 10px;
+  margin-bottom: 10px;
+}
