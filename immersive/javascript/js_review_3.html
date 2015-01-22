@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>Javascript Review 3</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #2.1
+// ----------------------------
+
+// Write the function alfred that:
+// - Takes a parameter order
+// - Returns an appropriate string based on the order
+// - When your function receives appetizer as a parameter, it should return an appetizer 
+// of your choice (for example, chips & salsa). When it receives lunch as a parameter, 
+// it should return a lunch dish of your choice, etc.
+
+var orders = ['appetizer', 'breakfast', 'lunch', 'dessert'];
+var hireCook = function (cook) {
+  // Generates a random number from 0 to 3
+  var ran = parseInt(Math.random() * 4, 10);
+  var order = orders[ran];
+  var dish = cook(order);
+  console.log('New order:', order, ' - You cooked the dish:', dish);
+};
+
+function alfred (order) {
+  if (order == 'appetizer')
+    return "Tuna and Mayo";
+  else if (order == 'breakfast')
+    return "Ham & Cheese Omelet with Tomatoes";
+  else if (order == 'lunch')
+    return "Skirt Steak with Broccoli";
+  else
+    return "Brownie with Caramel Ice Cream";
+};
+// Hire alfred for ten orders
+for (var i = 0; i < 10; i += 1) {
+  hireCook(alfred);
+};
+
+
+</script>
+</body>
+</html>
