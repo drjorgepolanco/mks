@@ -23,15 +23,15 @@
 
 
 var whinyPerson = {
-	pokeCount: 0,
-	poke: function () {
-		this.pokeCount += 1;
-		$('#response').append('ow!');
-		for (var i = 0; i < this.pokeCount - 1; i += 1) {
-			$('#response').append("!");
-		}
-		$('#response').append(' ');
-	}
+  pokeCount: 0,
+  poke: function () {
+    this.pokeCount += 1;
+    $('#response').append('ow!');
+    for (var i = 0; i < this.pokeCount - 1; i += 1) {
+      $('#response').append("!");
+    }
+    $('#response').append(' ');
+  }
 };
 
 $('#poke').on('click', function () {

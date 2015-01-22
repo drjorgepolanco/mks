@@ -57,4 +57,5 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[JavaScript keyword 'this'](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_this.html)**
 - **[JavaScript Review 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_2.html)**
 - **[JavaScript Review 3](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_3.html)**
+- **[Ow! - A For Loop Exercise](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/ow.html)**
      
