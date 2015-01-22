@@ -56,6 +56,7 @@ var museum = {
 museum.ticketPrice = 8;
 
 console.log("The price for the " + museum.name + " Museum is $" + museum.ticketPrice);
+// → The price for the Ramen Museum is $8
 
 
 // -----------------------------------------------------------------------------
@@ -70,6 +71,7 @@ me = {
 };
 
 console.log("My name is " + me.name + " and I love the " + me.accent + " accent!");
+// → My name is Jorge and I love the scottish accent!
 
 
 // -----------------------------------------------------------------------------
@@ -86,6 +88,194 @@ var book = {
 book['author'] = 'Jeffrey A. Kottler'
 
 console.log("The author of " + book.title + " should be  Jeffrey A. Kottler: ", book.author);
+// → The author of The Mummy at the Dining Room Table should be  Jeffrey A. Kottler:  Jeffrey A. Kottler
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #4.1
+// ----------------------------
+
+var deckOfCards = {
+  cardCount: 52, 
+  draw: function (number) {
+    this.cardCount -= number;
+  }
+};
+
+deckOfCards.draw(15);
+console.log("Example #1:", deckOfCards.cardCount);
+// → Example #1: 37
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #4.2
+// ----------------------------
+
+var func = function (amount) {
+  this.x += amount;
+  return this.x;
+};
+
+var ex2 = func(11);
+console.log("Example #2:", ex2);
+// → Example #2: NaN
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #4.3
+// ----------------------------
+
+var func = function (amount) {
+  this.x += amount;
+  return this.x;
+};
+
+var obj = {
+  x: 1,
+  f: func
+};
+
+var ex3 = obj.f(11);
+console.log("Example #3:", ex3);
+// → Example #3: 12
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #5.1
+// ----------------------------
+
+// Fix the following code:
+
+var dog = {};
+dog['sound'] = 'ruff';
+dog.bark = function () {
+  return this.sound + '!';
+};
+
+console.log("Dog should bark 'ruff!':", dog.bark());
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #5.2
+// ----------------------------
+
+// Fix the following code:
+
+var speak = function () {
+  return "I want to eat " + this.favFood;
+};
+
+var rabbit = {
+  speak: speak,
+  favFood: 'carrot'
+};
+
+var mouse = {
+  speak: speak,
+  favFood: 'cheese'
+};
+
+console.log("The mouse says:", mouse.speak());
+// → The mouse says: I want to eat cheese
+
+console.log("The rabbit says:", rabbit.speak());
+// → The rabbit says: I want to eat carrot
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #6.1
+// ----------------------------
+
+// Complete the missing line so that the cute and cuddly forest animal does not 
+// die. You must use this in your function.
+
+var cuteAndCuddlyForestAnimal = {
+  mood: 'lackadaisical',
+  listen: function () {
+    this.mood = 'alert';
+  }
+};
+
+var hunter = {
+  shoot: function (animal) {
+    if (animal.mood === 'alert')
+      return "Yes! It dodged the bullet!";
+    else
+      return "no0ooOo0o(1-1)o";
+  }
+}
+
+cuteAndCuddlyForestAnimal.listen();
+var result = hunter.shoot(cuteAndCuddlyForestAnimal);
+console.log("NO a hunter! Did it live?", result);
+// → NO a hunter! Did it live? Yes! It dodged the bullet!
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #6.2
+// ----------------------------
+
+// Complete the function processPassword such that the following code works:
+
+var processPassword = function (password) {
+  if (password === this.password)
+    return "Access Granted";
+  else
+    return "Access Denied";
+};
+
+var door1 = {
+  password: 'abc',
+  enterPassword: processPassword
+};
+
+var door2 = {
+  password: '123',
+  enterPassword: processPassword
+};
+
+var result;
+
+result = door1.enterPassword('letmein');
+console.log('Result should be denied:', result);
+// → Result should be denied: Access Denied
+
+result = door1.enterPassword('abc');
+console.log('Result should be granted:', result);
+// → Result should be granted: Access Granted
+
+result = door2.enterPassword('open up');
+console.log('Result should be denied:', result);
+// → Result should be denied: Access Denied
+
+result = door2.enterPassword('123');
+console.log('Result should granted:', result);
+// → Result should be granted: Access Granted
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #6.3
+// ----------------------------
+
+// Complete the missing line so that the following code works:
+
+var computer = { active: false };
+var otherComputer = { active: false };
+
+computer.switchOn = function () {
+  this.active = true;
+};
+
+otherComputer.switchOn = computer.switchOn;
+
+computer.switchOn();
+console.log("Computer should be active:", computer.active === true);
+// → Computer should be active: true
+
+otherComputer.switchOn();
+console.log("Other computer should be active:", otherComputer.active === true);
+// → Other computer should be active: true
+
 
 </script>
 </body>
