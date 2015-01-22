@@ -11,13 +11,6 @@
 // Partner Review Exercise #2.1
 // ----------------------------
 
-// Write the function alfred that:
-// - Takes a parameter order
-// - Returns an appropriate string based on the order
-// - When your function receives appetizer as a parameter, it should return an appetizer 
-// of your choice (for example, chips & salsa). When it receives lunch as a parameter, 
-// it should return a lunch dish of your choice, etc.
-
 var orders = ['appetizer', 'breakfast', 'lunch', 'dessert'];
 var hireCook = function (cook) {
   // Generates a random number from 0 to 3
@@ -27,6 +20,12 @@ var hireCook = function (cook) {
   console.log('New order:', order, ' - You cooked the dish:', dish);
 };
 
+// Write the function alfred that:
+// - Takes a parameter order
+// - Returns an appropriate string based on the order
+// - When your function receives appetizer as a parameter, it should return an 
+// appetizer of your choice (for example, chips & salsa). When it receives lunch 
+// as a parameter, it should return a lunch dish of your choice, etc.
 function alfred (order) {
   if (order == 'appetizer')
     return "Tuna and Mayo";
@@ -54,12 +53,39 @@ var museum = {
 
 // Now set a value ticketPrice on this museum object such that the following 
 // code executes correctly:
-
 museum.ticketPrice = 8;
 
 console.log("The price for the " + museum.name + " Museum is $" + museum.ticketPrice);
 
 
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #3.2
+// ----------------------------
+
+// Create an object me with your name and favorite accent such that the following 
+// code outputs correctly:
+me = {
+  name: "Jorge",
+  accent: "scottish"
+};
+
+console.log("My name is " + me.name + " and I love the " + me.accent + " accent!");
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #3.2
+// ----------------------------
+
+var book = {
+  title: "The Mummy at the Dining Room Table",
+  author: "George W. Bush"
+};
+
+// Write additional code to update the value of the author property so that the 
+// following code executes correctly:
+book['author'] = 'Jeffrey A. Kottler'
+
+console.log("The author of " + book.title + " should be  Jeffrey A. Kottler: ", book.author);
 
 </script>
 </body>
