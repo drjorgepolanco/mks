@@ -60,4 +60,9 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[JavaScript Review 3](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_3.html)**
 - **[Ow! - A For Loop Exercise](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/ow.html)**
 - **[Riot.js Templates](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js):** [Riot.js](https://github.com/muut/riotjs) is a tiny Model View Presenter (MVP) framework.
+- **[Javascript Review 4](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_4.html):** 
+  - **Review**:
+    - Arrays
+    - For Loops.
+- **[Riot.js Templates Review]():** Creating transparent, draggable and colored boxes using templates and Riot.js's $.render function.
      

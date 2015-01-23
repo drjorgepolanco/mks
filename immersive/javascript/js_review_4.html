@@ -9,7 +9,7 @@
 
 
 // -----------------------------------------------------------------------------
-// Partner Review Exercise #2.2
+// Partner Review Exercise #2.1
 // ----------------------------
 
 // Create a function echoecho that takes one parameter str and returns that string twice.
@@ -87,9 +87,59 @@ for (var i = 0; i < properties.length; i += 1) {
   var fishType = properties[i];
   console.log(fishType + ": " + aquarium[fishType]);
 };
+// → goldfish: 3
+// → betafish: 1
+// → octopusfish: 2
+// → gorillafish: 1
 
 
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #3.1
+// ----------------------------
 
+var letters = ['a', 'b', 'c', 'a', 'a', 'c'];
+var stats = {};
+
+for (var i = 0; i < letters.length; i += 1) {
+  var letter = letters[i];
+
+  if (stats[letter] === undefined) {
+    stats[letter] = 0;
+  }
+  stats[letter] += 1;
+};
+
+console.log('Stats for letters:', stats);
+// → Stats for letters: Object {a: 3, b: 1, c: 2}
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #3.2
+// ----------------------------
+
+var compact = function (array) {
+  var results = [];
+
+  for (var i = 0; i < array.length; i += 2) {
+    if (array[i])
+      results.push(array[i]);
+  }
+  return results;
+};
+
+var items = [10, 'a', 0, false, true];
+console.log('before:', items);
+// → before: [10, "a", 0, false, true]
+
+console.log('after compact:', compact(items));
+// → after compact: [10, true]
+
+items = [{}, [], null, compact.x, compact.prototype];
+console.log('before:', items);
+// → before: [Object, Array[0], null, undefined, compact]
+
+console.log('compact again:', compact(items));
+// → compact again: [Object, compact]
 
 </script>
 </body>
