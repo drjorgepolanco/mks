@@ -141,6 +141,39 @@ console.log('before:', items);
 console.log('compact again:', compact(items));
 // → compact again: [Object, compact]
 
+
+// -----------------------------------------------------------------------------
+// Extension Partner Exercise
+// --------------------------
+
+var contains = function(array, element) {
+  for (var i = 0; i < array.length; i += 1) {
+    if (array[i] === element)
+      return true;
+  }
+  return false;
+};
+
+var mystery = function (arrays) {
+  var results = [];
+
+  for (var n = 0; n < arrays.length; n += 1) {
+    var currentArray = arrays[n];
+
+    for (var i = 0; i < currentArray.length; i += 1) {
+      if (contains(results, currentArray[i]) === false)
+        results.push(currentArray[i]);
+    }
+  }
+  return results;
+};
+
+var arrayOne   = [11, 22];
+var arrayTwo   = [22, 33, 44];
+var arrayThree = [33, 44, 55];
+console.log('mystery meat:', mystery([arrayOne, arrayTwo, arrayThree]));
+// → mystery meat: [11, 22, 33, 44, 55]
+
 </script>
 </body>
 </html>
