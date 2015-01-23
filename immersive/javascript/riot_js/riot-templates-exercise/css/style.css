@@ -1,8 +1,17 @@
 #templates { 
 	display: none; 
 }
+
+.container {
+	padding-top: 24px;
+}
+
+.center_text {
+	text-align: center;
+}
+
 #store .item {
   background: #ddd;
-  padding: 1px 10px;
-  margin-bottom: 10px;
+  padding: 8px 16px;
+  margin-bottom: 5px;
 }
