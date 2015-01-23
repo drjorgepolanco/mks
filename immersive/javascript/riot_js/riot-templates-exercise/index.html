@@ -2,10 +2,34 @@
 <head>
   <title>Riot Templates Exercise</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/css/foundation.min.css">
 </head>
 <body>
 
+<div class="row container">
+	<h1 class="center_text">The Fruit's Cocktail Store</h1>
+	<hr>
+	<form id="store-form" class="large-3 columns">
+		<h5>Add Fruit Cocktail:</h5>
+    <label>Name:</label>
+    <input type="text" name="name" class="name">
+    <label>Price:</label>
+    <input type="text" name="price" class="price">
+    <br>
+    <input type="submit" value="Submit" class="button expand">
+  </form>
+  <div id="store" class="large-9 columns">
+  	<h3>Fruit's Cocktail Menu</h3>
+  </div>
+</div>
 
+<div id="templates">
+  <script class="item" type="text/template">
+    <div class="item">
+      <div>{ name } - ${ price }</div>
+    </div>
+  </script>
+</div>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
 <script src="vendor/js/riot.js"></script>
