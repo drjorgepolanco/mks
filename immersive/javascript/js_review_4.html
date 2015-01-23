@@ -33,8 +33,8 @@ console.log("Should be okok:", echoecho('ok'));
 // Partner Review Exercise #2.2
 // ----------------------------
 
-// Create a function stringMult() that takes two parameters 'string' and 'times' and returns 
-// that string multiplied by the given number of times.
+// Create a function stringMult() that takes two parameters 'string' and 'times' 
+// and returns that string multiplied by the given number of times.
 
 // Recursive Solution
 function stringMult(string, times) {
@@ -65,6 +65,28 @@ console.log("Should be cakecakecakecakecakecake:", stringMultiplier('cake', 6));
 
 console.log("Should be NewYorkNewYorkNewYorkNewYork:", stringMultiplier('NewYork', 4));
 // → Should be NewYorkNewYorkNewYorkNewYork: NewYorkNewYorkNewYorkNewYork
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #2.3
+// ----------------------------
+
+// Complete the for loop so that it console logs the amount of each fish in the 
+// aquarium.
+
+var aquarium = {
+  goldfish: 3,
+  betafish: 1,
+  octopusfish: 2,
+  gorillafish: 1
+};
+
+var properties = ['goldfish', 'betafish', 'octopusfish', 'gorillafish'];
+for (var i = 0; i < properties.length; i += 1) {
+  var fishType = properties[i];
+  console.log(fishType + ": " + aquarium[fishType]);
+};
+
 
 
 
