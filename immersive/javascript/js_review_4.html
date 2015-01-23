@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Javascript Review 4</title>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #2.2
+// ----------------------------
+
+// Create a function strMult() that takes two parameters 'str' and 'times' and returns 
+// that string multiplied by the given number of times.
+function strMult(str, times) {
+  if (times === 0)
+    return '';
+  else
+    return str + strMult(str, times - 1);
+};
+
+console.log("Should be whatwhat:", strMult('what', 2));
+console.log("Should be mikemikemikemikemike:", strMult('mike', 5));
+
+
+
+</script>
+</body>
+</html>
