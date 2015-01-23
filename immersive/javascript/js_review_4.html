@@ -81,7 +81,8 @@ var aquarium = {
   gorillafish: 1
 };
 
-var properties = ['goldfish', 'betafish', 'octopusfish', 'gorillafish'];
+// var properties = ['goldfish', 'betafish', 'octopusfish', 'gorillafish'];
+var properties = Object.keys(aquarium);
 for (var i = 0; i < properties.length; i += 1) {
   var fishType = properties[i];
   console.log(fishType + ": " + aquarium[fishType]);
