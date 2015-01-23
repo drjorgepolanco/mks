@@ -13,6 +13,7 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[Restaurant Reservation 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/restaurant_reservation_2.html):** A better implementation of the first try at the top of this list.
 - **[Bakery Bonanza](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/bakery):** A bakery that can bake baked goods, including cupcakes and cookies. See live project **[here](http://drjorgepolanco.com/js_apps/bakery/bakery.html)**.
 - **[Tic Tac Toe](https://github.com/drjorgepolanco/tic-tac-toe)**: See live project **[here](http://drjorgepolanco.com/js_apps/tic-tac-toe/index.html)**.
+- **[Music Videos](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/music-videos):** See live project **[here](http://drjorgepolanco.com/js_apps/music-videos/index.html)**.
 
 
 ###Exercises:
@@ -58,4 +59,5 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[JavaScript Review 2](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_2.html)**
 - **[JavaScript Review 3](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_3.html)**
 - **[Ow! - A For Loop Exercise](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/ow.html)**
+- **[Riot.js Templates](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js):** [Riot.js](https://github.com/muut/riotjs) is a tiny Model View Presenter (MVP) framework.
      
