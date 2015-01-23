@@ -1,14 +1,14 @@
 #Music Video Playlist Manager
 
-We're going to implement a music video playlist manager.
+See live project **[here](http://drjorgepolanco.com/js_apps/music-videos/index.html)**.
 
-##1.0
+##v1.0
 * Create a form for users to add a new video
 * Display the list of videos in HTML
 * Provide a link to each video
 
 ####Render the Video List
-* In `index.html`, write a `video-list-item` template that interpolates a `title` variable, wrapped in a `h3` tag
+* In `index.html`, write a `video-list-item` template that interpolates a `title` variable, wrapped in a `li` tag
 * In `main.js`, complete the `renderVideoList` function that:
   * Iterates over each video in the `videos` array
   * Generate new HTML for each video

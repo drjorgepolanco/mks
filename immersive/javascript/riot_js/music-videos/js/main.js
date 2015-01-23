@@ -21,6 +21,8 @@ $('#new-video').on('submit', function (e) {
 	e.preventDefault();
 	var title = $('.title').val();
 	var youtubeId = $('.youtube_id').val();
+  $('.title').val('');
+  $('.youtube_id').val('');
 	var newVideo = $.render(videoTemplate, { 
 		title: title, 
 		youtubeId: youtubeId
