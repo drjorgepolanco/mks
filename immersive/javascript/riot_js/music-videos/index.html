@@ -2,23 +2,33 @@
 <head>
   <title>Riot Starter - Music Videos</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.0/css/foundation.min.css">
 </head>
 <body>
+  <div class="row">
+    <h1 class="center_text"><strong>Music Video Playlist Manager</strong></h1>
+    <hr>
+    <div id="video-display"></div>
 
-<div id="video-display"></div>
-<div id="video-list"></div>
+    <div id="video-list">
+      <h3><strong>Video List</strong></h3>
+    </div>
 
-<form id="new-video">
-  <!-- TODO: 2 inputs, 1 button -->
-</form>
+    <form id="new-video">
+      <!-- TODO: 2 inputs, 1 button -->
+    </form>
 
 
-<div id="templates">
-  <!-- TODO: video-list-item template -->
-  <script class="video-list-item" type="text/template">
-    <h3>{ title }</h3>
-  </script>
-</div>
+    <div id="templates">
+      <!-- TODO: video-list-item template -->
+      <script class="video-list-item" type="text/template">
+        <h4>{ title }</h4>
+      </script>
+    </div>
+
+  </div>
+
+
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
 <script src="vendor/js/riot.js"></script>
