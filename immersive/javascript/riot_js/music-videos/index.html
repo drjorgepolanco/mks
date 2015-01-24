@@ -14,7 +14,9 @@
         <h3><strong>Add Video</strong></h3>
         <hr>
         <label>Title</label>
-        <input type="text" name="title" class="title" placeholder="Write the name of the video here">
+        <input type="text" name="title" class="title" placeholder="Write the video name here">
+        <label>Genre</label>
+        <input type="text" name="genre" class="genre" placeholder="Write the video genre here">
         <label>Youtube ID</label>
         <input type="text" name="youtube_id" class="youtube_id" placeholder="Paste the id here. Eg. GyR2HJ9B7aM">
         <input type="submit" value="Add Video" class="button success expand">
@@ -44,7 +46,7 @@
   <div id="templates">
     <ul>
       <script class="video-list-item" type="text/template">
-        <li><a href="http://www.youtube.com/watch?v={ youtubeId }" target="blank">{ title }</a></li>
+        <li><a href="http://www.youtube.com/watch?v={ youtubeId }" target="blank">{ title }</a> - { genre }</li>
       </script>
     </ul>
 

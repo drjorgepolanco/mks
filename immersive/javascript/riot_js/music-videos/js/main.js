@@ -19,7 +19,8 @@ var videoTemplate = $('#templates .video-list-item').html();
 var renderVideoList = function () {
   for (var i = 0; i < videos.length; i += 1) {
     var video = $.render(videoTemplate, { 
-    	title: videos[i].title, 
+    	title: videos[i].title,
+      genre: videos[i].genre, 
     	youtubeId: videos[i].youtubeId 
     });
     $('#video-list').append(video);
@@ -29,12 +30,17 @@ renderVideoList();
 
 $('#new-video').on('submit', function (e) {
 	e.preventDefault();
-	var title = $('.title').val();
+  var title = $('.title').val();
+  var genre = $('.genre').val();
 	var youtubeId = $('.youtube_id').val();
   $('.title').val('');
+  $('.genre').val('');
   $('.youtube_id').val('');
+  videos.push({ title: title, genre: genre, youtubeId: youtubeId});
+  renderGenreStats();
 	var newVideo = $.render(videoTemplate, { 
-		title: title, 
+		title: title,
+    genre: genre, 
 		youtubeId: youtubeId
 	});
 	$('#video-list').append(newVideo);
@@ -50,6 +56,7 @@ var renderGenreStats = function () {
   };
   stats;
   var genreStatTemplate = $('#templates .genre-stat').html();
+  $('#genre-stats').empty();
   for (var genre in stats) {
     var genreCount = stats[genre];
     var genreStat = $.render(genreStatTemplate, { 
