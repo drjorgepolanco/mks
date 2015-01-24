@@ -42,8 +42,8 @@ $('#new-video').on('submit', function (e) {
     title: title,
     genre: genre, 
     youtubeId: youtubeId
-	});
-	$('#video-list').append(newVideo);
+  });
+  $('#video-list').append(newVideo);
 });
 
 var renderGenreStats = function () {
