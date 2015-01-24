@@ -2,8 +2,8 @@
 
 See live project **[here](http://drjorgepolanco.com/js_apps/music-videos/index.html)**.
 
-##v1.0
 <hr>
+##v1.0
 
 ####Goals
 * Create a form for users to add a new video
@@ -34,9 +34,8 @@ Create a `submit` event handler for your new form. It should:
 * Generate the new `video-list-item` html
 * Add the newly generated html to the `#video-list` div
 
-
-##v2.0
 <hr>
+##v2.0
 
 ####Goals
 * Adding a `genre` property to each music video
@@ -51,15 +50,15 @@ Create a `submit` event handler for your new form. It should:
 ####Displaying the Stats on the Page
 * Add this div to your page:
 
-      <div id="genre-stats"></div>
+        <div id="genre-stats"></div>
       
 * Now create a template script for an individual genre count.
 * Add the following code to your `renderGenreStats` function:
 
-      for (var genre in stats) {
-        var genreCount = stats[genre];
-        // TODO
-      }
+        for (var genre in stats) {
+          var genreCount = stats[genre];
+          // TODO
+        }
 
 Finish this object loop so that it:
 
