@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Javascript Scopes</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// -----------------------------------------------------------------------------
+// Lexical Scope
+// -------------
+
+// Because of closures, a variable is accessible to any inner scope. In other words, 
+// if you have a local variable x, any new function declared inside the same scope 
+// as x will have access to it. This is called Lexical Scoping.
+
+var createAnnouncer = function (catchphrase) {
+  var phrase = catchphrase + '!';
+  var result = {
+    welcome: function () {
+      return 'Welcome, ladies and gents! ' + phrase;
+    },
+    goodbye: function () {
+      return 'Have a good night folks! ' + phrase;
+    }
+  };
+  return result;
+};
+
+var announcer = createAnnouncer('Boom Shakalakalaka');
+console.log('It begins:', announcer.welcome());
+// → It begins: Welcome, ladies and gents! Boom Shakalakalaka!
+
+console.log('It ends:', announcer.goodbye());
+// → It ends: Have a good night folks! Boom Shakalakalaka!
+
+
+
+
+</script>
+</body>
+</html>
