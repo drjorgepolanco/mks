@@ -1,0 +1,118 @@
+<html>
+<head>
+  <title>Functions as Constructors</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1
+// --------------------------
+
+var Person = function (name, age) {
+  this.name = name;
+  this.age = age;
+  this.species = 'H. sapiens';
+};
+
+var bob = new Person('Bob', 45);
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #2
+// --------------------------
+
+// Finish the constructor function Person such that it:
+// - Takes one parameter: name
+// - Constructs a new object with a property name
+
+var Person = function (name) {
+  this.name = name;
+};
+
+var alice = new Person('Alice');
+console.log('New Person:', alice);
+// → New Person: Person {name: "Alice"}
+
+console.log('Is it Alice?', alice.name === 'Alice');
+// → Is it Alice? true
+
+var bob = new Person('Bob');
+console.log('New Person:', bob);
+// → New Person: Person {name: "Bob"}
+
+console.log('Is it Bob?', bob.name === 'Bob');
+// → Is it Bob? true
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #3
+// --------------------------
+
+// This new constructor function will interact with your previous Person function:
+
+// - Constructor function: Car
+//   - Takes two parameters: color and person
+//   - color is expected to be a string
+//   - person is expected to be an object constructed by Person
+//   - Constructs an object with three properties: color, driver, and ignite
+//   - color will be a string
+//   - driver will be an object
+//   - ignite will be a function that returns a string:
+//     - If the car has a driver, it returns "Vroom!"
+//     - If not, it returns a message that says a driver is required.
+
+var Car = function (color, person) {
+  this.color  = color;
+  this.driver = person;
+  this.ignite = function () {
+    if (this.driver === undefined)
+      return "No driver, no driving...";
+    else
+      return "Vroom!";
+  };
+};
+
+var bob           = new Person('Bob');
+var car           = new Car('black', bob);
+var driverlessCar = new Car('blue');
+
+console.log('New Car:', car);
+// → New Car: Car {color: "black", driver: Person, ignite: function}
+
+console.log('Is it black?', car.color === 'black');
+// → Is it black? true
+
+console.log('Who is the driver?', car.driver);
+// → Who is the driver? Person {name: "Bob"}
+
+console.log('Is the driver\'s name Bob?', car.driver.name === 'Bob');
+// → Is the driver's name Bob? true
+
+console.log('Starting the car:', car.ignite());
+// → Starting the car: Vroom!
+
+console.log('Did it start?', car.ignite() === 'Vroom!');
+// → Did it start? true
+
+console.log('Another Car:', driverlessCar);
+// → Another Car: Car {color: "blue", driver: undefined, ignite: function}
+
+console.log('Is it blue?', driverlessCar.color === 'blue');
+// → Is it blue? true
+
+console.log('Who is the driver?', driverlessCar.driver);
+// → Who is the driver? undefined
+
+console.log('Starting the car:', driverlessCar.ignite());
+// → Starting the car: No driver, no driving...
+
+console.log('Did it fail to start?', driverlessCar.ignite() !== 'Vroom!');
+// → Did it fail to start? true
+
+
+</script>
+</body>
+</html>
