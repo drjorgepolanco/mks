@@ -65,4 +65,5 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
     - Arrays
     - For Loops.
 - **[Riot.js Templates Review 1](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/riot-review-1):** Creating transparent, draggable and colored boxes using templates and Riot.js's $.render function.
+- **[JavaScript Review 5](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_5.html):** jQuery Review. Traversing, selecting and updating the DOM.
      
