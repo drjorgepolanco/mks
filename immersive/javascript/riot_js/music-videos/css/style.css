@@ -9,6 +9,7 @@ body:before {
   z-index: -1;
   background: url('../images/music_videos.jpg') no-repeat center center fixed;
   background-size: cover;
+  opacity: 0.4;
 }
 
 .center_text {
