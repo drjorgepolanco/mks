@@ -3,6 +3,9 @@
 See live project **[here](http://drjorgepolanco.com/js_apps/music-videos/index.html)**.
 
 ##v1.0
+<hr>
+
+####Goals
 * Create a form for users to add a new video
 * Display the list of videos in HTML
 * Provide a link to each video
@@ -30,3 +33,39 @@ Create a `submit` event handler for your new form. It should:
 * Add a **new object** to the `videos` array with the new title and youtube id
 * Generate the new `video-list-item` html
 * Add the newly generated html to the `#video-list` div
+
+
+##v2.0
+<hr>
+
+####Goals
+* Adding a `genre` property to each music video
+
+####Setting Up Test Data
+* Manually type and add a `genre` property to each object in your `videos` array
+* Add extra videos
+
+####Calculating Genre Stats
+* Write a `renderGenreStats` function that loops through your `videos` array and calculates the number of videos that are part of each genre.
+
+####Displaying the Stats on the Page
+* Add this div to your page:
+
+      <div id="genre-stats"></div>
+      
+* Now create a template script for an individual genre count.
+* Add the following code to your `renderGenreStats` function:
+
+      for (var genre in stats) {
+        var genreCount = stats[genre];
+        // TODO
+      }
+
+Finish this object loop so that it:
+
+* Generates **new html** for the current genre (using your **template script** from the previous exercise)
+* Adds this new html to the `#genre-stats` div
+
+####Updating Stats in REAL TIME
+
+In your original form's `submit` handler, call your `renderGenreStats` function so that your stats update every time the user enters a new video with a genre.
