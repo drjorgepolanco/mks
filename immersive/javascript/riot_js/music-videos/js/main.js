@@ -1,3 +1,7 @@
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+};
+
 var videos = [
   { title: "Iron Maiden Wasted Years Official Music Video",           youtubeId: 'GnqkDbrIfps', genre: 'metal'        },
   { title: "Blake Shelton - 'Lonely Tonight' (Ft. Ashley Monroe)",    youtubeId: 'G91KZ56mNbw', genre: 'country'      },
@@ -44,6 +48,18 @@ var renderGenreStats = function () {
       stats[genre] = 0;
     stats[genre] += 1;
   };
-  return stats;
+  stats;
+  var genreStatTemplate = $('#templates .genre-stat').html();
+  for (var genre in stats) {
+    var genreCount = stats[genre];
+    var genreStat = $.render(genreStatTemplate, { 
+      genre: capitalize(genre), 
+      genreCount: genreCount 
+    });
+    $('#genre-stats').append(genreStat);
+  };
 };
-console.log(renderGenreStats());
+renderGenreStats();
+
+
+

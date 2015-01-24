@@ -9,27 +9,48 @@
   <div class="row">
     <h1 class="center_text"><strong>Music Video Playlist Manager</strong></h1>
     <hr>
-    <form id="new-video">
-      <label>Title</label>
-      <input type="text" name="title" class="title" placeholder="Write the name of the video here">
-      <label>Youtube ID</label>
-      <input type="text" name="youtube_id" class="youtube_id" placeholder="Paste the id here. Eg. GyR2HJ9B7aM">
-      <input type="submit" value="Add Video" class="button success expand">
-    </form>
-
-    <div id="video-display"></div>
-
-    <div id="video-list">
-      <h3><strong>Video List</strong></h3>
+    <div class="large-8 columns">
+      <form id="new-video">
+        <h3><strong>Add Video</strong></h3>
+        <hr>
+        <label>Title</label>
+        <input type="text" name="title" class="title" placeholder="Write the name of the video here">
+        <label>Youtube ID</label>
+        <input type="text" name="youtube_id" class="youtube_id" placeholder="Paste the id here. Eg. GyR2HJ9B7aM">
+        <input type="submit" value="Add Video" class="button success expand">
+      </form>
     </div>
 
-    <div id="templates">
-      <ul>
-        <script class="video-list-item" type="text/template">
-          <li>{ title } - <a href="http://www.youtube.com/watch?v={ youtubeId }" target="blank">See in Youtube</a></li>
-        </script>
-      </ul>
+    <div class="large-4 columns">
+      <div id="genre-stats">
+        <h3><strong>Video Stats</strong></h3>
+        <hr>
+      </div>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 columns">
+      <div id="video-list">
+        <h3><strong>Video List</strong></h3>
+      </div>
+    </div>
+
+    <div class="large-4 columns">
+      <div id="video-display"></div>
+    </div>
+  </div>
+  
+  <div id="templates">
+    <ul>
+      <script class="video-list-item" type="text/template">
+        <li><a href="http://www.youtube.com/watch?v={ youtubeId }" target="blank">{ title }</a></li>
+      </script>
+    </ul>
+
+    <script class="genre-stat" type="text/template">
+      <p><strong>{ genre }:</strong> { genreCount } video(s).</p>
+    </script>
   </div>
 
 <script src="vendor/js/jquery-1.10.2.min.js"></script>
