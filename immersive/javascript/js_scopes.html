@@ -35,7 +35,75 @@ console.log('It ends:', announcer.goodbye());
 // → It ends: Have a good night folks! Boom Shakalakalaka!
 
 
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1.1
+// ----------------------------
 
+window.msg = 'JavaScript is cool!';
+
+var outerFunc = function () {
+  var msg = 'JavaScript is not bad.';
+
+  var innerFunc = function () {
+    var msg = "It's ok I guess...";
+    console.log(msg);
+    // → It's ok I guess...                         (first)
+  };
+  innerFunc();
+  console.log(msg);
+  // → JavaScript is not bad.                       (second)
+};
+outerFunc();
+console.log(msg);
+// → JavaScript is cool!                            (third)
+
+delete window.msg;
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1.2
+// ----------------------------
+
+var outerFunc2 = function () {
+  var msg = "JavasScript is not bad.";
+
+  var innerFunc2 = function () {
+    var msg = "It's not bad - it's great!";
+    console.log(msg);
+    // → It's not bad - it's great!                 (first)
+  };
+  innerFunc2();
+  console.log(msg);
+  // → "JavasScript is not bad."                    (second)
+};
+outerFunc2();
+// console.log(msg);
+// → Uncaught ReferenceError: msg is not defined    (third)
+
+delete window.msg;
+
+
+// -----------------------------------------------------------------------------
+// Partner Review Exercise #1.3
+// ----------------------------
+
+var outerFunc3 = function () {
+  msg = "JavasScript is not bad.";
+
+  var innerFunc3 = function () {
+    var msg = "It's not bad - it's great!";
+    console.log(msg);
+    // → It's not bad - it's great!                 (first)
+  };
+  innerFunc3();
+  console.log(msg);
+  // → "JavasScript is not bad."                    (second)
+};
+outerFunc3();
+console.log(msg);
+// → "JavasScript is not bad."                      (third)
+
+delete window.msg;
 
 </script>
 </body>
