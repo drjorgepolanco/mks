@@ -74,57 +74,71 @@ weather.trigger('snow-storm');
 weather.trigger('tornado');
 
 
+// -----------------------------------------------------------------------------
+// Partner Exercise #1.3
+// ---------------------
+
+// Add two event listeners on fireEater that listen for a 'pose' event and a 'choke' 
+// event. When the fire eater poses, console log an applause. When the fire eater 
+// chokes, console log an audience gasp.
+
+var fireEater = {
+	state: 'arrogant',
+	eatFire: function () {
+		if (this.state === 'choking') {
+			this.trigger('choke');
+		}
+		var fate = parseInt(Math.random() * 5, 10);
+		if (fate === 0) {
+			this.trigger('choke');
+			this.state = 'choking';
+		}
+		else {
+			this.trigger('pose');
+		} 
+	}
+};
+
+$.observable(fireEater);
+
+fireEater.on('pose', function () {
+	console.log("Applauses!!!");
+});
+fireEater.on('choke', function () {
+	console.log("Audience gasps!!");
+});
+
+for (var i = 0; i < 10; i += 1) {
+	fireEater.eatFire();
+};
 
 
+// -----------------------------------------------------------------------------
+// Partner Exercise #2
+// -------------------
 
+// Trigger a price change event so that the following code works:
 
+var stock = $.observable({
+  price: 99,
+  update: function () {
+    this.price += parseInt(Math.random() * 3, 10) - 1;
+    this.trigger('price-change', this.price);
+  }
+});
 
+stock.on('price-change', function (price) {
+  if (price > 100) {
+    console.log('Too expensive:', price);
+  }
+  else if (price < 100) {
+    console.log('Too cheap:', price);
+  }
+  else {
+    console.log('Just right!', price);
+  }
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+setInterval(function () {
+  stock.update();
+}, 1000);
