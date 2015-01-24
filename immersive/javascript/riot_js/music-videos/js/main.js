@@ -35,3 +35,15 @@ $('#new-video').on('submit', function (e) {
 	});
 	$('#video-list').append(newVideo);
 });
+
+var renderGenreStats = function () {
+  var stats = {};
+  for (var i = 0; i < videos.length; i += 1) {
+    var genre = videos[i].genre;
+    if (stats[genre] === undefined)
+      stats[genre] = 0;
+    stats[genre] += 1;
+  };
+  return stats;
+};
+console.log(renderGenreStats());
