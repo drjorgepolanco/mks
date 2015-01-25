@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>Javascript Data Abstraction</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// -----------------------------------------------------------------------------
+// Private Variables
+// -----------------
+
+var PeopleClicker = function () {
+  
+  // The Private Variable
+  var clicks = 0;
+  // var clicks is NOT a property of clicker. <--- <<-- <<<-
+  // It is instead a private variable inside the function scope created in line 31.
+
+  // A 'public' function that increments the private variable
+  this.click = function () {
+    clicks += 1;
+  };
+
+  // Another 'public' function that allows read (not write) access to the variable
+  this.getClickCount = function () {
+    return clicks;
+  };
+};
+
+var clicker = new PeopleClicker(); // <-- CREATES THE SCOPE (THE DREAM SPACE)
+
+// This works
+clicker.click();
+
+// This also works
+clicker.getClickCount();     // → 1
+
+// This doesn't work!
+clicker.clicks               // → undefined
+
+// The concept of the inner functions having exclusive access to the clicks 
+// variable is called a "CLOSURE".
+
+// When a closure happens, the 'dream space' will stick around for as long as
+// 'var clicker' sticks around.
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #1.1
+// ---------------------
+
+// Write a function that decrements the amount of energy the robot has:
+
+var Robot = function () {
+  var energy = 10;
+  this.go = function () {
+    energy -= 1;
+  };
+  this.getEnergy = function () {
+    return energy;
+  };
+};
+
+var rob = new Robot();
+console.log('Robot should have 10 energy:', rob.getEnergy());
+
+rob.go();
+rob.go();
+console.log('Robot should have 8 energy:', rob.getEnergy());
+
+</script>
+</body>
+</html>
