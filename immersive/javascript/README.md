@@ -68,4 +68,5 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[JavaScript Review 5](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_5.html):** jQuery Review. Traversing, selecting and updating the DOM.
 - **[Functions as Constructors](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/functions_as_constructors.html)**
 - **[Riot.js Events](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/riot-events)**
+- **[Riot Event Reading](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/riot-event-reading):** In this lesson we read through some working code to see how Riot.js events can effectively be used.
      
