@@ -68,3 +68,25 @@ Finish this object loop so that it:
 ####Updating Stats in REAL TIME
 
 In your original form's `submit` handler, call your `renderGenreStats` function so that your stats update every time the user enters a new video with a genre.
+
+<hr>
+##v3.0
+
+####Goals
+* A video playlist is most excellent when you can view the videos on the page itself!
+
+####The Youtube Embed Template
+
+1. Visit any Youtube video page
+2. Click the `share` tab above the description
+3. Click the inner `Embed` tab
+4. Copy the iframe code
+5. Paste it **as a new template script** with class `video-embed`
+
+####Detecting a Video Click
+Add `data-youtube-id` attribute with the **youtube id as the value** (similar to the href) to the anchor link in your `video-list-item` template. You will need this to identify which youtube video link is being clicked.
+
+Now create a click listener for your anchor links.
+
+####Displaying the Video
+Now that you have the youtube id, **on each click**, use your new `video-embed` template to generate new html to replace the contents of the `#video-display` div with an iframe that points to the clicked video.
