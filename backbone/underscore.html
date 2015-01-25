@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Underscore Bare</title>
+  <style type="text/css">
+    #templates { display: none; }
+    #scores .item {
+      background: #ddd;
+      padding: 1px 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="store">
+  <div class="item">
+    <p>Apple - $1</p>
+  </div>
+  <div class="item">
+    <p>Banana - $2</p>
+  </div>
+  <div class="item">
+    <p>Carrot - $4</p>
+  </div>
+</div>
+
+<div id="templates">
+  <script type="text/template" class="item">
+    <div class="item">
+      <p><%= name %> - $<%= price %></p>
+    </div>
+  </script>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+<script type="text/javascript">
+  var itemTemplateHtml = $('#templates .item').html();
+  var itemTemplate = _.template(itemTemplateHtml)
+
+  var newItemHtml = itemTemplate({ name: 'Date', price: 0.15 });
+  $('#store').append(newItemHtml)
+</script>
+
+</body>
+</html>
