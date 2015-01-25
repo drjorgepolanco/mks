@@ -41,6 +41,23 @@
 
   var newItemHtml = itemTemplate({ name: 'Date', price: 0.15 });
   $('#store').append(newItemHtml)
+
+  var scores = [
+    { name: "Beet",   price: 3},
+    { name: "Orange", price: 2},
+    { name: "Beer",   price: 5}
+  ];
+
+  for (var i = 0; i < scores.length; i += 1) {
+    var name  = scores[i].name;
+    var price = scores[i].price;
+    var newItemHtml = itemTemplate({
+      name:  name,
+      price: price
+    });
+    $('#store').prepend(newItemHtml);
+  };
+
 </script>
 
 </body>
