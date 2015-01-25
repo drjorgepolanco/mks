@@ -12,6 +12,33 @@ body:before {
   opacity: 0.4;
 }
 
+#video-display-container {
+  background: #000;
+  margin-bottom: 24px; 
+}
+
+#video-display {
+  text-align: center;
+}
+
 .center_text {
   text-align: center;
+}
+
+.list-item-container {
+  margin-bottom: 24px;
+  padding-left: 0 !important;
+  border: 1px solid #ccc;
+}
+
+.list-item-container:hover {
+  cursor: pointer;
+}
+
+.list-item-video {
+  padding: 0 !important;
+}
+
+.list-item-text {
+  padding-top: 16px;
 }
