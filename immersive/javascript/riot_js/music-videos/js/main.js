@@ -3,19 +3,20 @@ function capitalize(string) {
 };
 
 var videos = [
-  { title: "Iron Maiden Wasted Years Official Music Video",           youtubeId: 'GnqkDbrIfps', genre: 'metal'        },
-  { title: "Blake Shelton - 'Lonely Tonight' (Ft. Ashley Monroe)",    youtubeId: 'G91KZ56mNbw', genre: 'country'      },
-  { title: "SODA STEREO - De musica ligera en vivo",                  youtubeId: 'PBozofUgEQ0', genre: 'spanish rock' },
-  { title: "B. B. King - The Thrill Is Gone (Live at Montreux 1993)", youtubeId: '4fk2prKnYnI', genre: 'blues'        },
-  { title: "Michel Camilo - New York Band - 'CARIBE' (Solo Intro)",   youtubeId: 'FC9MKexsNnU', genre: 'jazz'         },
-  { title: "Enanitos Verdes - Lamento Boliviano (video oficial)",     youtubeId: 'khbDnLqe_Wk', genre: 'spanish rock' },
-  { title: "Chick Corea Elektric Band Live at North Sea Jazz 2003",   youtubeId: 'SL34LYIWQ6M', genre: 'jazz'         },
-  { title: "Art Tatum Solo Masterpieces - Volume 1",                  youtubeId: '1SnJSHfMAxQ', genre: 'jazz'         },
-  { title: "Metallica - Nothing Else Matters [Official Music Video]", youtubeId: 'tAGnKpE4NCI', genre: 'metal'        }
+  { title: "Iron Maiden - Wasted Years",                           youtubeId: 'GnqkDbrIfps', genre: 'metal'        },
+  { title: "Blake Shelton - 'Lonely Tonight' (Ft. Ashley Monroe)", youtubeId: 'G91KZ56mNbw', genre: 'country'      },
+  { title: "SODA STEREO - De musica ligera",                       youtubeId: 'PBozofUgEQ0', genre: 'spanish-rock' },
+  { title: "B. B. King - The Thrill Is Gone",                      youtubeId: '4fk2prKnYnI', genre: 'blues'        },
+  { title: "Michel Camilo - Caribe (Solo Intro)",                  youtubeId: 'FC9MKexsNnU', genre: 'jazz'         },
+  { title: "Enanitos Verdes - Lamento Boliviano",                  youtubeId: 'khbDnLqe_Wk', genre: 'spanish-rock' },
+  { title: "Chick Corea - Live at North Sea Jazz 2003",            youtubeId: 'SL34LYIWQ6M', genre: 'jazz'         },
+  { title: "Art Tatum - Solo Masterpieces (Vol. 1)",               youtubeId: '1SnJSHfMAxQ', genre: 'jazz'         },
+  { title: "Metallica - Nothing Else Matters",                     youtubeId: 'tAGnKpE4NCI', genre: 'metal'        }
 ];
 
-var videoTemplate = $('#templates .video-list-item').html();
 
+// DISPLAYS VIDEO LIST
+var videoTemplate = $('#templates .video-list-item').html();
 var renderVideoList = function () {
   for (var i = 0; i < videos.length; i += 1) {
     var video = $.render(videoTemplate, { 
@@ -28,6 +29,7 @@ var renderVideoList = function () {
 };
 renderVideoList();
 
+// ADDS NEW VIDEO TO THE LIST
 $('#new-video').on('submit', function (e) {
   e.preventDefault();
   var title = $('.title').val();
@@ -43,9 +45,11 @@ $('#new-video').on('submit', function (e) {
     genre: genre, 
     youtubeId: youtubeId
   });
-  $('#video-list').append(newVideo);
+  $('#video-list').prepend(newVideo);
 });
 
+
+// DISPLAYS VIDEO STATS
 var renderGenreStats = function () {
   var stats = {};
   for (var i = 0; i < videos.length; i += 1) {
@@ -67,3 +71,16 @@ var renderGenreStats = function () {
   };
 };
 renderGenreStats();
+
+
+// DISPLAYS FULL SIZE VIDEO ON TOP OF BROWSER
+var videoDisplay = $('#templates .video-embed').html();
+$(document).on('click', '.list-item-container', function (e) {
+  e.preventDefault();
+  var youtubeId = $(this).data('youtube-id');
+  console.log('Clicked on youtube video:', youtubeId);
+  var currentVideo = $.render(videoDisplay, { youtubeId: youtubeId });
+  $('#video-display').empty();
+  $('html, body').animate({ scrollTop: 0 }, 'fast');
+  $('#video-display').append(currentVideo);
+});
