@@ -9,6 +9,9 @@
   <div class="row">
     <h1 class="center_text"><strong>Music Video Playlist Manager</strong></h1>
     <hr>
+    <div id="video-display-container" class="large-12 columns">
+      <div id="video-display"></div>
+    </div>
     <div class="large-8 columns">
       <form id="new-video">
         <h3><strong>Add Video</strong></h3>
@@ -52,18 +55,37 @@
       </div>
     </div>
   </div>
-
-  <div id="video-display"></div>
   
   <div id="templates">
     <ul>
       <script class="video-list-item" type="text/template">
-        <li><a href="http://www.youtube.com/watch?v={ youtubeId }" target="blank">{ title }</a> - <strong>{ genre }</strong></li>
+        <div class="large-12 columns list-item-container" data-youtube-id="{ youtubeId }">
+          <div class="large-5 columns list-item-video">
+            <iframe width="240" height="135" src="http://www.youtube.com/embed/{ youtubeId }" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="large-7 columns list-item-text">
+            <h5><b><a href="http://www.youtube.com/watch?v={ youtubeId }" target="blank">{ title }</a></b></h5>
+            <p>Genre: <b>{ genre }</b></p>
+          </div>
+        </div>
       </script>
     </ul>
 
     <script class="genre-stat" type="text/template">
-      <p><strong>{ genre }:</strong> { genreCount } video(s).</p>
+      <div class="large-12 columns">
+        <div class="large-6 columns">
+          <p><strong>{ genre }:</strong></p>
+        </div>
+        <div class="large-6 columns">
+          <p>{ genreCount } video(s).</p>
+        </div>
+      </div>
+    </script>
+
+    <script class="video-embed" type="text/template">
+      <div class="large-12 columns">
+        <iframe width="853" height="480" src="http://www.youtube.com/embed/{ youtubeId }" frameborder="0" allowfullscreen></iframe>
+      </div>
     </script>
   </div>
 
