@@ -64,10 +64,94 @@ var Robot = function () {
 
 var rob = new Robot();
 console.log('Robot should have 10 energy:', rob.getEnergy());
+// → Robot should have 10 energy: 10
 
 rob.go();
 rob.go();
 console.log('Robot should have 8 energy:', rob.getEnergy());
+// → Robot should have 8 energy: 8
+
+
+// -----------------------------------------------------------------------------
+// Parameters Are People, Too!
+// ---------------------------
+
+// Parameters are just local variables. If an inner function uses a parameter, a 
+// closure is also created.
+
+var ScaredySpy = function (secret) {
+  this.threaten = function () {
+    return secret;
+  }
+};
+
+var spy = new ScaredySpy('I sleep with my socks on');
+
+var doesNotWork = spy.secret;
+console.log('The secret is not directly accessible:', doesNotWork);
+// → undefined
+
+var result = spy.threaten();
+console.log('However, the inner function still has access:', result);
+// → However, the inner function still has access: I sleep with my socks on 
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #3
+// -------------------
+
+// Write a function that takes a parameter 'pass' and returns 'true' or 'false'
+// based on if the password is correct.
+
+var UserAccount = function (password) {
+  this.enterPassword = function (pass) {
+    if (password === pass)
+      return true;
+    else
+      return false;
+  }
+};
+
+var account = new UserAccount('abc123');
+
+var guess1 = account.enterPassword('123456');
+console.log('First guess should be false:', guess1);
+// → First guess should be false: false
+
+var guess2 = account.enterPassword('abc123');
+console.log('Second guess should be true:', guess2);
+// → Second guess should be true: true
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #4
+// -------------------
+
+// Convert the following code to hide the 'balance' value by using a closure:
+
+var BankAccount = function () {
+  var balance = 0;
+  this.getBalance = function () {
+    return balance;
+  };
+  this.withdraw = function (amount) {
+    if (amount <= balance) {
+      balance -= amount;
+      console.log('Withdrew $' + amount);
+      console.log('Ending balance:', balance);
+    }
+    else {
+      console.log('Cannot draw $' + amount + ': not enough funds');
+    }
+  }
+};
+
+var account = new BankAccount();
+
+account.balance = 50000;
+account.withdraw(10000);
+
+console.log('Bank account should have a balance of zero:', account.getBalance());
 
 </script>
 </body>

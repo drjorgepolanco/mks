@@ -76,5 +76,4 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
     - `for` loops
     - $.render
     - $.observable
-     
-     
+- **[Data Abstraction]():** is an object/class/whatever protecting its own data from direct access, and instead provides a means to manipulate that data via methods.
