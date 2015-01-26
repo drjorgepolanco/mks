@@ -8,8 +8,8 @@ var id    = 'jofNR_WkoCE';
 var genre = 'club';
 
 var video = {
-	youtubeId: id, 
-	genre:     genre
+  youtubeId: id, 
+  genre:     genre
 };
 
 console.log('Youtube ID:', video.youtubeId);
@@ -27,7 +27,7 @@ console.log('Video genre:', video.genre);
 // console log output the correct value:
 
 var dog = {
-	name: 'Bill'
+  name: 'Bill'
 };
 
 console.log("The dog's name is:", dog['name']);
@@ -42,7 +42,7 @@ console.log("The dog's name is:", dog['name']);
 // correct value:
 
 var book = {
-	title: "How to Ruin People's Lives"
+  title: "How to Ruin People's Lives"
 };
 
 var propertyName = 'title';
@@ -58,14 +58,14 @@ console.log('The book title is:', book[propertyName]);
 // Complete the line of code so that Bob is rejected by the restaurant:
 
 var reservations = {
-	'Alice'  : true,
-	'Charlie': true
+  'Alice'  : true,
+  'Charlie': true
 };
 
 var checkForReservation = function (name) {
-	var r = reservations[name];
+  var r = reservations[name];
 
-	return !!r;
+  return !!r;
 };
 
 console.log('Alice should have a reservation:', checkForReservation('Alice'));
@@ -82,11 +82,11 @@ console.log('Bob should not. Poor Bob', checkForReservation('Bob'));
 // Write a for loop that calls the following function 16 times.
 
 var ringDoorbell = function () {
-	console.log('Ding-dong!');
+  console.log('Ding-dong!');
 };
 
 for (var i = 0; i < 16; i += 1) {
-	ringDoorbell();
+  ringDoorbell();
 };
 // → (16) Ding-dong!
 
@@ -98,12 +98,12 @@ for (var i = 0; i < 16; i += 1) {
 // Complete the function to add loudness number of exclamation marks to phrase:
 
 var amplify = function (phrase, loudness) {
-	var result = '';
-	result += phrase;
-	for (var i = 0; i < loudness; i += 1) {
-		result += '!';
-	}
-	return result;
+  var result = '';
+  result += phrase;
+  for (var i = 0; i < loudness; i += 1) {
+    result += '!';
+  }
+  return result;
 };
 
 console.log('Result should be "hello?!!!!!"', amplify('hello?', 5));
@@ -119,21 +119,21 @@ console.log('Result should be "hello?!!!!!"', amplify('hello?', 5));
 
 // Recursive
 function strMult(str, times) {
-	if (times === 0) {
-		return "";
-	}
-	else {
-		return str + strMult(str, times - 1); 
-	}
+  if (times === 0) {
+    return "";
+  }
+  else {
+    return str + strMult(str, times - 1); 
+  }
 };
 
 // For Loop
 function strMult(str, times) {
-	result = "";
-	for (var i = 0; i < times; i += 1) {
-		result += str;
-	}
-	return result;
+  result = "";
+  for (var i = 0; i < times; i += 1) {
+    result += str;
+  }
+  return result;
 };
 
 console.log("Should be whatwhat:", strMult('what', 2));
@@ -191,7 +191,7 @@ console.log('Result should be "bop it, pull it, twist it!":', result);
 // Complete the object so that the string renders correctly:
 
 var greetingHtml = $.render('<p>Welcome, { username }</p>', { 
-	username: 'xXxDarkxAssassinxXx' 
+  username: 'xXxDarkxAssassinxXx' 
 });
 
 console.log('Result should be <p>Welcome, xXxDarkxAssassinxXx</p>', greetingHtml);
@@ -206,12 +206,12 @@ console.log('Result should be <p>Welcome, xXxDarkxAssassinxXx</p>', greetingHtml
 // Complete the string so that the console.log outputs the correct value:
 
 var giantButtonHtml = $.render('<a class="giant button { className }">Color is not { color }</a>', {
-	color: 'pickle-green', 
-	className: 'not-green' 
+  color: 'pickle-green', 
+  className: 'not-green' 
 });
 
 console.log('Result should be <a class="giant button not-green">Color is not pickle-green</a>', 
-	giantButtonHtml);
+  giantButtonHtml);
 // → Result should be <a class="giant button not-green">Color is not pickle-green</a> 
 // →                  <a class="giant button not-green">Color is not pickle-green</a>
 
@@ -238,9 +238,9 @@ console.log('Result should be <div id="loud" class="giant">AHOY!</div>', giantBo
 
 var tastyItemTemplate = $('#templates .yummy').html();
 var tastyItemHtml = $.render(tastyItemTemplate, { 
-	item: 'Creme Puff', 
-	tastiness: 'Oh so good', 
-	className: 'yummy' 
+  item: 'Creme Puff', 
+  tastiness: 'Oh so good', 
+  className: 'yummy' 
 });
 console.log('Result should be <div class="yummy box">The tasty thing is: Creme Puff. Its rating is: Oh so good</div>', tastyItemHtml);
 // → Result should be <div class="yummy box">The tasty thing is: Creme Puff. Its rating is: Oh so good</div> 
@@ -256,11 +256,11 @@ console.log('Result should be <div class="yummy box">The tasty thing is: Creme P
 var poultryRace = $.observable({});
 
 poultryRace.on('turkey-run', function () {
-	console.log('gobble! gobble!');
+  console.log('gobble! gobble!');
 });
 
 poultryRace.on('chicken-waddle', function () {
-	console.log('kachirp! kachirp!');
+  console.log('kachirp! kachirp!');
 });
 
 poultryRace.trigger('turkey-run');
@@ -277,7 +277,7 @@ poultryRace.trigger('turkey-run');
 var stuntMan = $.observable({});
 
 stuntMan.on('10-story-jump', function () {
-	console.log('I beLIEVE!');
+  console.log('I beLIEVE!');
 });
 
 stuntMan.trigger('10-story-jump');
@@ -291,7 +291,7 @@ stuntMan.trigger('10-story-jump');
 // Write the missing line of code so that the following code makes it rain:
 
 var makeItRain = {
-	rainContent: 'dollar bills, yo'
+  rainContent: 'dollar bills, yo'
 };
 
 console.log('Before:', makeItRain);
@@ -305,7 +305,7 @@ console.log('After:', makeItRain);
 
 
 makeItRain.on('rain', function () {
-	console.log("It's raining " + makeItRain.rainContent + '.');
+  console.log("It's raining " + makeItRain.rainContent + '.');
 });
 
 makeItRain.trigger('rain');

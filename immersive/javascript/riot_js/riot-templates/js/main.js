@@ -26,8 +26,8 @@ var items = [
 
 for (var i = 0; i < items.length; i += 1) {
   var newItems = $.render(itemTemplate, { 
-  	name: items[i].name, 
-  	price: items[i].price 
+    name: items[i].name, 
+    price: items[i].price 
   });
   $('#store').append(newItems);
 };
