@@ -11,9 +11,11 @@
 	/* Listen to user events */
 
 	// 2. When the form submits, add a new todo via the model
-
-
-
+	$('form.new-todo').on('submit', function (e) {
+		e.preventDefault();
+		var item = $('#new-todo-text').val();
+		todo.add(item);
+	});
 
 	// 3. When the user clicks the 'x' button, remove the todo via the model
 	$root.on('click', '.destroy', function (e) {
