@@ -15,11 +15,14 @@
 		e.preventDefault();
 		var item = $('#new-todo-text').val();
 		todo.add(item);
+		$('#new-todo-text').val('');
 	});
 
 	// 3. When the user clicks the 'x' button, remove the todo via the model
 	$root.on('click', '.destroy', function (e) {
-		// TODO
+		e.preventDefault();
+		var id = $(this).closest('.todo-item').data('id')
+		todo.remove(id);
 	});
 
 	
