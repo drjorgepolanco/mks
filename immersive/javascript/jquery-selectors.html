@@ -45,6 +45,119 @@
 <script type="text/javascript">
 
 // TODO
+// -----------------------------------------------------------------------------
+// Partner Exercise #1.1
+// ---------------------
+
+// Write a single line of jQuery that selects the div with Item 2
+$('.item.active')
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #1.2
+// ---------------------
+
+// Write a single line of jQuery that selects the form element's second text box.
+$('.new-item .price')
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #2.1
+// ---------------------
+
+// Write on line of jQuery that grabs the value of the input box that's prefilled
+// with 'Mitch Thomsom'
+$('.name', '.new-item').val();
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #2.2
+// ---------------------
+
+// Write one line of jQuery that grabs the value of the input box that's prefilled 
+// with Mitch is $19.
+$('.new-item').find('.price').val();
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #2.3
+// ---------------------
+
+// Write one line of jQuery that listens for the submit event on the form and 
+// responds by console logging the value of the input box that's prefilled with 
+// "Mitch is $19".
+$('.new-item').on('submit', function (e) { 
+  e.preventDefault();
+  console.log($('.new-item .price').val())
+});
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #3.1
+// ---------------------
+
+// Write one line of jQuery that adds "Buy one, Get one!!" to the end of the second item div.
+$('#items .item').eq(1).append('Buy one, Get one!!');
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #3.2
+// ---------------------
+
+// Write one line of jQuery that removes the price from 'Item 3'.
+$('#items .item:last').find('.price').remove();
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #3.3
+// ---------------------
+
+// Write one line of jQuery that appends the div below to 'Item 3'
+// <div class="price">$121</div>
+$('.item:eq(2)', '#items').append('<div class="price">$121</div>')
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #4.1
+// ---------------------
+
+// Write one line of jQuery that changes the width of the first item div to 60px, 
+// then changes the font size of its item price to 25px.
+$('#items .item:first').css('width', 60).find('.price').css('font-size', 25);
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #4.2
+// ---------------------
+
+// Write one line of jQuery that changes the font size of the input box prefilled 
+// with Mitch Thomson to 30px, then changes its parent container's background color to lime.
+$('.new-item input:first').css('font-size', 30).parent().css('background', 'lime');
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #4.3
+// ---------------------
+
+// Write one line of jQuery that changes the background color of the body tag to teal, 
+// then font-size of all Item text (e.g. Item 1, Item 2, etc) to 15px, then height of 
+// all their parent containers to 60px.
+$('body').css('background', 'teal').find('label', '.item').css('font-size', 15).parent().css('height', 60);
+
+
+// -----------------------------------------------------------------------------
+// Partner Exercise #4.4
+// ---------------------
+
+// Write one line of jQuery that listens for the submit event on the form and 
+// responds by appending the value of the input box that's prefilled with 
+// "Mitch Thomson" to the div with id #items.
+
+$('.new-item').on('submit', function (e) {
+  e.preventDefault();
+  $('#items').append($('.new-item .name').val());
+});
+
 
 </script>
 </body>
