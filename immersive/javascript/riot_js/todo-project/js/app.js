@@ -14,6 +14,7 @@
 
 
 
+
 	// 3. When the user clicks the 'x' button, remove the todo via the model
 	$root.on('click', '.destroy', function (e) {
 		// TODO
@@ -25,7 +26,13 @@
 	// 1. When a new todo is added, generate new html to show it on the page
 	todo.on('add', function (newTodo) {
 		console.log('New todo!', newTodo);
-		// TODO
+		var name = newTodo.name;
+		var id   = newTodo.id;  
+		var item = $.render(todoTemplate, {
+			name: name,
+			id: id
+		});
+		$root.append(item);
 	});
 
 	todo.on('remove', function (todo) {
