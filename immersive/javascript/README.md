@@ -3,7 +3,7 @@
 
 This represents the JavaScript Lessons that were part of my Cohort at [MakerSquare](http://www.makersquare.com/). 
 
-**There present exercises are only the one that were not meant to be completed in MakerSquare's Learn App.**
+**The presented exercises are only the ones that were not meant to be completed in MakerSquare's Learn App or directly in the browser.**
 
 ###Mini Projects:
 
@@ -47,10 +47,9 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
     - Functions as Callbacks
     - Anonymous Functions
 - **[Javascript Review:](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review.html)**
-  - **Review:**
-    - Functions
-    - Functions as Callbacks
-    - Anonymous Functions
+  - Functions
+  - Functions as Callbacks
+  - Anonymous Functions
 - **[Javascript Objects:](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_objects.html)** Introduction to Objects in JavaCript.
 - **[Javascript Nested Objects](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_nested_objects.html)**
 - **[Javascript Funky Keys](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_funky_keys.html)**
@@ -61,19 +60,18 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[Ow! - A For Loop Exercise](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/ow.html)**
 - **[Riot.js Templates:](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js)** [Riot.js](https://github.com/muut/riotjs) is a tiny Model View Presenter (MVP) framework.
 - **[Javascript Review 4:](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_4.html)** 
-  - **Review:**
-    - Arrays
-    - For Loops.
+  - Arrays
+  - For Loops.
 - **[Riot.js Templates Review 1](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/riot-review-1):** Creating transparent, draggable and colored boxes using templates and Riot.js's $.render function.
 - **[JavaScript Review 5:](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/js_review_5.html)** jQuery Review. Traversing, selecting and updating the DOM.
 - **[Functions as Constructors](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/functions_as_constructors.html)**
 - **[Riot.js Events](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/riot-events)**
 - **[Riot Event Reading:](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/riot-event-reading)** In this lesson we read through some working code to see how Riot.js events can effectively be used.
 - **[JavaScript Review 6:](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/js_review_6)**
-  - **Review:**
-    - Scopes
-    - Object Properties
-    - `for` loops
-    - $.render
-    - $.observable
-- **[Data Abstraction]():** is an object/class/whatever protecting its own data from direct access, and instead provides a means to manipulate that data via methods.
+  - Scopes
+  - Object Properties
+  - `for` loops
+  - $.render
+  - $.observable
+- **[Data Abstraction](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/data_abstraction.html)** 
+- **[jQuery Selectors](https://github.com/drjorgepolanco/mks/blob/master/immersive/javascript/jquery-selectors.html)**
