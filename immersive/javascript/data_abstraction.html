@@ -150,8 +150,10 @@ var account = new BankAccount();
 
 account.balance = 50000;
 account.withdraw(10000);
+// → Cannot draw $10000: not enough funds
 
 console.log('Bank account should have a balance of zero:', account.getBalance());
+// → Bank account should have a balance of zero: 0
 
 </script>
 </body>
