@@ -14,6 +14,7 @@ This represents the JavaScript Lessons that were part of my Cohort at [MakerSqua
 - **[Bakery Bonanza:](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/bakery)** A bakery that can bake baked goods, including cupcakes and cookies. See live project **[here](http://drjorgepolanco.com/js_apps/bakery/bakery.html)**.
 - **[Tic Tac Toe:](https://github.com/drjorgepolanco/tic-tac-toe)** See live project **[here](http://drjorgepolanco.com/js_apps/tic-tac-toe/index.html)**.
 - **[Music Videos:](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/music-videos)** See live project **[here](http://drjorgepolanco.com/js_apps/music-videos/index.html)**.
+- **[Todo App:](https://github.com/drjorgepolanco/mks/tree/master/immersive/javascript/riot_js/todo-project)** See live project **[here](http://drjorgepolanco.com/js_apps/todo-project)**.
 
 
 ###Exercises:
