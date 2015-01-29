@@ -1,13 +1,12 @@
 (function () {
 
-  /* *
-   * list-item-list.js
-   * This presenter displays and manages the list of list items.
-   */
+  /*\ 
+ | * list-item-list.js
+ | * This presenter displays and manages the list of list items.
+  \*/
 
-  var $view = $('#main .list-items')
-    , itemTemplate = $("#templates .list-item").html();
-  ;
+  var $view = $('#main .list-items'), 
+              itemTemplate = $("#templates .list-item").html();
 
 // - - - - - - - - - - - - -
 // View (HTML) Interactions

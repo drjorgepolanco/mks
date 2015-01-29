@@ -3,9 +3,7 @@
   var $view = $('form.new-list-item'), 
               invalidText = '(!) You must include both an item name and an item category.';
 
-
 // HTML interactions
-
   $view.on('submit', function (e) {
 
     e.preventDefault();
@@ -30,7 +28,6 @@
 
     // Clear out new items input field
     $('input[type="text"]', $view).val('');
-  
+    
   });
-
 })();
