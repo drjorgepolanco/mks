@@ -57,18 +57,4 @@
   listItems.on(...);
   /**/
 
-  function (122)
-    jajaja
-      holahola
-      
-
 })();
-
-
-
-
-  Example
-  Example
-  Example
-
-  Example
