@@ -17,8 +17,11 @@
       this.trigger('destroy', index);
 		};
 
-		this.update = function (index, name, priority) {
-			this.trigger('update', items[index], index);
+		this.update = function (index, name, category) {
+      var item = items[index];
+      item.name = name;
+      item.category = category;
+			this.trigger('update', item, index);
 		};
 
 	};
