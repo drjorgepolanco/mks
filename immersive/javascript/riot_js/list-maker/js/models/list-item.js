@@ -13,7 +13,8 @@
 		};
 
 		this.destroy = function (index) {
-
+      items.splice(index, 1);
+      this.trigger('destroy', index);
 		};
 
 		this.update = function (index, name, priority) {
