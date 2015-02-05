@@ -20,7 +20,7 @@ class Item
   end
   
   def hash
-    @item_name.hash ^ @quantity.hash ^ @supplier_name.hash ^         @price.hash
+    @item_name.hash ^ @quantity.hash ^ @supplier_name.hash ^ @price.hash
   end
   
 end

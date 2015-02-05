@@ -79,7 +79,7 @@ end
 
 class EvilNinja < Person
 	include Fighter
-	
+
 	def initialize(name, strength, evilness)
 		super(name)
 		@strength = strength
@@ -110,20 +110,20 @@ def fight_scene
 	jorge.drink_coffee(3)
 	jorge.run
 	massiel.caffeine_level = 1.0
-	
+
 	puts "#{massiel.name} couldn't drink her coffee this morning, so her caffeine level is #{massiel.caffeine_level}."
-	
+
 	massiel.run
 
 	puts "While running to work #{jorge.name} and #{massiel.name} hear a lot of noise. Some people are fighting..."
-	
+
 	puts "Ohhh nooo!!! It's the Mighty Morphin Power Rangers!!"
-	
+
 	jason.punch(rita, 3)
 	rita.cause_mayhem(jason)
 	jason.rest(10)
 	jason.punch(rita, 7)
-	
+
 	goldar.punch(kimberly, 4)
 	kimberly.use_megazord(goldar)
 end

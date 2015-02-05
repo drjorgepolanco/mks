@@ -20,26 +20,26 @@ class Cookbook
 		end
 	end
 
-	def recipe_ingredients
-		puts "===================================================="
-		puts "The ingredients of this recipe are: "
-		@recipes.each do |item| 
-			puts "#{item.title.upcase}: #{item.ingredients.map(&:capitalize).join(", ")}." 
-		end
+def recipe_ingredients
+	puts "===================================================="
+	puts "The ingredients of this recipe are: "
+	@recipes.each do |item| 
+		puts "#{item.title.upcase}: #{item.ingredients.map(&:capitalize).join(", ")}." 
 	end
+end
 
-	def print_cookbook
-		puts "===================================================="
-		puts "The #{@title} cookbook has the following recipes:"
-		@recipes.each do |item|
-			puts ""
-			puts item.title.upcase
-			puts "---------------"
-			puts " "
-			puts "The ingredients of this recipe are:"
-			puts item.ingredients.map {|x| puts "- " + x.capitalize}
-			puts "To make this recipe you need to:"
-			puts item.steps.map {|x| puts "- " + x.capitalize}
+def print_cookbook
+	puts "===================================================="
+	puts "The #{@title} cookbook has the following recipes:"
+	@recipes.each do |item|
+		puts ""
+		puts item.title.upcase
+		puts "---------------"
+		puts " "
+		puts "The ingredients of this recipe are:"
+		puts item.ingredients.map {|x| puts "- " + x.capitalize}
+		puts "To make this recipe you need to:"
+		puts item.steps.map {|x| puts "- " + x.capitalize}
 		end
 	end
 end
@@ -67,5 +67,4 @@ class Recipe
 		steps_hash = Hash[@steps.map.with_index.to_a]
 		steps_hash.each {|key, value| puts "#{value + 1}. #{key.capitalize}"}
 	end
-
 end
