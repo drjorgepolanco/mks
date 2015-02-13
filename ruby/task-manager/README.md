@@ -2,6 +2,9 @@
 
 Base coden taken from [makersquare/ruby-course](https://github.com/makersquare/ruby-course/tree/task-manager).
 
+###Open:
+	$ bundle exec ruby pm.rb
+
 ###Project Requirements (Part 1)
 
 - A new project can be created with a name.
