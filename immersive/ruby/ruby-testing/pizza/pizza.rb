@@ -32,5 +32,4 @@ module Pizza
       @vegetarian = vegetarian
     end
   end
-
 end
