@@ -60,7 +60,7 @@ describe Pizza::Pie do
         end
       end
     end
-	end
+  end
 end
 
 describe Pizza::Topping do
