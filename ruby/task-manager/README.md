@@ -1,23 +1,17 @@
 #Task Manager Pro v1.0
 
-Base coden taken from [makersquare/ruby-course](https://github.com/makersquare/ruby-course/tree/task-manager).
-
 ###Open:
 	$ bundle exec ruby pm.rb
 
-###Project Requirements (Part 1)
+###Features
 
-- A new project can be created with a name.
-	- This must automatically generate and assign the new project a unique id.
-- A new task can be created with a project id, description, and priority number.
-- A task can be marked as complete, specified by id.
-- A project can retrieve a list of all complete tasks, sorted by creation date.
-- A project can retrieve a list of all incomplete tasks, sorted by priority.
+- A new project can be created with a name (id is assigned automatically).
+- New task can be created with a project id, description and priority number.
+- Tasks can be marked as complete, specified by id.
+- Projects can retrieve a list of all complete tasks, sorted by creation date.
+- Projects can retrieve a list of all incomplete tasks, sorted by priority.
 - If two tasks have the same priority number, the older task gets priority
-
-###Project Requirements (Part 2)
-
-- Write a `TerminalClient` class that interacts with your application through the terminal.
+- **TerminalClient** to interact with the application through the terminal.
 
 
 ###Test Results
