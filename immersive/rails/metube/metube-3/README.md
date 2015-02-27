@@ -2,10 +2,6 @@
 ###ActiveRecord & Rails Console
 
 
-This basic Video Sharing App has been developed following the **third lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
-
-Base code taken from **github:** [makersquare/metube-cohort3](https://github.com/makersquare/metube-cohort3/tree/c-start).
-
 #####Purpose:
 Create the first database-backed Rails web application.
 

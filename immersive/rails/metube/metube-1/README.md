@@ -2,8 +2,6 @@
 ###Routes, Controllers & Views
 
 
-This basic Video Sharing App has been developed following the **first lesson** on [Rails](http://rubyonrails.org/) at [**MakerSquare**](http://www.makersquare.com/).
-
 #####Purpose:
 
 Learn about how a Rails application handles **incoming HTTP requests** and routes those requests to the appropriate sections of code within the application. 
