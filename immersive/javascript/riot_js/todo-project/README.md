@@ -1,4 +1,5 @@
-#ToDo App
+#Task Manager
+##ToDo App
 
 See live project **[here](http://drjorgepolanco.com/js_apps/todo-project/)**.
 

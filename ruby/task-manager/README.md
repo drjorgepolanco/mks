@@ -1,4 +1,4 @@
-#Task Manager Pro v1.0
+#Project Manager Pro v1.0
 
 ###Open:
 	$ bundle exec ruby pm.rb
