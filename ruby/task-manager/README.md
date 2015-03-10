@@ -73,7 +73,7 @@ when there are many incompleted tasks with same priorities
 ![image_1](https://scontent-a-lga.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10858542_10152739102773961_2542577563641137404_n.jpg?oh=8e2127d3132f58f8c5474a382e8ccb67&oe=55029319)
 
 ####Creating new tasks
-![image_2](https://scontent-b-lga.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10849950_10152739102783961_3424789121116862356_n.jpg?oh=0e2dfdbf7b60eed54f405426d5d321df&oe=54FF39D3)
+![image_2](https://scontent-lga.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10849950_10152739102783961_3424789121116862356_n.jpg?oh=eef340257a9e05671ae72769c51157c5&oe=5575E0D3)
 
 ####Show all tasks and mark task as 'complete'
 ![image_3](https://scontent-b-lga.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10849981_10152739102778961_2583689143971870292_n.jpg?oh=a62b52f2d198c682dfb765ea11433798&oe=550EDC65)
