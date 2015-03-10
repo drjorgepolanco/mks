@@ -1,8 +1,8 @@
-#Bakery Bonanza
-See live project **[here](http://drjorgepolanco.com/js_apps/bakery/bakery.html)**.
+#The Bakery
+See live project **[here](http://drjorgepolanco.com/js_apps/bakery)**.
 
-Today you are creating a bakery that can bake baked goods, including cupcakes and cookies.
+Create your own Treats!
 
-- **setIngredientsList():** Display all available ingredients dynanically.
-- **make():** Check for supplies, creates new desserts and displays them in 'Food Display Case'.
-- **updateIngredientsList():** Updates the available ingredients.
+- Create new treats
+- Display all available ingredients dynamically.
+- Available ingredients are updated automatically.
